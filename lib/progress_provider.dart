@@ -38,7 +38,6 @@ class ProgressProvider with ChangeNotifier {
       _testHistory.addAll(savedHistory.map((jsonString) => jsonDecode(jsonString) as Map<String, dynamic>));
     }
     
-    // Load sound setting, defaulting to true if not found
     _isSoundOn = prefs.getBool('isSoundOn') ?? true;
 
     _isLoading = false;
@@ -57,7 +56,7 @@ class ProgressProvider with ChangeNotifier {
     if (_unlockedStops.isEmpty && _roadMap.isNotEmpty) {
       _unlockedStops.add(_roadMap.first);
     }
-    notifyListeners();
+    // NOTIFY LISTENERS IS REMOVED FROM HERE
   }
 
   bool isUnlocked(String stopLabel) {

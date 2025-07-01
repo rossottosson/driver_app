@@ -75,7 +75,7 @@ class _QuizScreenState extends State<QuizScreen> {
   void _submitQuiz() {
     final score = _questionsForThisQuiz.isNotEmpty ? _correctAnswerCount / _questionsForThisQuiz.length : 0.0;
     
-    if (score >= 0.8) {
+    if (score >= 0.6) {
       Provider.of<ProgressProvider>(context, listen: false)
           .unlockNextStop(widget.quizId);
     }
@@ -260,7 +260,7 @@ class QuizResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final bool passed = score >= 0.8;
+    final bool passed = score >= 0.6;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Quiz Results'),
@@ -285,7 +285,7 @@ class QuizResultsScreen extends StatelessWidget {
               style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
              Text(
-              'You needed 80% to pass.',
+              'You needed 60% to pass.',
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 16, color: Colors.grey),
             ),
