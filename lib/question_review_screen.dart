@@ -31,25 +31,34 @@ class QuestionReviewScreen extends StatelessWidget {
               question['question'] as String,
               style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+            
+            // --- UPDATED: Reduced top spacing ---
+            const SizedBox(height: 16),
+
             if (imagePaths.isNotEmpty)
-              SizedBox(
-                height: 120,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: imagePaths.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Image.asset(imagePaths[index], height: 120),
-                    );
-                  },
+              Center(
+                child: SizedBox(
+                  // --- UPDATED: Image height increased to 240 ---
+                  height: 240,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: imagePaths.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Image.asset(imagePaths[index], height: 240),
+                      );
+                    },
+                  ),
                 ),
               ),
+              
+            // --- UPDATED: Reduced bottom spacing ---
             const SizedBox(height: 24),
             const Text('Options:', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
             const SizedBox(height: 8),
-            // Display the options with highlighting
+            
             ...List.generate(options.length, (index) {
               final bool isCorrect = index == correctAnswerIndex;
               final bool isUserChoice = index == userAnswerIndex;

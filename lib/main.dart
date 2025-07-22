@@ -44,9 +44,9 @@ class MyApp extends StatelessWidget {
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             backgroundColor: primaryColor,
-            foregroundColor: Colors.white
-          )
-        )
+            foregroundColor: Colors.white,
+          ),
+        ),
       ),
       home: const MainScreen(),
       debugShowCheckedModeBanner: false,
@@ -62,8 +62,8 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int _selectedIndex = 0; 
-  
+  int _selectedIndex = 0;
+
   static const List<Widget> _pages = <Widget>[
     RoadMapScreen(),
     PracticeTestsScreen(),
@@ -114,16 +114,19 @@ class RoadMapScreen extends StatefulWidget {
 
 class _RoadMapScreenState extends State<RoadMapScreen> {
   late ScrollController _scrollController;
-  final double roadHeight = 11400.0;
-  
+  final double roadHeight = 11700.0;
   final List<Map<String, dynamic>> roadStops = [];
   bool _isInitialized = false;
+
+  // --- FIXED: Moved baseScreenWidth to the class level ---
+  static const double baseScreenWidth = 412.0;
 
   @override
   void initState() {
     super.initState();
     _scrollController = ScrollController();
 
+    // Ensures that the context is available for MediaQuery.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!_isInitialized && mounted) {
         _initializeStops();
@@ -136,48 +139,49 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
 
   void _initializeStops() {
     final double screenWidth = MediaQuery.of(context).size.width;
-    
+
     final List<Map<String, dynamic>> bubbleData = [
-      {'label': 'Start', 'isQuiz': false}, 
-      {'label': '1.1', 'isQuiz': false, 'imageAsset': 'assets/images/L1_Sign.png'},
-      {'label': '1.2', 'isQuiz': false},
-      {'label': 'Q1',  'isQuiz': true},
-      {'label': '2.1', 'isQuiz': false, 'imageAsset': 'assets/images/L2_Sign.png'},
-      {'label': '2.2', 'isQuiz': false},
-      {'label': 'Q2',  'isQuiz': true},
-      {'label': '3.1', 'isQuiz': false, 'imageAsset': 'assets/images/L3_Sign.png'},
-      {'label': '3.2', 'isQuiz': false},
-      {'label': 'Q3',  'isQuiz': true},
-      {'label': '4.1', 'isQuiz': false, 'imageAsset': 'assets/images/L4_Sign.png'},
-      {'label': '4.2', 'isQuiz': false},
-      {'label': 'Q4',  'isQuiz': true},
-      {'label': '5.1', 'isQuiz': false, 'imageAsset': 'assets/images/L5_Sign.png'},
-      {'label': '5.2', 'isQuiz': false},
-      {'label': '5.3', 'isQuiz': false},
-      {'label': '5.4', 'isQuiz': false},
-      {'label': '5.5', 'isQuiz': false},
-      {'label': 'Q5',  'isQuiz': true},
-      {'label': '6.1', 'isQuiz': false, 'imageAsset': 'assets/images/L6_Sign.png'},
-      {'label': '6.2', 'isQuiz': false},
-      {'label': '6.3', 'isQuiz': false},
-      {'label': 'Q6',  'isQuiz': true},
-      {'label': '7.1', 'isQuiz': false, 'imageAsset': 'assets/images/L7_Sign.png'},
-      {'label': '7.2', 'isQuiz': false},
-      {'label': 'Q7',  'isQuiz': true},
-      {'label': '8.1', 'isQuiz': false, 'imageAsset': 'assets/images/L8_Sign.png'},
-      {'label': '8.2', 'isQuiz': false},
-      {'label': '8.3', 'isQuiz': false},
-      {'label': '8.4', 'isQuiz': false},
-      {'label': 'Q8',  'isQuiz': true},
-      {'label': '9.1', 'isQuiz': false, 'imageAsset': 'assets/images/L9_Sign.png'},
-      {'label': '9.2', 'isQuiz': false},
-      {'label': 'Q9',  'isQuiz': true},
-      {'label': '10.1','isQuiz': false, 'imageAsset': 'assets/images/L10_Sign.png'},
-      {'label': '10.2','isQuiz': false},
-      {'label': '10.3','isQuiz': false},
-      {'label': 'Q10', 'isQuiz': true},
+      { 'label': 'Start', 'isQuiz': false },
+      { 'label': '1.1',  'isQuiz': false, 'imageAsset': 'assets/images/L1_Sign.png',  'imageSize': 280.0, 'offsetX': 0.0, 'offsetY': 50.0},
+      { 'label': '1.2',  'isQuiz': false, 'imageAsset': 'assets/images/Waving_from_car.png',  'imageSize': 270.0, 'offsetX': 10.0, 'offsetY': -5.0  },
+      { 'label': 'Q1',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0,},
+      { 'label': '2.1',  'isQuiz': false, 'imageAsset': 'assets/images/L2_Sign.png',  'imageSize': 280.0,  'offsetX': -20.0, 'offsetY': 0.0  },
+      { 'label': '2.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_bench.png',     'imageSize': 280.0,},
+      { 'label': 'Q2',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',  'imageSize': 350.0 },
+      { 'label': '3.1',  'isQuiz': false, 'imageAsset': 'assets/images/L3_Sign.png',  'imageSize': 280.0 },
+      { 'label': '3.2',  'isQuiz': false, 'imageAsset': 'assets/images/Car_with_learners_permit.png',     'imageSize': 350.0, },
+      { 'label': 'Q3',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',    'imageSize': 350.0 },
+      { 'label': '4.1',  'isQuiz': false, 'imageAsset': 'assets/images/L4_Sign.png',  'imageSize': 280.0 },
+      { 'label': '4.2',  'isQuiz': false, 'imageAsset': 'assets/images/Fire_truck_decoration.png',     'imageSize': 280.0, },
+      { 'label': '4.3',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 300.0, },
+      { 'label': 'Q4',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',   'imageSize': 350.0 },
+      { 'label': '5.1',  'isQuiz': false, 'imageAsset': 'assets/images/L5_Sign.png',  'imageSize': 280.0 },
+      { 'label': '5.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_lake.png',     'imageSize': 280.0, },
+      { 'label': '5.3',  'isQuiz': false, 'imageAsset': 'assets/images/Gas_pump_decoration.png',     'imageSize': 280.0,},
+      { 'label': '5.4',  'isQuiz': false, 'imageAsset': 'assets/images/Traffic_cone_decoration.png',     'imageSize': 350.0, },
+      { 'label': '5.5',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_lake.png',     'imageSize': 350.0, },
+      { 'label': 'Q5',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0 },
+      { 'label': '6.1',  'isQuiz': false, 'imageAsset': 'assets/images/L6_Sign.png',  'imageSize': 280.0 },
+      { 'label': '6.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_market.png',     'imageSize': 350.0, },
+      { 'label': '6.3',  'isQuiz': false, 'imageAsset': 'assets/images/Heap_of_old_tires.png',     'imageSize': 350.0, },
+      { 'label': 'Q6',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png','imageSize': 350.0 },
+      { 'label': '7.1',  'isQuiz': false, 'imageAsset': 'assets/images/L7_Sign.png',  'imageSize': 280.0 },
+      { 'label': '7.2',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 300.0, },
+      { 'label': 'Q7',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',  'imageSize': 350.0 },
+      { 'label': '8.1',  'isQuiz': false, 'imageAsset': 'assets/images/L8_Sign.png',  'imageSize': 280.0 },
+      { 'label': '8.2',  'isQuiz': false },
+      { 'label': '8.3',  'isQuiz': false },
+      { 'label': '8.4',  'isQuiz': false },
+      { 'label': 'Q8',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0 },
+      { 'label': '9.1',  'isQuiz': false, 'imageAsset': 'assets/images/L9_Sign.png',  'imageSize': 280.0 },
+      { 'label': '9.2',  'isQuiz': false },
+      { 'label': 'Q9',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',     'imageSize': 350.0 },
+      { 'label': '10.1', 'isQuiz': false, 'imageAsset': 'assets/images/L10_Sign.png', 'imageSize': 280.0 },
+      { 'label': '10.2', 'isQuiz': false },
+      { 'label': '10.3', 'isQuiz': false },
+      { 'label': 'Q10',  'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',      'imageSize': 280.0,  'offsetX': 20.0, 'offsetY': 20.0},
     ];
-    
+
     final List<Offset> positions = [
       Offset(screenWidth * 0.5, roadHeight - 200),
       Offset(screenWidth * 0.2, roadHeight - 500),
@@ -215,33 +219,55 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
       Offset(screenWidth * 0.2, roadHeight - 10100),
       Offset(screenWidth * 0.8, roadHeight - 10400),
       Offset(screenWidth * 0.2, roadHeight - 10700),
-      Offset(screenWidth * 0.5, roadHeight - 11000),
-      Offset(screenWidth * 0.5, roadHeight - 11300),
+      Offset(screenWidth * 0.8, roadHeight - 11000),
+      Offset(screenWidth * 0.2, roadHeight - 11300),
+      Offset(screenWidth * 0.5, roadHeight - 11600),
     ];
-    
+
     final List<Map<String, dynamic>> stops = [];
     for (int i = 0; i < positions.length; i++) {
-        stops.add({
-            ...bubbleData[i],
-            'pos': positions[i],
-        });
+      final stopData = bubbleData[i];
+      final newStopData = Map<String, dynamic>.from(stopData);
+
+      // --- Calculate responsive sizes and offsets ---
+      if (newStopData.containsKey('imageSize')) {
+        final originalSize = newStopData['imageSize'] as double;
+        newStopData['imageSize'] = (originalSize / baseScreenWidth) * screenWidth;
+      }
+      if (newStopData.containsKey('offsetX')) {
+        final originalOffsetX = newStopData['offsetX'] as double;
+        newStopData['offsetX'] = (originalOffsetX / baseScreenWidth) * screenWidth;
+      }
+      if (newStopData.containsKey('offsetY')) {
+        final originalOffsetY = newStopData['offsetY'] as double;
+        newStopData['offsetY'] = (originalOffsetY / baseScreenWidth) * screenWidth;
+      }
+
+      stops.add({
+        ...newStopData,
+        'pos': positions[i],
+      });
     }
 
-    final roadMapLabels = stops.map((stop) => stop['label'] as String).toList();
-    Provider.of<ProgressProvider>(context, listen: false).initializeRoadMap(roadMapLabels);
+    final roadMapLabels =
+        stops.map((stop) => stop['label'] as String).toList();
+    Provider.of<ProgressProvider>(context, listen: false)
+        .initializeRoadMap(roadMapLabels);
 
     setState(() {
       roadStops.clear();
       roadStops.addAll(stops);
     });
 
+    // Scroll to the bottom after initialization
     Future.delayed(const Duration(milliseconds: 100), () {
       if (_scrollController.hasClients) {
-        _scrollController.jumpTo(_scrollController.position.maxScrollExtent);
+        _scrollController.jumpTo(
+            _scrollController.position.maxScrollExtent);
       }
     });
   }
-  
+
   @override
   void dispose() {
     _scrollController.dispose();
@@ -252,7 +278,7 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
   Widget build(BuildContext context) {
     final double screenWidth = MediaQuery.of(context).size.width;
     final progressProvider = context.watch<ProgressProvider>();
-    
+
     if (progressProvider.isLoading || !_isInitialized) {
       return Scaffold(
         appBar: AppBar(
@@ -266,9 +292,12 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
 
     final totalStops = roadStops.length;
     final completedStops = progressProvider.unlockedStops.length;
-    final double progressPercent = totalStops > 1 ? ((completedStops - 1) / (totalStops - 1)) : 0.0;
+    final double progressPercent = totalStops > 1
+        ? ((completedStops - 1) / (totalStops - 1))
+        : 0.0;
     final int percentage = (progressPercent * 100).toInt();
-    final List<Offset> pathPoints = roadStops.map((stop) => stop['pos'] as Offset).toList();
+    final pathPoints =
+        roadStops.map((stop) => stop['pos'] as Offset).toList();
 
     return Scaffold(
       appBar: AppBar(
@@ -280,7 +309,8 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
               LinearProgressIndicator(
                 value: progressPercent,
                 backgroundColor: Colors.grey[700],
-                valueColor: const AlwaysStoppedAnimation<Color>(Colors.amber),
+                valueColor:
+                    const AlwaysStoppedAnimation<Color>(Colors.amber),
                 minHeight: 22.0,
               ),
               Align(
@@ -316,21 +346,24 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
 
                 if (stop.containsKey('imageAsset')) {
                   final imageAsset = stop['imageAsset'] as String;
-                  
-                  // --- MODIFIED: New symmetrical layout logic for signs ---
-                  final bool isBubbleOnLeftOrCenter = position.dx <= screenWidth / 2;
-                  const double imageSize = 280.0; // A large, visible, but safe size
+                  // --- UPDATED: Default size is now responsive ---
+                  final double imageSize =
+                      (stop['imageSize'] as double?) ?? (280.0 / baseScreenWidth) * screenWidth;
+                  final double dxOffset =
+                      (stop['offsetX'] as double?) ?? 0.0;
+                  final double dyOffset =
+                      (stop['offsetY'] as double?) ?? 0.0;
 
-                  // Determine the center X-coordinate for the sign on the OPPOSITE side of the road
-                  final double imageCenterX = isBubbleOnLeftOrCenter
-                      ? screenWidth * 0.75 // If bubble is left/center, place sign on the right side
-                      : screenWidth * 0.3; // If bubble is on the right, place sign on the left side
+                  final bool isLeftOrCenter =
+                      position.dx <= screenWidth / 2;
+                  final double baseCenterX = isLeftOrCenter
+                      ? screenWidth * 0.75
+                      : screenWidth * 0.3;
 
-                  // Calculate the 'left' property to center the image at its new X-coordinate
-                  final double imageLeft = imageCenterX - (imageSize / 2);
-                  
-                  // Vertically align the image's center with the bubble's center
-                  final double imageTop = position.dy - (imageSize / 2);
+                  final double imageLeft =
+                      baseCenterX - imageSize / 2 + dxOffset;
+                  final double imageTop =
+                      position.dy - imageSize / 2 + dyOffset;
 
                   widgets.add(
                     Positioned(
@@ -347,7 +380,8 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
 
                 final bool isQuiz = stop['isQuiz'] as bool;
                 final String label = stop['label'] as String;
-                final bool isLocked = !progressProvider.isUnlocked(label);
+                final bool isLocked =
+                    !context.read<ProgressProvider>().isUnlocked(label);
 
                 widgets.add(
                   Positioned(
@@ -358,28 +392,33 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
                       isQuiz: isQuiz,
                       isLocked: isLocked,
                       onTap: () {
-                        final progressProvider = Provider.of<ProgressProvider>(context, listen: false);
-                        SoundManager.playBubbleTapSound(progressProvider.isSoundOn);
-                        
+                        final prov = context.read<ProgressProvider>();
+                        SoundManager.playBubbleTapSound(
+                            prov.isSoundOn);
                         if (isLocked) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(content: Text('Complete the previous stop to unlock!'), duration: Duration(seconds: 1)),
+                            const SnackBar(
+                              content: Text(
+                                  'Complete the previous stop to unlock!'),
+                              duration: Duration(seconds: 1),
+                            ),
                           );
                           return;
                         }
-
                         if (isQuiz) {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => QuizScreen(quizId: label),
+                              builder: (c) =>
+                                  QuizScreen(quizId: label),
                             ),
                           );
                         } else {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => TheoryScreen(chapterKey: label),
+                              builder: (c) =>
+                                  TheoryScreen(chapterKey: label),
                             ),
                           );
                         }
@@ -416,8 +455,10 @@ class InteractiveBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Color primaryColor = isQuiz ? Colors.cyan.shade700 : Colors.orange.shade800;
-    final Color secondaryColor = isQuiz ? Colors.cyan.shade400 : Colors.orange.shade600;
+    final Color primaryColor =
+        isQuiz ? Colors.cyan.shade700 : Colors.orange.shade800;
+    final Color secondaryColor =
+        isQuiz ? Colors.cyan.shade400 : Colors.orange.shade600;
     final Color lockedColor = Colors.grey.shade600;
     final Color lockedSecondaryColor = Colors.grey.shade500;
 
@@ -428,9 +469,11 @@ class InteractiveBubble extends StatelessWidget {
         backgroundColor: isLocked ? lockedColor : primaryColor,
         child: CircleAvatar(
           radius: radius - 4,
-          backgroundColor: isLocked ? lockedSecondaryColor : secondaryColor,
+          backgroundColor:
+              isLocked ? lockedSecondaryColor : secondaryColor,
           child: isLocked
-              ? Icon(Icons.lock, color: Colors.grey.shade800, size: 40)
+              ? Icon(Icons.lock,
+                  color: Colors.grey.shade800, size: 40)
               : Text(
                   label,
                   textAlign: TextAlign.center,

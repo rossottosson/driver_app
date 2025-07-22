@@ -1,16 +1,16 @@
 final Map<String, Map<String, dynamic>> theoryData = {
   'Start': {
-    'title': 'Welcome!',
+    'title': 'Welcome',
     'contentBlocks': [
-    {
-      'type': 'heading',
-      'content': 'Welcome to Your Learning Journey',
-    },
-    {
-      'type': 'paragraph',
-      'content' : 'Learning and following the contents of this app will help you stay alive while using the road.  It will help you avoid penalties due to road offences. It will also teach you how to use the road in a safe and civilized manner. It contains everything you need to know including: theory, pictures, questions and tests. While learning you follow the “Theory Road” leading all the way to the end. After each chapter, you will be quizzed on the contents to ensure you have taken in the information.  After completing the Theory Road you can take as many tests as you want which mimic the real test. Doing this will ensure you are well prepared for your Drivers License test. Good Luck!',
-    }
-    ]
+      {
+        'type': 'heading',
+        'content': 'Welcome to Your Learning Journey!',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'Learning and following the contents of this app will help you stay alive while using the road. It will help you avoid penalties due to road offences. It will also teach you how to use the road in a safe and civilized manner. It contains everything you need to know including: theory, pictures, questions and tests. While learning you follow the “Theory Road” leading all the way to the end. After each chapter, you will be quizzed on the contents to ensure you have taken in the information. After completing the Theory Road you can take as many tests as you want which mimic the real test. Doing this will ensure you are well prepared for your Drivers License test. Good Luck!',
+      },
+    ],
   },
   '1.1': {
     'title': 'Lesson 1',
@@ -21,7 +21,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'Driving in Nigeria is governed by the Federal Road Safety Corps (FRSC) and the Nigerian Highway Code, which outlines the rules and regulations for all road users. To legally drive, you must obtain a valid driver\'s license. Here are key points about the licensing process and requirements in Nigeria:',
+        'content': 'Driving regulations are governed by the Federal Road Safety Commission (FRSC) and the Nigerian Highway Code, which outlines the rules and regulations for all road users. To legally drive, you must obtain a valid driver\'s license. Here are key points about the licensing process and requirements in Nigeria:',
       },
       {
         'type': 'heading',
@@ -38,6 +38,10 @@ final Map<String, Map<String, dynamic>> theoryData = {
       {
         'type': 'paragraph',
         'content': 'First-time applicants are required to attend an FRSC-accredited driving school and obtain a Certificate of Completion. This ensures you have undergone proper training in driving theory and practical skills.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Learners_permit.png',
       },
       {
         'type': 'heading',
@@ -86,7 +90,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
     'contentBlocks': [
       {
         'type': 'heading',
-        'content': 'Lesson 1: Introduction to Driving in Nigeria - Licence classes and validity',
+        'content': 'Lesson 1: Introduction to Driving - Licence classes and validity',
       },
 {
         'type': 'heading',
@@ -94,7 +98,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'Nigeria has different classes of driver\'s licenses for various vehicle types\n\nClass A - Motorcycles (two-wheeled vehicles)\n\nClass B - Motor vehicles (cars, small vans) under 3 tonnes gross weight, excluding commercial passenger vehicles like taxis or buses. (This is ideal for private cars.)\n\nClass C-Motor vehicles under 3 tonnes, similar to Class B but including those used as taxis or small buses (no motorcycles).\n\nClass D - Motor vehicles above 3 tonnes (e.g. larger cars, SUVs, light trucks), excluding motorcycles and excluding articulated trucks/trailers. Does not include commercial passenger vehicles.\n\nClass E - All motor vehicles except motorcycles and articulated vehicles. This class allows driving of larger buses and trucks (rigid vehicles, no trailer).\n\nClass F- Agricultural machines and tractors.\n\nClass G - Articulated vehicles (e.g. semi-trailer trucks). Minimum age for this heavy category is higher (often 26 years) due to the skill required.\n\nClass H - Earth-moving vehicles (e.g. bulldozers, graders used in construction).\n\nClass I - Special category for physically challenged persons operating specially adapted vehicles.',
+        'content': 'There are different classes of driver\'s licenses for various vehicle types\n\nClass A - Motorcycles (two-wheeled vehicles)\n\nClass B - Motor vehicles (cars, small vans) under 3 tonnes gross weight, excluding commercial passenger vehicles like taxis or buses. (This is ideal for private cars.)\n\nClass C-Motor vehicles under 3 tonnes, similar to Class B but including those used as taxis or small buses (no motorcycles).\n\nClass D - Motor vehicles above 3 tonnes (e.g. larger cars, SUVs, light trucks), excluding motorcycles and excluding articulated trucks/trailers. Does not include commercial passenger vehicles.\n\nClass E - All motor vehicles except motorcycles and articulated vehicles. This class allows driving of larger buses and trucks (rigid vehicles, no trailer).\n\nClass F- Agricultural machines and tractors.\n\nClass G - Articulated vehicles (e.g. semi-trailer trucks). Minimum age for this heavy category is higher (often 26 years) due to the skill required.\n\nClass H - Earth-moving vehicles (e.g. bulldozers, graders used in construction).\n\nClass I - Special category for physically challenged persons operating specially adapted vehicles.',
       },
       {
         'type': 'paragraph',
@@ -106,7 +110,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'A Nigerian driver\'s license is typically valid for five years (or three years in some cases, depending on the option chosen during application). After expiry, it must be renewed; driving with an expired license is an offence.',
+        'content': 'A driver\'s license is typically valid for five years (or three years in some cases, depending on the option chosen during application). After expiry, it must be renewed; driving with an expired license is an offence.',
       },
       {
         'type': 'heading',
@@ -156,7 +160,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'heading',
-        'content': 'Staring the Car',
+        'content': 'Starting the Car',
       },
       {
         'type': 'paragraph',
@@ -168,7 +172,15 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'Be familiar with the vehicle\'s controls:\n\nThe steering wheel - grip it with both hands (usually at the "10 and 2" or "9 and 3" o\'clock positions for best control). Avoid driving with one hand without necessity; driving with one hand continuously is unsafe and even listed as a traffic violation.\n\nThe pedals - in a manual (stick shift) car, from right to left you have Accelerator (gas), Brake, and Clutch (for changing gears). In an automatic car, you have Accelerator and Brake only. Use your right foot for both accelerator and brake; the left foot is only used for the clutch in a manual.\n\nThe gear shifter - know the gear layout if manual (1-5 gears and Reverse) or the modes if automatic (P, R, N, D, etc.). Only shift gears when the clutch is fully pressed (manual) or when the car is at appropriate speed (automatic will handle gear changes for you).\n\nIndicators/Turn Signals - usually a stalk on one side of the steering column. Move it up or down to signal turns (one direction for right, the other for left). Always use your indicators to signal your intentions to other road users before turning or changing lanes.\n\nOther controls - know how to operate the headlights (and switch between low beam and high beam), windshield wipers (often another stalk or switch), the hazard lights (usually a red triangle button, used only for emergencies), and the horn (usually by pressing the center of the steering wheel).',
+        'content': 'Be familiar with the vehicle\'s controls:\n\nThe steering wheel - grip it with both hands (usually at the "10 and 2" or "9 and 3" o\'clock positions for best control). Avoid driving with one hand without necessity; driving with one hand continuously is unsafe and even listed as a traffic violation.\n\nThe pedals - in a manual (stick shift) car, from right to left you have Accelerator (gas), Brake, and Clutch (for changing gears). In an automatic car, you have Accelerator and Brake only. Use your right foot for both accelerator and brake; the left foot is only used for the clutch in a manual.\n\nThe gear shifter - know the gear layout if manual (1-5 gears and Reverse) or the modes if automatic (P, R, N, D, etc.). Only shift gears when the clutch is fully pressed (manual) or when the car is at appropriate speed (automatic will handle gear changes for you).\n\nIndicators/Turn Signals - usually a stalk on one side of the steering column. Move it up or down to signal turns (one direction for right, the other for left). Always use your indicators to signal your intentions to other road users before turning or changing lanes.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Hazard_lights.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'Other controls - know how to operate the headlights (and switch between low beam and high beam), windshield wipers (often another stalk or switch), the hazard lights (usually a red triangle button, used only for emergencies), and the horn (usually by pressing the center of the steering wheel).',
       },
       {
         'type': 'heading',
@@ -233,7 +245,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'heading',
-        'content': 'Lane Discipline on Mulit-Lane Roads',
+        'content': 'Lane Discipline on Multi-Lane Roads',
       },
       {
         'type': 'paragraph',
@@ -337,12 +349,20 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'A roundabout is a circular intersection. Traffic on roundabouts moves in one direction (counter-clockwise in Nigeria, since we drive on the right). Vehicles entering a roundabout must give way to traffic already on the circle coming from the left. In practice, that means you yield to vehicles approaching from your left side on the roundabout. We will discuss roundabout navigation in detail in Lesson 4, but the core rule is to yield and only enter when it\'s safe.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Informative_zebra_crossing.png',
+      },
+      {
         'type': 'heading',
         'content': 'Pedestrians',
       },
       {
         'type': 'paragraph',
         'content': 'Pedestrians have the right of way at marked zebra crossings and intersections when they are crossing on a "Walk" signal. If you see pedestrians stepping onto a zebra crossing, you are required to stop and let them cross safely. Do not stop on a pedestrian crossing or block it with your car. Be especially careful near schools or residential areas where children might dart out.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Emergency_vehicles.png',
       },
       {
         'type': 'heading',
@@ -374,6 +394,10 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Traffic signs are vital for communicating the rules of the road to drivers. In Nigeria, as in most countries, road signs are divided into three main categories: Regulatory signs, Warning signs, and Informative (Guide) signs. This lesson focuses on Regulatory signs. These signs indicate laws and regulations things you must do or must not do. Disobeying regulatory signs is an offence and can lead to penalties.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Characteristics_of_regulatory_signs.png',
+      },
+      {
         'type': 'heading',
         'content': 'Characteristics of Regulatory Signs',
       },
@@ -388,23 +412,27 @@ final Map<String, Map<String, dynamic>> theoryData = {
     ],
   },
   '4.2': {
-    'title': 'Lesson 4: Traffic Signs - Regulatory Signs (Specific Signs)',
+    'title': 'Lesson 4',
     'contentBlocks': [
       {
         'type': 'heading',
-        'content': 'Important Regulatory Signs and Their Meanings',
+        'content': 'Lesson 4: Important Regulatory Signs and Their Meanings (Prohibited)',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Stop_sign.png',
       },
       {
         'type': 'paragraph',
         'content': 'Stop Sign (Octagon, red with "STOP"): This sign means come to a complete halt at the marked stop line or junction.',
       },
       {
-        'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page6_image1.png',
-      },
-      {
         'type': 'paragraph',
         'content': 'You must not proceed until the way is clear and it\'s your turn to go. Even if you think the road is empty, you still must stop whenever you see this sign. Not stopping is a serious offence.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Yield_sign.png',
       },
       {
         'type': 'paragraph',
@@ -412,67 +440,87 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page6_image2.png',
+        'content': 'assets/images/No_entry.png',
       },
       {
         'type': 'paragraph',
         'content': 'No Entry: A red circle with a horizontal white bar is the "No Entry" sign.',
       },
       {
-        'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page7_image1.png',
-      },
-      {
         'type': 'paragraph',
         'content': 'It indicates that entry is prohibited on the road or area ahead (usually used at one-way roads from the wrong side, or restricted zones). If you see this sign facing you, do not drive past it - you would be going the wrong way or into a forbidden area.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Speed_limit_signs.png',
       },
       {
         'type': 'paragraph',
         'content': 'Speed Limit Signs: These are circular signs with a number in the center and a red border. The number is the maximum speed (in km/h) you are allowed to travel on that road. For example, a sign with "50" and a red border means the speed limit is 50 kilometers per hour. Obeying speed limit signs is very important. Common speed limits you\'ll see: 50~km/h in cities/towns, 80~km/h on many open roads, 100~km/h on expressways for cars. (Specific limits for different vehicle types were discussed in Lesson 9.) Do not exceed the posted limit it\'s both unsafe and illegal to speed.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/No_u_turn.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'No U-Turn: This sign is a red-bordered circle with a black U-arrow crossed by a red diagonal line. It means you are not allowed to make a U-turn (turn around to go back the way you came) at that location. Sometimes this restriction is only at certain junctions or stretches of road for safety. Always look for any sign before deciding to U-turn.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/No_left_right_turn.png',
       },
       {
         'type': 'paragraph',
         'content': 'No Left Turn / No Right Turn: Similar to no U-turn, these signs show a left-bending arrow or right-bending arrow with a red slash. They indicate you cannot turn in that direction at the junction ahead. For example, a "No Left Turn" sign at an intersection means you must not make a left turn there. Plan to go straight or right or find another route.',
       },
       {
-        'type': 'paragraph',
-        'content': 'No Overtaking: This regulatory sign typically shows two cars next to each other, the one on the left (representing the overtaker) in black and the one on the right in red, with a red slash across (or some variants show a car passing another).',
+        'type': 'image',
+        'content': 'assets/images/No_overtaking.png',
       },
       {
-        'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page7_image2.png',
+        'type': 'paragraph',
+        'content': 'No Overtaking: This regulatory sign typically shows two cars next to each other, the one on the left (representing the overtaker) in black and the one on the right in red, with a red slash across (or some variants show a car passing another).',
       },
       {
         'type': 'paragraph',
         'content': 'It means you are not allowed to overtake on this road or section of road. Often, it\'s placed where visibility is limited or the road is too narrow/unsafe for passing. Even if a slow vehicle is ahead, you must stay behind it until you pass a "End of No Overtaking" sign or the restriction ends.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/No_parking.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'No Parking: Usually indicated by a red circle with a blue background and a red diagonal line or a bold "P" with a slash through it. This means you may not park your vehicle in the area indicated. Sometimes a no parking sign might be accompanied by times (e.g., "No Parking 8am-6pm") which means parking is forbidden during those hours, but allowed outside them. No parking means you can stop the car briefly to drop off or pick up someone (if not otherwise prohibited) but not leave the vehicle unattended or for long.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/No_stopping.png',
+      },
+      {
         'type': 'paragraph',
-        'content': 'No Stopping (Clearway): This is often a red circle with a blue background and an "X" (two diagonal crosses). It means you cannot stop at all not even briefly on that road side, except in an emergency (or as directed by police). This is usually used on busy roads where any stopping would cause obstruction.',
+        'content': 'No Stopping (Clearway): This is often a red circle with a blue background and an "X" (two diagonal crosses). It means you cannot stop at all, not even briefly on that road side, except in an emergency (or as directed by police). This is usually used on busy roads where any stopping would cause obstruction.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/No_horn.png',
       },
       {
         'type': 'paragraph',
         'content': 'No Horn (No Honking): A sign showing a horn with a red slash means do not use your horn in that area. This rule is usually in effect in certain zones like hospital areas or quiet zones. In fact, generally in Nigeria it\'s prohibited to use a horn in built-up areas between 11:30 pm and 7:00 am except in an emergency. So if you see this sign (or even if you don\'t, during late night hours in town), refrain from honking unless absolutely necessary.',
       },
       {
-        'type': 'paragraph',
-        'content': 'One Way Traffic: A circular sign (informative/regulatory) with an arrow indicates one-way street direction. A "One Way" sign means all traffic on that road must move in the direction of the arrow. Entering from the opposite end is prohibited (you might see a No Entry sign on the opposite side). When you are on a one-way road, you should not drive against the flow. Also be mindful to stay in the correct lane if it later splits by direction.',
-      },
-      {
-        'type': 'paragraph',
-        'content': 'Turn Allowed/Mandatory Direction: Some intersections have mandatory direction signs, usually white or blue arrows. For example, a blue circular sign with a white arrow pointing left means you must turn left ahead (going straight or right is not allowed). A common one is a white arrow on blue pointing straight and another to the left, meaning you are only allowed to go straight or left (and not right). Obey these direction signs; they are often used to manage traffic flow (such as preventing right turns where they cause congestion or accidents).',
+        'type': 'image',
+        'content': 'assets/images/Traffic_control_signs.png',
       },
       {
         'type': 'paragraph',
         'content': 'Traffic Control Signs: These include signs like Stop (police) or Stop (customs) - often used by law enforcement or checkpoints. For example, a red octagon sign that says "STOP POLICE" requires you to stop for a police checkpoint. These are regulatory in nature since you must comply. Always obey instructions from authorized officers on duty (more on hand signals in Lesson 5).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Weight_height_length.png',
       },
       {
         'type': 'paragraph',
@@ -481,6 +529,167 @@ final Map<String, Map<String, dynamic>> theoryData = {
       {
         'type': 'paragraph',
         'content': 'Remember: Regulatory signs often carry an implied "MUST". If it\'s a prohibitory sign - you must not do the action shown. If it\'s a mandatory sign - you must do as instructed. Ignoring these signs can lead to accidents or legal penalties. As a new driver, take time to memorize the common regulatory signs and their meanings; you will be tested on recognizing them. When driving, scan the road ahead and on the sides for these signs so you can act accordingly.',
+      },
+    ],
+  },
+ '4.3': {
+    'title': 'Lesson 4',
+    'contentBlocks': [
+      {
+        'type': 'heading',
+        'content': 'Lesson 4: Important Regulatory Signs and Their Meanings (Mandatory)',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Turn_mandatory.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'Turn Allowed/Mandatory Direction: Some intersections have mandatory direction signs, usually white or blue arrows. For example, a blue circular sign with a white arrow pointing left means you must turn left ahead (going straight or right is not allowed). A common one is a white arrow on blue pointing straight and another to the left, meaning you are only allowed to go straight or left (and not right). Obey these direction signs; they are often used to manage traffic flow (such as preventing right turns where they cause congestion or accidents).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/One_way_traffic.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'One Way Traffic: A circular sign (informative/regulatory) with an arrow indicates one-way street direction. A "One Way" sign means all traffic on that road must move in the direction of the arrow. Entering from the opposite end is prohibited (you might see a No Entry sign on the opposite side). When you are on a one-way road, you should not drive against the flow. Also be mindful to stay in the correct lane if it later splits by direction.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/4_lanes_undivided_2_way_ahead.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign tells you that you are entering a two-way, dual-carriageway section: there are two lanes for traffic coming towards you (the downward arrows) and two lanes for your direction (the upward arrows). Watch for on-coming vehicles and stay in the correct side of your carriageway.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Divided_4_lanes_undivided_2_way_ahead.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This sign tells you that you are entering a two-way, dual-carriageway section that has a divide between the different directions: there are two lanes for traffic coming towards you (the downward arrows) and two lanes for your direction (the upward arrows).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/2_lane_2_way_ahead.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'Two-Way Traffic: A sign with two opposite arrows going up and down indicates that the road will carry two-way traffic ahead, usually after a stretch of one-way or divided highway. It warns you that you\'ll be encountering oncoming traffic again, so stay in your lane (the right side) and be cautious.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Divided_2_lanes_2_way_ahead.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This sign tells you that you are entering a two-way road that has a divide between the different directions: there are one lane for traffic coming towards you (the downward arrow) and one lane for your direction (the upward arrow).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Compulsory_cycle_track.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a white bicycle pictogram is a mandatory cycle track sign. It means that the lane or path is reserved exclusively for cyclists, bicycles must use this route, and motor vehicles are prohibited from entering.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Pedestrian_track.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a white walking figure is a mandatory pedestrian walkway sign. It means that the path or lane is reserved exclusively for people on foot. Vehicles, bicycles and other traffic must keep out and you must use this designated route.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Direction_to_be_followed.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a single white arrow pointing straight up is the “Proceed straight ahead only” sign. It means you are required to continue in your current direction. You may not turn left or right at the upcoming junction.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Keep_right.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a white arrow pointing down‐and‐to‐the‐right is the “pass on right” (keep right) sign. It means you must go to the right of the central obstacle (island, bollard or traffic divider) ahead.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Pass_either_side.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This one is the “Pass either side” sign. It tells you there’s an obstruction (island, divider, etc.) ahead and you may drive around it on either the left or right side, both routes are allowed.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Roundabout.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This is the “roundabout mandatory” sign. It means you’re approaching a roundabout and must follow the direction of the arrows, yielding to any traffic already on the circle before you enter.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Diversion.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This sign is a "Direction to be followed" mandatory sign, indicating that you must turn right or continue along the road in the direction shown by the arrow. You will frequently encounter this sign when traffic is being redirected, for instance, during temporary diversions due to roadworks, an accident, or any other obstruction that requires vehicles to take an alternative route.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/End_diversion.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This mandatory sign, displaying "END DIVERSION", indicates that the temporary diversion you have been following has now concluded. Upon seeing this sign, drivers are informed that they are either back on the original route or that the need to follow a specific diverted path is over. You should now resume normal driving conditions for the road ahead, as the special instructions for the diversion no longer apply.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Two_way.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a single stem splitting into left and right arrows is the “Turn left or right” mandatory sign. It tells you that at the junction ahead you must turn either left or right, continuing straight ahead is not allowed.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Two_way_2.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign is a compulsory lane‐direction sign. It means: \nLeft lane = left turn only: any vehicle in the lane under the upper (left‐pointing) arrow must turn left. \nRight lane = right turn only: any vehicle in the lane under the lower (right‐pointing) arrow must turn right. There is no straight-on movement from either lane. Pick the lane that matches your intended turn before you reach the junction.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Speed_limit_minimum.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This blue circular sign with a white “30” is the minimum‐speed sign. It means you must travel at least 30 km/h on this section of road,  you are not allowed to go slower unless forced to by traffic or other hazards.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Sign_for_temporary_traffic_control.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This is not the normal red octagonal STOP sign you see at permanent junctions, but a mandatory “stop” used in temporary traffic-control situations (e.g. roadworks or special events). When you see this blue circle with “STOP” you must: Come to a complete halt at the sign (or marked line). Remain stopped until a traffic controller (or portable signal) gives you permission to go. Follow any additional instructions (cones, flag-persons, boards) in the work zone.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Expressway.png',
+      },
+      {
+        'type': 'paragraph',
+        'content': 'This is the “Expressway” entry sign plus the dual-carriageway symbol. Together they mean: Expressway start (blue rectangle labeled “Expressway”): you\’re entering a high-speed, limited-access road. Prohibited on this road: no stopping; no learner (“L”) drivers; no motorcycles under 50 cc; no mopeds or pedal-cycles; no invalid carriages or prams; no pedestrians or animals. Circular dual-carriageway pictogram: the road ahead is a two-way, dual-carriageway with two lanes each way separated by a median, keep to your side and watch for oncoming traffic.',
       },
     ],
   },
@@ -494,6 +703,10 @@ final Map<String, Map<String, dynamic>> theoryData = {
       {
         'type': 'paragraph',
         'content': 'Warning signs are designed to alert drivers of potential hazards or changes in road conditions ahead. They give you advance notice so you can slow down and prepare. Recognizing warning signs will help you drive defensively and avoid surprises.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Characteristics_of_warning_signs.png',
       },
       {
         'type': 'heading',
@@ -513,8 +726,16 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Lesson 5: Traffic Signs - Warning Signs - Common Warning Signs and Meanings',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Road_bend.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Road Bend or Curve Ahead: A triangle with a curved arrow indicates a bend. If the arrow curves to the left, it means a sharp curve to the left is ahead; if it curves right, a right bend ahead. Slow down before the curve - especially on highways - because taking a bend too fast can cause you to lose control. For a series of bends, there might be a sign with a zigzag arrow (like left then right). Approach all curves with caution, on your side of the road, and be prepared for potential obstacles beyond your view.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Junction_ahead.png',
       },
       {
         'type': 'paragraph',
@@ -522,15 +743,11 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page9_image1.png',
+        'content': 'assets/images/Roundabout_ahead.png',
       },
       {
         'type': 'paragraph',
         'content': 'Roundabout Ahead: A triangle sign with three arrows forming a circle means a roundabout is ahead.',
-      },
-      {
-        'type': 'image',
-        'content': 'assets/images/Nigerian Driver\'s License Theory Guide_page9_image2.png',
       },
       {
         'type': 'paragraph',
@@ -546,8 +763,16 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Lesson 5: Traffic Signs - Warning Signs - Pedestrians & Animals',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Pedestrian_crossing.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Pedestrian Crossing / Children: A warning sign with the silhouette of people (often a man and woman holding hands or a child and adult) indicates a pedestrian crossing ahead or area with pedestrians. This could be near a zebra crossing, school zone, or other area where people frequently cross the road. When you see this, slow down and be ready to stop for pedestrians. A specific "School ahead" sign might show two children. In school zones, drive very carefully children may run out unexpectedly, and a lower speed limit (often 30~km/h) may be in force during school hours.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Animal_crossing.png',
       },
       {
         'type': 'paragraph',
@@ -563,28 +788,48 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Lesson 5: Traffic Signs - Warning Signs - Road Conditions',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Road_narrows.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Road Narrows: A warning sign with two lines converging (either symmetrically or on one side) indicates the road ahead will narrow. If both sides narrow, both lines come closer (like an A shape without the bar); if only one side narrows (e.g., the left line converges toward the right line), it means the road narrows on that side (left lane ends or shoulder disappears). This is a cue to be cautious and possibly merge lanes if you were on the side that ends.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Uneven_road.png',
       },
       {
         'type': 'paragraph',
         'content': 'Uneven Road / Bumps: A triangle with an icon that looks like a bump or series of bumps means the road surface ahead is uneven or there are speed bumps. Slow down to avoid losing control or damaging your vehicle. A specific sign with a dip shape indicates a sharp depression (dip) in the road. Go slowly over dips and humps.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Slippery_road.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Slippery Road: A warning sign showing a car with skid marks (wavy tire tracks) means the road could be slippery (perhaps when wet or due to gravel or oil). Be extra cautious with your speed and avoid sudden braking or sharp turns when you see this sign. It\'s often placed before bridges (which can be slippery when iced) or near areas that frequently get oil spills or loose gravel.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Steep_hill.png',
       },
       {
         'type': 'paragraph',
         'content': 'Steep Hill (Incline or Descent): A triangle with a truck on a steep triangle indicates a steep uphill or downhill grade ahead. For an uphill (ascending) slope, the triangle often shows the incline going up to the right with a percentage (e.g., 10%) this means prepare for your engine to work harder; maybe shift to lower gear. For a downhill (descending) slope, it usually shows a truck going down to the right with a percentage - meaning a steep descent where you should lower your gear and be ready to brake carefully (do not ride brakes constantly; use engine braking in a low gear to control speed on a long descent). Trucks must be especially cautious on descents to avoid brake failure.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Falling_rocks.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Falling Rocks: A sign depicting rocks falling from a cliff warns that on that stretch, rocks might fall onto the road (common in hilly or mountainous terrain). It means drive with caution and avoid stopping by the cliff side.',
       },
       {
-        'type': 'paragraph',
-        'content': 'Two-Way Traffic: A sign with two opposite arrows going up and down indicates that the road will carry two-way traffic ahead, usually after a stretch of one-way or divided highway. It warns you that you\'ll be encountering oncoming traffic again, so stay in your lane (the right side) and be cautious.',
+        'type': 'image',
+        'content': 'assets/images/Bridge_ahead.png',
       },
       {
         'type': 'paragraph',
@@ -600,8 +845,16 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Lesson 5: Traffic Signs - Warning Signs - Traffic Controls & Railway',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Traffic_signals_ahead.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Traffic Signals Ahead: A triangle with the image of traffic lights warns that you are approaching an intersection controlled by traffic signals (lights) which might not be immediately visible. This is typically used on high-speed roads to give advance warning to start slowing down because a junction with lights is coming. Be prepared to stop if the light is red.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Railway_ahead.png',
       },
       {
         'type': 'paragraph',
@@ -625,12 +878,20 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Informative signs (also called guide signs) provide useful information to drivers. They are usually rectangular in shape and can be in various colors (blue, green, white) depending on their purpose. These signs do not generally give commands or warnings, but instead guide you with directions, locations, or general info. This lesson also covers road surface markings which are another vital way information is communicated on Nigerian roads.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Direction_and_distance.png',
+      },
+      {
         'type': 'heading',
         'content': 'Direction and Distance Signs',
       },
       {
         'type': 'paragraph',
         'content': 'These are often green or blue rectangular signs with white lettering (on federal highways often green). They show directions to towns, cities, villages, or landmarks, sometimes with an arrow. For example, a sign might say “Abuja – 250 km” with an arrow pointing straight, meaning Abuja is straight ahead in 250 kilometers. Or a big directional sign at an interchange might list multiple destinations with arrows. Pay attention to these so you don\'t miss your turn or exit. On approaches to major exits, you may see advance direction signs 500m or 1km before the turn.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Welcome_to_traffic_sign.png',
       },
       {
         'type': 'heading',
@@ -654,24 +915,48 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Facilities/Service Signs: Usually blue (or sometimes green) squares or rectangles with symbols indicating services ahead. For example, a sign with a fuel pump symbol means a petrol/gas station is nearby. A bed symbol indicates lodging/hotel, a fork and knife for a restaurant, a big “P” for a parking area, “H” for Hospital, etc. These are typically found on highways before rest areas or towns, letting drivers know what amenities are available if they stop.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Hospital_ahead.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Hospital/First Aid: A white or blue sign with a red cross or the letter “H” indicates a hospital or first aid station. In an emergency, this guides you to medical help. It also warns to drive carefully (often near hospitals you\'ll also see “No horn” signs to avoid disturbing patients).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Airport_ahead.png',
       },
       {
         'type': 'paragraph',
         'content': 'Airport: A symbol of an airplane on a sign informs of an airport ahead or direction to an airport.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Telephone_ahead.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Telephone: A sign with a telephone handset might indicate public telephone service (less common now with mobile phones).',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Police_controll_ahead.png',
       },
       {
         'type': 'paragraph',
         'content': 'Police/Checkpost: Signs may indicate a police station or checkpoint ahead. For example, “Police checkpoint 300m” might be seen on highways, alerting you to slow down and be prepared to stop if flagged.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Lane_use_signs.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Directional Arrows and Lane Use Signs: On multi-lane roads, especially approaching intersections, you might see lane use signs mounted above or beside the road. For example, arrows painted or on signs indicating “← (left arrow for left-turn only lane), ↑ (straight), → (right-turn only lane)”. These guide you on which lane to use if you intend to go left, straight or right. Pay attention and get into the correct lane early when you see these signs or corresponding road markings on the pavement.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Construction_signs.png',
       },
       {
         'type': 'paragraph',
@@ -691,20 +976,32 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Road Markings: Painted lines and markings on the road surface are also crucial in guiding drivers. They often reinforce rules and sometimes serve as regulatory instructions themselves.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Center_lines.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Center Lines: Most roads have a center line separating opposite directions of traffic. If the center line is a broken (dashed) white line, it means you may overtake or cross it if it\'s safe to do so. If the center line is a continuous solid line, it means no crossing – you must stay on your side of the road. Often, you will see one solid line with one broken line alongside it: if the solid line is on your side, you are not allowed to overtake or cross (but vehicles on the opposite side may, if their side is broken). If the broken line is on your side, you may overtake if safe, but traffic on the other side (with the solid line on their side) cannot. Always respect these lines; they are there based on road visibility. Crossing a solid line is dangerous and illegal.',
       },
       {
         'type': 'paragraph',
-        'content': 'Lane Lines: On multi-lane roads, white broken lines separate lanes moving in the same direction. You may change lanes over a broken white line with caution. Sometimes lanes may have solid white lines between them – a solid white lane line means lane changing is discouraged or not allowed (perhaps because you\'re approaching a hazard or an intersection). For example, near an intersection, the lane lines might turn solid to tell you to stay in your lane through the junction.',
+        'content': 'Lane Lines: On multi-lane roads, white broken (dashed) lines separate lanes moving in the same direction. You may change lanes over a broken white line with caution. Sometimes lanes may have solid white lines between them – a solid white lane line means lane changing is discouraged or not allowed (perhaps because you\'re approaching a hazard or an intersection). For example, near an intersection, the lane lines might turn solid to tell you to stay in your lane through the junction.',
       },
       {
         'type': 'paragraph',
         'content': 'Edge Lines: A solid white line along the outer edge of the road marks the road\'s shoulder. don\'t drive to the right of this line (off the road) except in an emergency or when pulling over. At night or in poor visibility, the edge line helps you stay on the road. Some roads use yellow edge lines on the left side if it\'s a divided highway (to mark the median side).',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Zebra_crossing.png',
+      },
+      {
         'type': 'paragraph',
-        'content': 'Crosswalks (Pedestrian crossings): These are marked by broad white stripes on the road (zebra crossing), usually accompanied by warning signs and sometimes flashing yellow beacons. As mentioned, when approaching a crosswalk, slow down and be prepared to stop for people crossing. Do not park on or within the zigzag lines leading to a zebra crossing – those zigzag markings (white zigzag lines on each side of the crossing) indicate no parking/no overtaking zone. They ensure the driver\'s view of pedestrians is not blocked. Overtaking is prohibited at these approaches as well.',
+        'content': 'Crosswalks (Pedestrian crossings): These are marked by broad white stripes on the road (zebra crossing), usually accompanied by warning signs and sometimes flashing yellow beacons. As mentioned, when approaching a crosswalk, slow down and be prepared to stop for people crossing. Do not park on or within the zigzag lines leading to a zebra crossing – those zig zag markings (white zigzag lines on each side of the crossing) indicate no parking/no overtaking zone. They ensure the driver\'s view of pedestrians is not blocked. Overtaking is prohibited at these approaches as well.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Stop_lines_at_intersections.png',
       },
       {
         'type': 'paragraph',
@@ -715,16 +1012,28 @@ final Map<String, Map<String, dynamic>> theoryData = {
         'content': 'Arrows on Road: White arrows painted on your lane indicate permitted directions or upcoming requirements. For example, an arrow pointing straight only, or left only, or a combination like straight or left. Position your car according to these arrows – if you are in a lane marked for left turn only, you must turn left. If you realize you are in the wrong lane (say you intended to go straight but you\'re in a left-turn-only lane), follow the lane\'s instruction (turn left) rather than swerving last minute; then find a safe way to redirect later. It\'s safer and expected by other drivers.',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Yellow_box_junctions.png',
+      },
+      {
         'type': 'paragraph',
-        'content': 'Yellow Box Junctions: In some busy intersections, you might see a yellow crisscross box painted on the road. The rule for a box junction is that you must not enter the box unless your exit is clear. In other words, do not stop and block that box area. These are often placed where blocking the intersection would cause traffic gridlock. If turning right at a box junction and you are prevented from exiting only by oncoming traffic or other vehicles waiting to turn right, you may wait in the box – but otherwise, do not enter it without a clear path out.',
+        'content': 'Yellow Box Junctions: In some busy intersections, you might see a yellow criss cross box painted on the road. The rule for a box junction is that you must not enter the box unless your exit is clear. In other words, do not stop and block that box area. These are often placed where blocking the intersection would cause traffic gridlock. If turning right at a box junction and you are prevented from exiting only by oncoming traffic or other vehicles waiting to turn right, you may wait in the box – but otherwise, do not enter it without a clear path out.',
       },
       {
         'type': 'paragraph',
         'content': 'Parking and Curb Markings: Yellow lines painted on the curb or edge can indicate parking restrictions. For instance, a single yellow line along the curb might indicate no parking during certain times (check signposts for times), while a double yellow line means no parking at any time. (These practices are common in many countries; local regulations in Nigeria may vary, but generally, do not park where the curb is marked yellow or where signs say “No Parking”). Red lines, if any, would indicate no stopping at any time (less common).',
       },
       {
+        'type': 'image',
+        'content': 'assets/images/Speed_bump_markings.png',
+      },
+      {
         'type': 'paragraph',
         'content': 'Speed Hump Markings: Speed bumps or humps may be painted with chevrons or stripes to make them visible. Slow down when you see these.',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Cycle_and_bus_lanes.png',
       },
       {
         'type': 'paragraph',
@@ -750,6 +1059,10 @@ final Map<String, Map<String, dynamic>> theoryData = {
       {
         'type': 'heading',
         'content': 'Traffic Light Colors and Meanings:',
+      },
+      {
+        'type': 'image',
+        'content': 'assets/images/Multiple_traffic_signals.png',
       },
       {
         'type': 'heading',
@@ -1281,7 +1594,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'If you are on a busy road or expressway, it\'s often safest to remain in your vehicle with seatbelt on until help arrives, especially if there\'s no safe place to stand. If you must step out (for example, to open the hood or change a tire), be very cautious of traffic. Stand off the road – not in front or behind your car, but preferably behind a guardrail or on the embankment if available. Have passengers also move to a safe spot if it\'s safer outside (like far off the road). In some cases (like a highway at night), staying in the vehicle might be safer; use judgment.',
+        'content': 'If you are on a busy road or expressway, it\'s often safest to remain in your vehicle with the seatbelt on until help arrives, especially if there\'s no safe place to stand. If you must step out (for example, to open the hood or change a tire), be very cautious of traffic. Stand off the road – not in front or behind your car, but preferably behind a guardrail or on the embankment if available. Have passengers also move to a safe spot if it\'s safer outside (like far off the road). In some cases (like a highway at night), staying in the vehicle might be safer; use judgment.',
       },
       {
         'type': 'heading',
@@ -1399,7 +1712,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'If your car is not driveable, you\'ll need a tow truck. The FRSC or police can often help arrange this or you call a towing service. Do not drive a vehicle that\'s leaking fluid, has a broken axle, or other major issue. Even if the car is driveable, ensure headlights, brakes, and steering are okay before gently driving it away. Later, you must follow up with insurance claims or repairs and possibly an FRSC office if required.',
+        'content': 'If your car is not driveable, you\'ll need a tow truck. The FRSC or police can often help arrange this or you can call a towing service. Do not drive a vehicle that\'s leaking fluid, has a broken axle, or other major issue. Even if the car is driveable, ensure headlights, brakes, and steering are okay before gently driving it away. Later, you must follow up with insurance claims or repairs and possibly an FRSC office if required.',
       },
       {
         'type': 'heading',
@@ -1415,7 +1728,7 @@ final Map<String, Map<String, dynamic>> theoryData = {
       },
       {
         'type': 'paragraph',
-        'content': 'Though rare, if your car goes into water (flooded river, etc.), remember: unbuckle seatbelts, and try to exit through a window. Power windows should work for a short time even after hitting water – open them immediately. If not, you might have to break a window (kick or use a sharp tool). Once water fills the car it will equalize pressure allowing doors to open, but that\'s tough – better go through window. Swim to safety and call for help.',
+        'content': 'Though rare, if your car goes into water (flooded river, etc.), remember: unbuckle seatbelts, and try to exit through a window. Power windows should work for a short time even after hitting water – open them immediately. If not, you might have to break a window (kick or use a sharp tool). Once water fills the car it will equalize pressure allowing doors to open, but that\'s tough – better go through the window. Swim to safety and call for help.',
       },
       {
         'type': 'heading',
@@ -1444,8 +1757,6 @@ final Map<String, Map<String, dynamic>> theoryData = {
 
 
 
-
-// --- The Expanded Central Question Bank ---
 final List<Map<String, dynamic>> questionBank = [
   //Lesson 1
   {
@@ -1488,6 +1799,47 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 2,
     'explanation': 'Class G is required for driving articulated vehicles like semi-trailer trucks, and has a higher minimum age.'
   },
+  {
+  'id': 'L1Q6', 'category': 'Introduction',
+  'question': 'What test is mandatory to assess your vision before obtaining a driver\'s license?',
+  'imagePaths': [],
+  'options': ['Driving test', 'Computer theory test', 'Vision acuity test', 'Road sign test'],
+  'correctAnswerIndex': 2,
+  'explanation': 'A vision acuity (eye) test is mandatory to ensure you can see clearly enough to drive safely.'
+},
+{
+  'id': 'L1Q7', 'category': 'Introduction',
+  'question': 'What does the Vehicle Inspection Office (VIO) test evaluate?',
+  'imagePaths': [],
+  'options': ['Knowledge of road signs', 'Ability to drive in a convoy', 'Practical driving skills', 'Medical fitness'],
+  'correctAnswerIndex': 2,
+  'explanation': 'The VIO test assesses your practical driving skills like parking and following road rules.'
+},
+{
+  'id': 'L1Q8', 'category': 'Introduction',
+  'question': 'How long is a Nigerian driver\'s license typically valid?',
+  'imagePaths': [],
+  'options': ['2 years', '3 or 5 years', '5 or 10 years', '10 years'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Driver\'s licenses are valid for either 3 or 5 years, depending on what was chosen during application.'
+},
+{
+  'id': 'L1Q9', 'category': 'Introduction',
+  'question': 'What must be displayed on your vehicle while using a learner\'s permit?',
+  'imagePaths': [],
+  'options': ['An "L" plate', 'A green flag', 'A red ribbon', 'Your ID number'],
+  'correctAnswerIndex': 0,
+  'explanation': 'Learner drivers must display "L" plates to indicate they are learning and under supervision.'
+},
+{
+  'id': 'L1Q10', 'category': 'Introduction',
+  'question': 'Which of the following is considered a criminal offence during the driver\'s license application?',
+  'imagePaths': [],
+  'options': ['Using a driving school certificate', 'Using forged documents', 'Paying application fees online', 'Failing the theory test once'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Using forged documents during the licensing process is illegal and considered a criminal offence.'
+},
+
   // --- Questions for Lesson 2 ---
   {
     'id': 'L2Q1', 'category': 'Vehicle Safety',
@@ -1529,6 +1881,47 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 2,
     'explanation': 'Using a mobile phone while driving is illegal and distracting. The only safe way is to pull over and park before handling it.'
   },
+  {
+  'id': 'L2Q6', 'category': 'Vehicle Safety',
+  'question': 'What is the correct hand position on the steering wheel for best control?',
+  'imagePaths': [],
+  'options': ['12 and 6 o\'clock', '10 and 2 o\'clock', '5 and 7 o\'clock', 'Any comfortable position'],
+  'correctAnswerIndex': 1,
+  'explanation': 'The recommended hand positions are "10 and 2" or "9 and 3" on the steering wheel, giving you better control.'
+},
+{
+  'id': 'L2Q7', 'category': 'Vehicle Safety',
+  'question': 'When should you use hazard lights?',
+  'imagePaths': ['assets/images/Hazard_lights.png'],
+  'options': ['When you want to turn left or right', 'When your car breaks down or during an emergency', 'When you are reversing', 'While waiting at a traffic light'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Hazard lights are used to alert others that your vehicle is in trouble or stationary in a potentially dangerous situation.'
+},
+{
+  'id': 'L2Q8', 'category': 'Vehicle Safety',
+  'question': 'Driving with one hand continuously is:',
+  'imagePaths': [],
+  'options': ['A style choice', 'Safe if you’re experienced', 'A traffic violation', 'Required when using manual cars'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Driving with one hand continuously is unsafe and considered a traffic violation under Nigerian road safety regulations.'
+},
+{
+  'id': 'L2Q9', 'category': 'Vehicle Safety',
+  'question': 'What should you do before moving your vehicle from a parked position?',
+  'imagePaths': [],
+  'options': ['Just drive off slowly', 'Check mirrors and blind spots, then move off when safe', 'Honk your horn first', 'Call someone to guide you'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Always check your surroundings, mirrors, and blind spots to avoid hitting a person or obstacle before moving off.'
+},
+{
+  'id': 'L2Q10', 'category': 'Vehicle Safety',
+  'question': 'Which of the following is TRUE about seatbelt use in Nigeria?',
+  'imagePaths': [],
+  'options': ['Only the driver needs to wear one', 'Seatbelt use is optional for passengers', 'Seatbelts are legally required for driver and front passenger', 'Only children need to wear seatbelts'],
+  'correctAnswerIndex': 2,
+  'explanation': 'By law in Nigeria, both the driver and front seat passenger must wear seatbelts. It is also strongly recommended for all passengers.'
+},
+
    // --- Questions for Lesson 3 ---
   {
     'id': 'L3Q1', 'category': 'Rules of the Road',
@@ -1563,6 +1956,81 @@ final List<Map<String, dynamic>> questionBank = [
     'explanation': 'Emergency vehicles have priority. You must safely pull over to the right side of the road to create a clear path for them.'
   },
   {
+  'id': 'L3Q5', 'category': 'Rules of the Road',
+  'question': 'Which lane should slower vehicles use on a multi-lane road in Nigeria?',
+  'imagePaths': [],
+  'options': ['Leftmost lane', 'Middle lane', 'Rightmost lane', 'Any lane'],
+  'correctAnswerIndex': 2,
+  'explanation': 'On multi-lane roads in Nigeria, slower traffic should keep to the rightmost lane. The left lane is for overtaking.'
+},
+{
+  'id': 'L3Q6', 'category': 'Rules of the Road',
+  'question': 'When is it dangerous and illegal to overtake?',
+  'imagePaths': [],
+  'options': [
+    'Near a bend or curve',
+    'Before a zebra crossing',
+    'On the crest of a hill',
+    'All of the above'
+  ],
+  'correctAnswerIndex': 3,
+  'explanation': 'It is illegal to overtake at crossings, on bends, and before a hill where visibility is poor. All are dangerous.'
+},
+{
+  'id': 'L3Q7', 'category': 'Rules of the Road',
+  'question': 'What should you do if another vehicle is overtaking you?',
+  'imagePaths': [],
+  'options': [
+    'Speed up so they cannot pass',
+    'Move slightly left to block them',
+    'Maintain or reduce speed and let them pass',
+    'Use your horn to warn them'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Always let other vehicles overtake safely. Do not accelerate or block them; maintain or reduce speed.'
+},
+{
+  'id': 'L3Q8', 'category': 'Rules of the Road',
+  'question': 'At an uncontrolled intersection with no signs or lights, what should you do?',
+  'imagePaths': [],
+  'options': [
+    'Speed up to cross quickly',
+    'Always insist on going first',
+    'Approach slowly and yield if necessary',
+    'Only stop if someone honks'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'At uncontrolled intersections, use caution and be prepared to yield. The goal is to avoid collisions, not assert priority.'
+},
+{
+  'id': 'L3Q9', 'category': 'Rules of the Road',
+  'question': 'What does a solid center line on your side of the road mean?',
+  'imagePaths': ['assets/images/No_overtaking.png'],
+  'options': [
+    'You can overtake carefully',
+    'Only motorbikes can overtake',
+    'No overtaking allowed',
+    'Overtake only if no vehicles are near'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'A solid line on your side means overtaking is not allowed — it’s unsafe due to road conditions or visibility.'
+},
+{
+  'id': 'L3Q10', 'category': 'Rules of the Road',
+  'question': 'Who has right of way when entering a major road from a minor road?',
+  'imagePaths': [],
+  'options': [
+    'The driver on the minor road',
+    'Whoever honks first',
+    'The driver on the major road',
+    'The fastest vehicle'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Traffic on a major road has priority. Vehicles entering from minor roads must yield and wait until it’s safe.'
+},
+
+  //Lesson 4
+  {
     'id': 'L4Q1', 'category': 'Regulatory Signs',
     'question': 'What shape is a STOP sign?',
     'imagePaths': [],
@@ -1594,6 +2062,62 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 2,
     'explanation': 'This sign prohibits you from turning around to go back in the opposite direction.'
   },
+  {
+  'id': 'L4Q5', 'category': 'Regulatory Signs',
+  'question': 'What does a "No Entry" sign indicate?',
+  'imagePaths': [],
+  'options': ['You can go straight only', 'You must not enter this road', 'Turn around ahead', 'Only trucks are allowed'],
+  'correctAnswerIndex': 1,
+  'explanation': 'A No Entry sign means entry into that road or area is prohibited, usually due to it being one-way in the other direction or restricted.'
+},
+{
+  'id': 'L4Q6', 'category': 'Regulatory Signs',
+  'question': 'Which sign means “You must not stop at all, even briefly”?',
+  'imagePaths': [],
+  'options': ['No Parking', 'Yield', 'No Stopping', 'Speed Limit'],
+  'correctAnswerIndex': 2,
+  'explanation': 'The "No Stopping" sign (often with a red X on blue) means you are not allowed to stop at all, except in an emergency.'
+},
+{
+  'id': 'L4Q7', 'category': 'Regulatory Signs',
+  'question': 'Where are "No Horn" signs typically placed?',
+  'imagePaths': [],
+  'options': ['Highways', 'School zones or hospital areas', 'Roundabouts', 'Car parks'],
+  'correctAnswerIndex': 1,
+  'explanation': 'No Horn signs are placed in quiet zones such as near hospitals, schools, or residential areas to reduce noise pollution.'
+},
+{
+  'id': 'L4Q8', 'category': 'Regulatory Signs',
+  'question': 'What does a blue circular sign with a white bicycle mean?',
+  'imagePaths': [],
+  'options': ['No bicycles allowed', 'Bicycle parking', 'Optional bicycle lane', 'Mandatory bicycle track'],
+  'correctAnswerIndex': 3,
+  'explanation': 'This mandatory sign indicates that the path is reserved exclusively for cyclists. Other vehicles must not use it.'
+},
+{
+  'id': 'L4Q9', 'category': 'Regulatory Signs',
+  'question': 'What is the purpose of the “Keep Right” sign?',
+  'imagePaths': [],
+  'options': ['You may turn right', 'Overtake on the right', 'Pass the obstacle on the right', 'Stay in the right lane'],
+  'correctAnswerIndex': 2,
+  'explanation': 'The “Keep Right” sign means you must pass a central obstacle (like a divider or bollard) on the right side.'
+},
+{
+  'id': 'L4Q10', 'category': 'Regulatory Signs',
+  'question': 'What does a blue circular sign with a white number like "30" mean?',
+  'imagePaths': [],
+  'options': [
+    'Maximum speed limit',
+    'Minimum speed required',
+    'Speed recommendation',
+    'Speed in miles per hour'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Blue circular signs with a white number indicate the **minimum speed** required on that road. You must not go slower unless necessary due to traffic or hazards.'
+},
+
+
+
   // --- Questions for Lesson 5 ---
   {
     'id': 'L5Q1', 'category': 'Warning Signs',
@@ -1651,6 +2175,46 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 1,
     'explanation': 'Using a lower gear helps control your speed without overheating your brakes on a long, steep descent.'
   },
+  {
+  'id': 'L5Q8', 'category': 'Warning Signs',
+  'question': 'What does a warning sign with a bridge symbol typically mean?',
+  'imagePaths': [],
+  'options': [
+    'You are approaching a toll booth',
+    'There is a bridge ahead, which may be narrow or open',
+    'You must stop immediately',
+    'You are leaving a city area'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'A bridge sign warns you of a bridge ahead. It could be narrow or open (like a drawbridge), so approach carefully and be prepared to stop.'
+},
+{
+  'id': 'L5Q9', 'category': 'Warning Signs',
+  'question': 'What does a triangle warning sign showing rocks falling from above indicate?',
+  'imagePaths': [],
+  'options': [
+    'Construction zone ahead',
+    'Landslide already occurred',
+    'Possibility of falling rocks on the road',
+    'You may throw rocks from your car'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'The falling rocks symbol alerts drivers that they are entering a zone where rocks might fall onto the road — common in mountainous terrain.'
+},
+{
+  'id': 'L5Q10', 'category': 'Warning Signs',
+  'question': 'What should you do when you see a warning sign with a traffic light symbol?',
+  'imagePaths': [],
+  'options': [
+    'Speed up to beat the red light',
+    'Expect an intersection controlled by traffic signals ahead',
+    'Stop immediately',
+    'Ignore it if the light is green'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'This sign gives advance notice of traffic signals ahead so you can slow down and be prepared to stop if the light changes.'
+},
+
    // --- Questions for Lesson 6 ---
   {
     'id': 'L6Q1', 'category': 'Informative Signs',
@@ -1700,6 +2264,58 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 1,
     'explanation': 'You must not enter the yellow box unless your exit road is clear, to avoid blocking the intersection and causing gridlock.'
   },
+  {
+  'id': 'L6Q7', 'category': 'Informative Signs',
+  'question': 'What does a directional sign with “Abuja – 250 km” and an arrow mean?',
+  'imagePaths': [],
+  'options': [
+    'You must stop in 250 km',
+    'It’s a warning about traffic',
+    'Abuja is straight ahead, 250 kilometers from here',
+    'The road is closed for 250 km'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'This is a distance sign showing how far Abuja is from your current location. It helps drivers plan and navigate.'
+},
+{
+  'id': 'L6Q8', 'category': 'Informative Signs',
+  'question': 'What does a white or blue sign with a red cross or an “H” usually indicate?',
+  'imagePaths': [],
+  'options': [
+    'Helicopter pad ahead',
+    'Hospital or medical help nearby',
+    'Hotel zone',
+    'Hazardous road ahead'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'The red cross or "H" symbol indicates a hospital or first aid station. It may also be a quiet zone (No horn area).'
+},
+{
+  'id': 'L6Q9', 'category': 'Informative Signs',
+  'question': 'What does a painted edge line along the right side of the road usually mean?',
+  'imagePaths': [],
+  'options': [
+    'Pedestrian path',
+    'The road ends there',
+    'Do not drive or park beyond this line except in emergencies',
+    'Overtake using that space'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Edge lines help mark the boundary of the road. Stay within them unless you need to pull over in an emergency.'
+},
+{
+  'id': 'L6Q10', 'category': 'Informative Signs',
+  'question': 'What should you do when you see a temporary orange “Detour” sign?',
+  'imagePaths': [],
+  'options': [
+    'Ignore it and follow your GPS',
+    'Follow the new route indicated',
+    'Speed up to avoid traffic',
+    'Stop and reverse'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Temporary signs like "Detour" are placed to redirect traffic safely around construction or closures. Always follow them.'
+},
   // --- Questions for Lesson 7 ---
   {
     'id': 'L7Q1', 'category': 'Traffic Lights',
@@ -1725,6 +2341,98 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 1,
     'explanation': 'The hand signals of a traffic officer always override traffic lights and signs. You must obey the officer.'
   },
+  {
+  'id': 'L7Q4', 'category': 'Traffic Lights',
+  'question': 'What should you do if the green light is on, but traffic ahead is blocking the intersection?',
+  'imagePaths': [],
+  'options': [
+    'Drive into the intersection anyway',
+    'Stop and wait until there is space to cross',
+    'Use your horn to clear the traffic',
+    'Flash your lights to warn others'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'You must not enter an intersection unless your exit is clear. Blocking the junction is an offence and can cause gridlock.'
+},
+{
+  'id': 'L7Q5', 'category': 'Traffic Lights',
+  'question': 'When a green light turns yellow just as you approach, what is the correct action?',
+  'imagePaths': [],
+  'options': [
+    'Accelerate quickly to beat the red',
+    'Stop immediately no matter what',
+    'Stop if it is safe to do so',
+    'Ignore the yellow and continue driving'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Yellow means you should prepare to stop. Only continue if stopping suddenly would be unsafe.'
+},
+{
+  'id': 'L7Q6', 'category': 'Traffic Lights',
+  'question': 'What does a flashing red traffic light indicate?',
+  'imagePaths': [],
+  'options': [
+    'Proceed with caution without stopping',
+    'Treat it as a stop sign and proceed when safe',
+    'Ignore the signal',
+    'Speed up to clear the intersection'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'A flashing red light means you must stop completely and only continue when it is safe, just like at a stop sign.'
+},
+{
+  'id': 'L7Q7', 'category': 'Traffic Lights',
+  'question': 'Which signal from a traffic officer indicates that you must stop?',
+  'imagePaths': [],
+  'options': [
+    'Waving arm toward the body',
+    'Both arms pointing sideways',
+    'One arm raised with palm facing you',
+    'Whistle followed by a wave'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'An officer with one arm raised and palm facing your vehicle is signaling you to stop.'
+},
+{
+  'id': 'L7Q8', 'category': 'Traffic Lights',
+  'question': 'Which hand signal indicates a driver intends to stop or slow down?',
+  'imagePaths': [],
+  'options': [
+    'Left arm extended upward',
+    'Left arm extended straight out',
+    'Left arm angled downward, palm back',
+    'Right arm pointing across the roof'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Extending the left arm downward with palm facing backward is the standard hand signal to show slowing down or stopping.'
+},
+{
+  'id': 'L7Q9', 'category': 'Traffic Lights',
+  'question': 'What is the purpose of countdown timers on some traffic lights?',
+  'imagePaths': [],
+  'options': [
+    'To warn pedestrians to cross quickly',
+    'To help drivers anticipate light changes safely',
+    'To tell drivers when to honk',
+    'To show how long to wait at stop signs'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Countdown timers help drivers anticipate when a light will change, allowing for safer decisions, especially when slowing down.'
+},
+{
+  'id': 'L7Q10', 'category': 'Traffic Lights',
+  'question': 'When is it acceptable to rely on hand signals instead of your vehicle indicators?',
+  'imagePaths': [],
+  'options': [
+    'At night',
+    'If your indicators are not working',
+    'When overtaking only',
+    'In busy markets'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Hand signals are especially useful if your indicator lights are malfunctioning, or to reinforce your intention in certain situations.'
+},
+
   
   // --- Questions for Lesson 8 ---
   {
@@ -1751,6 +2459,97 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 3,
     'explanation': 'High-beams reflect off the fog/haze and make visibility worse. Low-beams or fog lights are aimed lower to illuminate the road without glare.'
   },
+  {
+  'id': 'L8Q4', 'category': 'Driving Conditions',
+  'question': 'What should you do if another vehicle’s high-beams are blinding you at night?',
+  'imagePaths': [],
+  'options': [
+    'Look directly at their lights to alert them',
+    'Flash your headlights continuously in anger',
+    'Look slightly to the right edge of your lane and slow down if needed',
+    'Close your eyes briefly to reduce glare'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Avert your eyes to the right edge of the road to avoid being blinded and reduce speed if necessary. Don’t stare into the light.'
+},
+{
+  'id': 'L8Q5', 'category': 'Driving Conditions',
+  'question': 'If your car starts to skid on a wet road, what should you do?',
+  'imagePaths': [],
+  'options': [
+    'Slam the brakes hard',
+    'Accelerate quickly to regain traction',
+    'Steer gently in the direction of the skid and ease off the brake',
+    'Turn the steering wheel sharply in the opposite direction'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'You should steer gently in the direction of the skid and brake smoothly to regain control.'
+},
+{
+  'id': 'L8Q6', 'category': 'Driving Conditions',
+  'question': 'What is the safe action if fog or dust haze becomes too thick to continue?',
+  'imagePaths': [],
+  'options': [
+    'Speed up to pass through it quickly',
+    'Use high-beams to improve visibility',
+    'Pull over completely off the road and turn on hazard lights',
+    'Continue slowly in the middle of the road'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'If visibility is too poor, the safest action is to pull off the road completely and turn on hazard and parking lights.'
+},
+{
+  'id': 'L8Q7', 'category': 'Driving Conditions',
+  'question': 'What is the recommended following distance during heavy rain?',
+  'imagePaths': [],
+  'options': [
+    '1 second',
+    '2 seconds',
+    '4 seconds or more',
+    'You don’t need extra space'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Wet roads increase stopping distance. Keep at least four seconds behind the vehicle in front during rain.'
+},
+{
+  'id': 'L8Q8', 'category': 'Driving Conditions',
+  'question': 'When driving in a convoy, what is the most important rule?',
+  'imagePaths': [],
+  'options': [
+    'Stay as close as possible to the vehicle ahead',
+    'Use your horn frequently to signal your position',
+    'Maintain reasonable speed and distance, and follow the convoy’s pace',
+    'Drive in any lane to avoid traffic'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Drivers in a convoy must maintain safe spacing and follow the pace of the group without tailgating or clustering.'
+},
+{
+  'id': 'L8Q9', 'category': 'Driving Conditions',
+  'question': 'Why should you never drive into a flooded road unless you are certain of the depth?',
+  'imagePaths': [],
+  'options': [
+    'It may wash away road signs',
+    'It can damage your radio',
+    'Even shallow water can stall or sweep away your vehicle',
+    'It makes your car dirty'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Flooded roads are very dangerous – even shallow water can disable your vehicle or cause it to float away.'
+},
+{
+  'id': 'L8Q10', 'category': 'Driving Conditions',
+  'question': 'What should you do if driving during strong wind or a thunderstorm?',
+  'imagePaths': [],
+  'options': [
+    'Drive with one hand and open the windows',
+    'Slow down, hold the wheel firmly, and be alert to sudden gusts',
+    'Turn on your hazard lights and continue at normal speed',
+    'Accelerate quickly to avoid the storm'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Strong winds can affect your steering, especially in high-sided vehicles. Hold the wheel firmly and reduce your speed.'
+},
   // --- Questions for Lesson 9 ---
   {
     'id': 'L9Q1', 'category': 'Defensive Driving',
@@ -1776,6 +2575,97 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 3,
     'explanation': 'Engaging with an aggressive driver is dangerous. The safest action is to de-escalate the situation by letting them go past.'
   },
+  {
+  'id': 'L9Q4', 'category': 'Defensive Driving',
+  'question': 'Why is it important to check your blind spot before changing lanes?',
+  'imagePaths': [],
+  'options': [
+    'To admire your car’s surroundings',
+    'To ensure no vehicles are hidden from your mirrors',
+    'To adjust your seat position',
+    'To make the turn smoother'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Blind spots are areas you can’t see with your mirrors. A quick shoulder check ensures there are no hidden vehicles beside you.'
+},
+{
+  'id': 'L9Q5', 'category': 'Defensive Driving',
+  'question': 'What does a “space cushion” refer to in safe driving?',
+  'imagePaths': [],
+  'options': [
+    'A padded seat for comfort',
+    'The gap between your car and roadside buildings',
+    'Keeping safe distance around your vehicle in all directions',
+    'Driving on soft road surfaces'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'A space cushion gives you time and room to react in all directions – ahead, behind, and to the sides.'
+},
+{
+  'id': 'L9Q6', 'category': 'Defensive Driving',
+  'question': 'What is the best way to avoid distractions while driving?',
+  'imagePaths': [],
+  'options': [
+    'Check your phone only at red lights',
+    'Talk constantly to passengers',
+    'Keep your focus on the road and minimize in-car distractions',
+    'Use your horn if distracted'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Defensive drivers avoid distractions like phones or deep conversations, keeping full attention on the road.'
+},
+{
+  'id': 'L9Q7', 'category': 'Defensive Driving',
+  'question': 'How should you drive when following a heavy vehicle like a truck?',
+  'imagePaths': [],
+  'options': [
+    'Stay close so no one cuts in',
+    'Drive in their blind spot to stay hidden',
+    'Keep a longer following distance and avoid cutting in front',
+    'Flash your lights to get their attention'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Heavy vehicles have large blind spots and need more time to stop. Keep your distance and overtake with caution.'
+},
+{
+  'id': 'L9Q8', 'category': 'Defensive Driving',
+  'question': 'What is the correct response if you see a ball roll into the road ahead?',
+  'imagePaths': [],
+  'options': [
+    'Speed up to pass before anyone runs after it',
+    'Swerve into the opposite lane immediately',
+    'Be ready to stop because a child may follow',
+    'Ignore it and continue as usual'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'A ball rolling into the road is a classic warning sign – a child may follow it. Defensive drivers slow down and prepare to stop.'
+},
+{
+  'id': 'L9Q9', 'category': 'Defensive Driving',
+  'question': 'Why is it dangerous to rely solely on the posted speed limit?',
+  'imagePaths': [],
+  'options': [
+    'The sign might be old',
+    'Other drivers might be speeding',
+    'Road or traffic conditions might require you to drive slower',
+    'You can’t see the signs at night'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Defensive drivers adjust speed based on current conditions, not just the posted limit. Sometimes slower is safer.'
+},
+{
+  'id': 'L9Q10', 'category': 'Defensive Driving',
+  'question': 'What is the best mindset for a defensive driver?',
+  'imagePaths': [],
+  'options': [
+    'I have the right of way, always',
+    'Other drivers will follow the rules',
+    'I must react quickly and aggressively',
+    'I should expect others to make mistakes and be ready'
+  ],
+  'correctAnswerIndex': 3,
+  'explanation': 'A defensive driver assumes others may make errors and stays prepared to avoid danger without escalating situations.'
+},
   
   // --- Questions for Lesson 10 ---
   {
@@ -1802,347 +2692,1119 @@ final List<Map<String, dynamic>> questionBank = [
     'correctAnswerIndex': 2,
     'explanation': 'The primary concern is personal safety. Car fires can be explosive, so evacuating everyone to a safe distance is the first and most important step.'
   },
+  {
+  'id': 'L10Q4', 'category': 'Emergencies',
+  'question': 'If your brakes fail while driving, what should you try first?',
+  'imagePaths': [],
+  'options': [
+    'Turn off the ignition immediately',
+    'Pump the brake pedal rapidly to build pressure',
+    'Jump out of the vehicle',
+    'Shift into neutral and coast'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Pumping the brake pedal can sometimes restore enough pressure to stop the car. If that fails, shift to a lower gear and use the handbrake carefully.'
+},
+{
+  'id': 'L10Q5', 'category': 'Emergencies',
+  'question': 'When should you use a warning triangle after a breakdown?',
+  'imagePaths': [],
+  'options': [
+    'Only if it is nighttime',
+    'Immediately, placing it 30–50 meters behind your car',
+    'Only in cities',
+    'Only if someone is injured'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Placing a warning triangle gives other drivers advanced notice that your vehicle is stationary, especially on highways or in low-visibility situations.'
+},
+{
+  'id': 'L10Q6', 'category': 'Emergencies',
+  'question': 'If a person is bleeding heavily after a crash, what should you do?',
+  'imagePaths': [],
+  'options': [
+    'Wash the wound with water',
+    'Remove any object stuck in the wound',
+    'Apply pressure with a clean cloth to stop the bleeding',
+    'Wait for emergency services before acting'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Applying firm pressure helps slow or stop serious bleeding. Never remove embedded objects—apply pressure around them instead.'
+},
+{
+  'id': 'L10Q7', 'category': 'Emergencies',
+  'question': 'What is a safe way to escape from a car sinking in water?',
+  'imagePaths': [],
+  'options': [
+    'Wait for the car to fill with water before opening the door',
+    'Try to open a window immediately and exit through it',
+    'Call for help and stay inside',
+    'Kick open the roof hatch'
+  ],
+  'correctAnswerIndex': 1,
+  'explanation': 'Power windows may still work for a few seconds—open one and escape before water pressure builds. Breaking a window is another option if needed.'
+},
+{
+  'id': 'L10Q8', 'category': 'Emergencies',
+  'question': 'What is the recovery position used for?',
+  'imagePaths': [],
+  'options': [
+    'Keeping an unconscious but breathing person’s airway clear',
+    'Making someone more comfortable while waiting',
+    'Helping with chest compressions',
+    'Preventing cold shock'
+  ],
+  'correctAnswerIndex': 0,
+  'explanation': 'The recovery position keeps the airway open and prevents choking, especially if the person vomits while unconscious.'
+},
+{
+  'id': 'L10Q9', 'category': 'Emergencies',
+  'question': 'What is a safe way to handle an overheating engine?',
+  'imagePaths': [],
+  'options': [
+    'Drive faster to cool the engine',
+    'Immediately remove the radiator cap',
+    'Pull over, turn off the AC, and let the engine cool before checking',
+    'Pour cold water on the engine'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Opening the radiator while hot is dangerous. You must let the engine cool before checking or adding coolant.'
+},
+{
+  'id': 'L10Q10', 'category': 'Emergencies',
+  'question': 'What should you do first if your engine starts to overheat while driving?',
+  'imagePaths': [],
+  'options': [
+    'Open the radiator cap to let out steam',
+    'Turn on the air conditioning to cool the engine',
+    'Turn off the AC and pull over as soon as it\’s safe',
+    'Keep driving until you reach your destination'
+  ],
+  'correctAnswerIndex': 2,
+  'explanation': 'Turning off the AC reduces strain on the engine, and pulling over allows it to cool. Opening the radiator cap while hot is dangerous and should be avoided.'
+},
+//For tests
+  {
+    'id': 'RS001',
+    'category': 'Road Signs',
+    'question': 'What action must you take when you encounter this sign?',
+    'imagePaths': ['assets/images/Stop_sign.png'],
+    'options': ['Stop completely before the stop line', 'Slow down and proceed with caution', 'Yield to all traffic without stopping', 'Stop only if other vehicles are present'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This is a stop sign. You must come to a complete stop and only proceed when it is safe and legal.'
+  },
+  {
+    'id': 'RS002',
+    'category': 'Road Signs',
+    'question': 'What does this sign require you to do?',
+    'imagePaths': ['assets/images/Yield_sign.png'],
+    'options': ['Accelerate and merge', 'Give way to traffic on the crossing road', 'Stop completely', 'Turn left or right'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'The yield sign means you must give way to traffic already on the road you are entering or crossing.'
+  },
+  {
+    'id': 'RS003',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate for drivers?',
+    'imagePaths': ['assets/images/No_entry.png'],
+    'options': ['Road closed for maintenance', 'One-way traffic ahead', 'Entry is prohibited on this road or area', 'Emergency vehicles only'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'A red circle with a horizontal white bar is the "No Entry" sign. It indicates that entry is prohibited on the road or area ahead (usually used at one-way roads from the wrong side, or restricted zones).'
+  },
+  {
+    'id': 'RS004',
+    'category': 'Road Signs',
+    'question': 'If you see this sign with the number "80", what is the maximum speed you are allowed to travel?',
+    'imagePaths': ['assets/images/Speed_limit_signs.png'],
+    'options': ['Highway 80', 'Minimum 80 km/h', 'Rest area in 80km', 'Maximum 80 km/h'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'Speed Limit Signs are circular signs with a number in the center and a red border. The number is the maximum speed (in km/h) you are allowed to travel on that road.'
+  },
+  {
+    'id': 'RS005',
+    'category': 'Road Signs',
+    'question': 'What maneuver is forbidden by this sign?',
+    'imagePaths': ['assets/images/No_u_turn.png'],
+    'options': ['Making a U-turn', 'Turning left', 'Stopping temporarily', 'Changing lanes'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This sign is a red-bordered circle with a black U-arrow crossed by a red diagonal line. It means you are not allowed to make a U-turn (turn around to go back the way you came) at that location.'
+  },
+  {
+    'id': 'RS006',
+    'category': 'Road Signs',
+    'question': 'If this sign shows an arrow pointing left with a red slash, what does it mean?',
+    'imagePaths': ['assets/images/No_left_right_turn.png'],
+    'options': ['Turn left is mandatory', 'No left turn allowed', 'Left lane ends', 'Left turns are dangerous'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'Similar to no U-turn, these signs show a left-bending arrow or right-bending arrow with a red slash. They indicate you cannot turn in that direction at the junction ahead.'
+  },
+  {
+    'id': 'RS007',
+    'category': 'Road Signs',
+    'question': 'What does this sign prohibit drivers from doing?',
+    'imagePaths': ['assets/images/No_overtaking.png'],
+    'options': ['Driving slowly', 'Stopping on the road', 'Overtaking other vehicles', 'Turning right'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This regulatory sign typically shows two cars next to each other, the one on the left (representing the overtaker) in black and the one on the right in red, with a red slash across. It means you are not allowed to overtake on this road or section of road.'
+  },
+  {
+    'id': 'RS008',
+    'category': 'Road Signs',
+    'question': 'What is forbidden by this sign?',
+    'imagePaths': ['assets/images/No_parking.png'],
+    'options': ['Stopping to drop off passengers', 'Entering the area', 'Using the horn', 'Parking your vehicle'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'This sign means you may not park your vehicle in the area indicated.'
+  },
+  {
+    'id': 'RS009',
+    'category': 'Road Signs',
+    'question': 'What does this sign mean you cannot do?',
+    'imagePaths': ['assets/images/No_stopping.png'],
+    'options': ['You cannot stop for any reason except emergency', 'You can park here', 'Only buses can stop', 'No U-turns allowed'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This is often a red circle with a blue background and an "X" (two diagonal crosses). It means you cannot stop at all not even briefly on that road side, except in an emergency (or as directed by police).'
+  },
+  {
+    'id': 'RS010',
+    'category': 'Road Signs',
+    'question': 'What does this sign instruct drivers to avoid?',
+    'imagePaths': ['assets/images/No_horn.png'],
+    'options': ['Speeding', 'Using the vehicle horn', 'Overtaking', 'Making loud noises'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'A sign showing a horn with a red slash means do not use your horn in that area.'
+  },
+  {
+    'id': 'RS011',
+    'category': 'Road Signs',
+    'question': 'What does a sign with "STOP POLICE" on it require you to do?',
+    'imagePaths': ['assets/images/Traffic_control_signs.png'],
+    'options': ['Slow down and proceed with caution', 'Stop only if flagged by an officer', 'Come to a complete stop for the checkpoint', 'It is an informative sign only'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'These include signs like Stop (police) or Stop (customs) - often used by law enforcement or checkpoints. For example, a red octagon sign that says "STOP POLICE" requires you to stop for a police checkpoint.'
+  },
+  {
+    'id': 'RS012',
+    'category': 'Road Signs',
+    'question': 'What does a circular sign with "3.5m" and an arrow pointing up and down signify?',
+    'imagePaths': ['assets/images/Weight_height_length.png'],
+    'options': ['Road is 3.5 meters wide', 'Speed limit 35 km/h', 'Road closed in 3.5 km', 'Vehicles taller than 3.5 meters are prohibited'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'A sign with "3.5m" and an arrow up and down means vehicles taller than 3.5 meters are not allowed (low bridge ahead).'
+  },
+  {
+    'id': 'RS013',
+    'category': 'Road Signs',
+    'question': 'What action is required by this sign?',
+    'imagePaths': ['assets/images/Direction_to_be_followed.png'],
+    'options': ['Proceed straight ahead only', 'Turn left or right', 'Stop and wait', 'U-turn ahead'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This blue circular sign with a single white arrow pointing straight up is the “Proceed straight ahead only” sign. It means you are required to continue in your current direction. You may not turn left or right at the upcoming junction.'
+  },
+  {
+    'id': 'RS014',
+    'category': 'Road Signs',
+    'question': 'What does this sign tell you about the road ahead?',
+    'imagePaths': ['assets/images/One_way_traffic.png'],
+    'options': ['Two-way traffic ahead', 'All traffic must move in the direction of the arrow', 'You can turn in any direction', 'Entry is prohibited'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'A "One Way" sign means all traffic on that road must move in the direction of the arrow.'
+  },
+  {
+    'id': 'RS015',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate about the road you are entering?',
+    'imagePaths': ['assets/images/4_lanes_undivided_2_way_ahead.png'],
+    'options': ['Four lanes for one-way traffic', 'A divided highway with four lanes', 'A four-lane, two-way road with no physical median', 'Two lanes for turning traffic'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This blue circular sign tells you that you are entering a two-way, dual-carriageway section: there are two lanes for traffic coming towards you (the downward arrows) and two lanes for your direction (the upward arrows).'
+  },
+  {
+    'id': 'RS016',
+    'category': 'Road Signs',
+    'question': 'What type of road does this sign indicate you are entering?',
+    'imagePaths': ['assets/images/Divided_4_lanes_undivided_2_way_ahead.png'],
+    'options': ['A road with four lanes in one direction', 'An undivided four-lane road', 'Two lanes for turning only', 'A divided four-lane, two-way road'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'This sign tells you that you are entering a two-way, dual-carriageway section that has a divide between the different directions.'
+  },
+  {
+    'id': 'RS017',
+    'category': 'Road Signs',
+    'question': 'What does this sign mean you will encounter ahead?',
+    'imagePaths': ['assets/images/2_lane_2_way_ahead.png'],
+    'options': ['A two-lane road with two-way traffic', 'Two lanes for one-way traffic', 'Road closed after two lanes', 'Emergency lane ahead'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'A sign with two opposite arrows going up and down indicates that the road will carry two-way traffic ahead.'
+  },
+  {
+    'id': 'RS018',
+    'category': 'Road Signs',
+    'question': 'What does this sign convey about the road ahead?',
+    'imagePaths': ['assets/images/Divided_2_lanes_2_way_ahead.png'],
+    'options': ['A two-lane undivided road', 'One-way traffic with two lanes', 'A shared central lane', 'A two-lane road with two-way traffic and a physical divide'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'This sign tells you that you are entering a two-way road that has a divide between the different directions.'
+  },
+  {
+    'id': 'RS019',
+    'category': 'Road Signs',
+    'question': 'What is the meaning of this sign?',
+    'imagePaths': ['assets/images/Compulsory_cycle_track.png'],
+    'options': ['Bicycles prohibited', 'Optional cycle lane', 'Mandatory cycle track for bicycles only', 'Shared path for cyclists and pedestrians'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This blue circular sign with a white bicycle pictogram is a mandatory cycle track sign. It means that the lane or path is reserved exclusively for cyclists, bicycles must use this route, and motor vehicles are prohibited from entering.'
+  },
+  {
+    'id': 'RS020',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate?',
+    'imagePaths': ['assets/images/Pedestrian_track.png'],
+    'options': ['No pedestrians allowed', 'Pedestrian crossing ahead', 'Mandatory pedestrian walkway', 'Shared path for vehicles and pedestrians'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This blue circular sign with a white walking figure is a mandatory pedestrian walkway sign. It means that the path or lane is reserved exclusively for people on foot.'
+  },
+  {
+    'id': 'RS021',
+    'category': 'Road Signs',
+    'question': 'What action is required by this sign?',
+    'imagePaths': ['assets/images/Direction_to_be_followed.png'],
+    'options': ['Proceed straight ahead only', 'Turn left or right', 'Stop and wait', 'U-turn ahead'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This blue circular sign with a single white arrow pointing straight up is the “Proceed straight ahead only” sign. It means you are required to continue in your current direction. You may not turn left or right at the upcoming junction.'
+  },
+  {
+    'id': 'RS022',
+    'category': 'Road Signs',
+    'question': 'What does this sign instruct drivers to do?',
+    'imagePaths': ['assets/images/Keep_right.png'],
+    'options': ['Keep to the rightmost lane', 'Right turns only', 'Pass the obstruction on the right side', 'Stop on the right'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This blue circular sign with a white arrow pointing down‐and‐to‐the‐right is the “pass on right” (keep right) sign. It means you must go to the right of the central obstacle (island, bollard or traffic divider) ahead.'
+  },
+  {
+    'id': 'RS023',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate about an obstruction ahead?',
+    'imagePaths': ['assets/images/Pass_either_side.png'],
+    'options': ['You must pass on the left', 'You may pass on either the left or right side', 'You must pass on the right', 'No passing allowed'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'This one is the “Pass either side” sign. It tells you there’s an obstruction (island, divider, etc.) ahead and you may drive around it on either the left or right side, both routes are allowed.'
+  },
+  {
+    'id': 'RS024',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate you are approaching, and what must you do?',
+    'imagePaths': ['assets/images/Roundabout.png'],
+    'options': ['A sharp bend; slow down', 'A roundabout; yield to traffic already on it', 'A no U-turn zone', 'A traffic light ahead'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'This is the “roundabout mandatory” sign. It means you’re approaching a roundabout and must follow the direction of the arrows, yielding to any traffic already on the circle before you enter.'
+  },
+  {
+    'id': 'RS025',
+    'category': 'Road Signs',
+    'question': 'What does this sign mean you must do?',
+    'imagePaths': ['assets/images/Diversion.png'],
+    'options': ['Turn in the direction of the arrow (a mandatory diversion)', 'Continue straight ahead', 'No entry allowed', 'Prepare for a speed camera'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'This sign is a "Direction to be followed" mandatory sign, indicating that you must turn right or continue along the road in the direction shown by the arrow. You will frequently encounter this sign when traffic is being redirected, for instance, during temporary diversions due to roadworks, an accident, or any other obstruction that requires vehicles to take an alternative route.'
+  },
+  {
+    'id': 'RS026',
+    'category': 'Road Signs',
+    'question': 'What does this sign tell drivers?',
+    'imagePaths': ['assets/images/End_diversion.png'],
+    'options': ['A new diversion is starting', 'The temporary diversion has ended', 'You must turn back', 'Road closed ahead'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'This mandatory sign, displaying "END DIVERSION", indicates that the temporary diversion you have been following has now concluded.'
+  },
+  {
+    'id': 'RS027',
+    'category': 'Road Signs',
+    'question': 'What are your options for turning at the upcoming junction when you see this sign?',
+    'imagePaths': ['assets/images/Two_way.png'],
+    'options': ['Proceed straight only', 'No turns allowed', 'U-turn permitted', 'Turn left or right only'],
+    'correctAnswerIndex': 3, // Cycle: 3
+    'explanation': 'This blue circular sign with a single stem splitting into left and right arrows is the “Turn left or right” mandatory sign. It tells you that at the junction ahead you must turn either left or right, continuing straight ahead is not allowed.'
+  },
+  {
+    'id': 'RS028',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate about the lanes ahead?',
+    'imagePaths': ['assets/images/Two_way_2.png'],
+    'options': ['Both lanes can go straight', 'Left lane must turn left, right lane must turn right', 'Only one lane is open', 'Traffic can merge from both sides'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'This blue circular sign is a compulsory lane‐direction sign. It means: Left lane = left turn only: any vehicle in the lane under the upper (left‐pointing) arrow must turn left. Right lane = right turn only: any vehicle in the lane under the lower (right‐pointing) arrow must turn right. There is no straight-on movement from either lane.'
+  },
+  {
+    'id': 'RS029',
+    'category': 'Road Signs',
+    'question': 'What does this sign mean if the number shown is "30"?',
+    'imagePaths': ['assets/images/Speed_limit_minimum.png'],
+    'options': ['Maximum speed 30 km/h', 'Recommended speed 30 km/h', 'You must travel at least 30 km/h', 'Road is 30 meters wide'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This blue circular sign with a white “30” is the minimum‐speed sign. It means you must travel at least 30 km/h on this section of road, you are not allowed to go slower unless forced to by traffic or other hazards.'
+  },
+  {
+    'id': 'RS030',
+    'category': 'Road Signs',
+    'question': 'What does this blue circular "STOP" sign mean?',
+    'imagePaths': ['assets/images/Sign_for_temporary_traffic_control.png'],
+    'options': ['Normal stop sign', 'Stop for parking', 'Mandatory stop for temporary traffic control', 'Yield ahead'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'This is not the normal red octagonal STOP sign you see at permanent junctions, but a mandatory “stop” used in temporary traffic-control situations. When you see this blue circle with “STOP” you must: Come to a complete halt at the sign (or marked line). Remain stopped until a traffic controller (or portable signal) gives you permission to go. Follow any additional instructions (cones, flag-persons, boards) in the work zone.'
+  },
+  {
+    'id': 'RS031',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate about the road you are entering, and what types of vehicles are prohibited?',
+    'imagePaths': ['assets/images/Expressway.png'],
+    'options': ['A city road with low speed limits, all vehicles allowed', 'An expressway where learners and pedestrians are prohibited', 'A road for heavy vehicles only', 'A temporary road for diversions'],
+    'correctAnswerIndex': 1, // Cycle: 3
+    'explanation': 'This is the “Expressway” entry sign plus the dual-carriageway symbol. Together they mean: Expressway start (blue rectangle labeled “Expressway”): you’re entering a high-speed, limited-access road. Prohibited on this road: no stopping; no learner (“L”) drivers; no motorcycles under 50 cc; no mopeds or pedal-cycles; no invalid carriages or prams; no pedestrians or animals.'
+  },
 
-  // Category: Road Signs (12 Questions)
+  // Lesson 5: Traffic Signs - Warning Signs
   {
-    'id': 'sign_001', 'category': 'Road Signs',
-    'question': 'What type of sign is a STOP sign?',
-    'imagePaths': ['assets/images/stop_sign.png'],
-    'options': ['Warning Sign', 'Regulatory Sign', 'Informational Sign'],
-    'correctAnswerIndex': 1,
-    'explanation': 'The stop sign is a regulatory sign because it enforces a traffic law that you must obey.',
-  },
-  {
-    'id': 'sign_002', 'category': 'Road Signs',
-    'question': 'This sign indicates:',
-    'imagePaths': ['assets/images/slippery_road_sign.png'],
-    'options': ['Road Narrows', 'Slippery When Wet', 'Winding Road'],
-    'correctAnswerIndex': 1,
-    'explanation': 'This is a warning sign, indicating that the road surface may be slippery, especially during or after rain.',
+    'id': 'RS032',
+    'category': 'Road Signs',
+    'question': 'What does this sign warn you about if the arrow points to the left?',
+    'imagePaths': ['assets/images/Road_bend.png'],
+    'options': ['A sharp turn to the left ahead', 'A mandatory left turn', 'No left turns allowed', 'Road closed on the left'],
+    'correctAnswerIndex': 0, // Cycle: 0
+    'explanation': 'A triangle with a curved arrow indicates a bend. If the arrow curves to the left, it means a sharp curve to the left is ahead.'
   },
   {
-    'id': 'sign_003', 'category': 'Road Signs',
-    'question': 'What does a triangular YIELD sign mean?', 'imagePaths': [],
-    'options': ['Stop completely', 'Merge left immediately', 'Slow down and give way to other traffic'], 'correctAnswerIndex': 2,
-    'explanation': 'A yield sign means you must slow down or stop if necessary to give the right-of-way to traffic on the road you are entering.',
+    'id': 'RS033',
+    'category': 'Road Signs',
+    'question': 'What does a warning sign with a "plus" (+) shape indicate?',
+    'imagePaths': ['assets/images/Junction_ahead.png'],
+    'options': ['A pedestrian crossing', 'A crossroad or intersection ahead', 'A hospital nearby', 'A parking area'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'A "crossroad" sign (a plus + shape) warns that a road crosses the one you\'re on, meaning traffic may enter from left or right-be ready to yield if needed.'
   },
   {
-    'id': 'sign_004', 'category': 'Road Signs',
-    'question': 'What shape is a school zone warning sign?', 'imagePaths': [],
-    'options': ['Circular', 'Octagonal', 'Pentagonal (five-sided)'], 'correctAnswerIndex': 2,
-    'explanation': 'School zone and school crossing signs are pentagon-shaped to be easily recognizable.',
+    'id': 'RS034',
+    'category': 'Road Signs',
+    'question': 'What does this warning sign tell you?',
+    'imagePaths': ['assets/images/Roundabout_ahead.png'],
+    'options': ['You must make a U-turn', 'Traffic circle closed', 'A roundabout is ahead; prepare to yield', 'Multiple lanes'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'A triangle sign with three arrows forming a circle means a roundabout is ahead. You should slow down and prepare to give way to traffic on the roundabout (coming from your left).'
   },
   {
-    'id': 'sign_005', 'category': 'Road Signs',
-    'question': 'A diamond-shaped sign with a picture of a deer indicates what?', 'imagePaths': [],
-    'options': ['Hunting area ahead', 'Animal crossing ahead', 'Zoo or park entrance'], 'correctAnswerIndex': 1,
-    'explanation': 'This is a warning sign alerting drivers that they are in an area with a high population of deer that may cross the road.',
+    'id': 'RS035',
+    'category': 'Road Signs',
+    'question': 'What does this sign warn drivers about?',
+    'imagePaths': ['assets/images/Pedestrian_crossing.png'],
+    'options': ['A pedestrian-only zone', 'A pedestrian crossing or area with children', 'No pedestrians allowed', 'A place to drop off pedestrians'],
+    'correctAnswerIndex': 1, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'A warning sign with the silhouette of people (often a man and woman holding hands or a child and adult) indicates a pedestrian crossing ahead or area with pedestrians. A specific "School ahead" sign might show two children.'
   },
   {
-    'id': 'sign_006', 'category': 'Road Signs',
-    'question': 'A round traffic sign usually indicates a...', 'imagePaths': [],
-    'options': ['...stop sign ahead.', '...railway crossing ahead.', '...speed limit change.'], 'correctAnswerIndex': 1,
-    'explanation': 'Round, yellow warning signs are commonly used to give advanced warning of a railway crossing.',
-  },
-   {
-    'id': 'sign_007', 'category': 'Road Signs',
-    'question': 'A rectangular sign with a white background and a red circle with a line through a "P" means:', 'imagePaths': [],
-    'options': ['Parking permitted', 'Paid parking zone', 'No Parking'], 'correctAnswerIndex': 2,
-    'explanation': 'This is a standard regulatory sign indicating that parking is prohibited in this area.',
+    'id': 'RS036',
+    'category': 'Road Signs',
+    'question': 'What should you be prepared for when you see this sign?',
+    'imagePaths': ['assets/images/Animal_crossing.png'],
+    'options': ['Domestic animals may be crossing the road', 'A zoo ahead', 'Farm for sale', 'Wild animals are prohibited'],
+    'correctAnswerIndex': 0, // Cycle: 0 (adjusted from 1 to 0 to balance the cycle)
+    'explanation': 'In rural areas, you might see a triangle sign with an animal symbol (e.g., a cow or cattle, or perhaps a deer). This warns of the possibility of animals on or crossing the road.'
   },
   {
-    'id': 'sign_008', 'category': 'Road Signs',
-    'question': 'An arrow sign with a sharp bend to the right warns of what?', 'imagePaths': ['assets/images/curve_sign.png'],
-    'options': ['A roundabout ahead', 'A sharp curve to the right', 'You must turn right'], 'correctAnswerIndex': 1,
-    'explanation': 'This is a warning sign indicating a sharp curve in the road ahead, advising drivers to slow down.',
+    'id': 'RS037',
+    'category': 'Road Signs',
+    'question': 'What does this sign warn you about the road ahead?',
+    'imagePaths': ['assets/images/Road_narrows.png'],
+    'options': ['The road is widening', 'The road will narrow on one or both sides', 'A bridge is ahead', 'A dead end ahead'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'A warning sign with two lines converging (either symmetrically or on one side) indicates the road ahead will narrow.'
   },
   {
-    'id': 'sign_009', 'category': 'Road Signs',
-    'question': 'What does a "No U-Turn" sign mean?', 'imagePaths': [],
-    'options': ['You cannot turn left', 'You cannot make a 180-degree turn', 'The road ahead is closed'], 'correctAnswerIndex': 1,
-    'explanation': 'This regulatory sign prohibits drivers from making a U-turn to go back in the opposite direction.',
+    'id': 'RS038',
+    'category': 'Road Signs',
+    'question': 'What road condition does this sign warn you about?',
+    'imagePaths': ['assets/images/Uneven_road.png'],
+    'options': ['Smooth road ahead', 'Uneven road surface or speed bumps', 'Road under construction', 'Slippery road ahead'],
+    'correctAnswerIndex': 1, // Cycle: 2 (adjusted from 1 to 2 to balance the cycle)
+    'explanation': 'A triangle with an icon that looks like a bump or series of bumps means the road surface ahead is uneven or there are speed bumps.'
   },
   {
-    'id': 'sign_010', 'category': 'Road Signs',
-    'question': 'A square blue sign with a white "H" on it indicates:', 'imagePaths': [],
-    'options': ['Helicopter landing pad', 'Highway entrance', 'Hospital nearby'], 'correctAnswerIndex': 2,
-    'explanation': 'Blue signs are typically informational signs. An "H" sign directs drivers to a nearby hospital.',
+    'id': 'RS039',
+    'category': 'Road Signs',
+    'question': 'What does this warning sign indicate?',
+    'imagePaths': ['assets/images/Slippery_road.png'],
+    'options': ['Road is wet from rain', 'Road is being cleaned', 'Road may be slippery when wet or due to loose material', 'Tire testing area'],
+    'correctAnswerIndex': 2, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'A warning sign showing a car with skid marks (wavy tire tracks) means the road could be slippery (perhaps when wet or due to gravel or oil).'
   },
   {
-    'id': 'sign_011', 'category': 'Road Signs',
-    'question': 'A sign showing two arrows pointing in opposite vertical directions warns of:', 'imagePaths': [],
-    'options': ['A one-way street', 'Two-way traffic ahead', 'A divided highway ending'], 'correctAnswerIndex': 1,
-    'explanation': 'This sign is used to warn drivers that they are leaving a one-way street and entering a road with traffic moving in both directions.',
+    'id': 'RS040',
+    'category': 'Road Signs',
+    'question': 'What does a sign with a truck going down a slope indicate?',
+    'imagePaths': ['assets/images/Steep_hill.png'],
+    'options': ['A steep downhill gradient ahead', 'Trucks only allowed downhill', 'A steep uphill gradient ahead', 'Road is winding downhill'],
+    'correctAnswerIndex': 0, // Cycle: 0 (adjusted from 1 to 0 to balance the cycle)
+    'explanation': 'For a downhill (descending) slope, it usually shows a truck going down to the right with a percentage - meaning a steep descent where you should lower your gear and be ready to brake carefully.'
   },
   {
-    'id': 'sign_012', 'category': 'Road Signs',
-    'question': 'A sign with a number inside a red circle on a white background indicates:', 'imagePaths': ['assets/images/speed_limit_sign.png'],
-    'options': ['A suggested speed', 'The maximum speed limit', 'A highway route number'], 'correctAnswerIndex': 1,
-    'explanation': 'This is a regulatory sign that indicates the maximum legal speed you can travel on that section of road under ideal conditions.',
-  },
-  
-  // Category: Road Rules (15 Questions)
-  {
-    'id': 'rule_001', 'category': 'Road Rules',
-    'question': 'When approaching a roundabout, you must give way to:', 'imagePaths': [],
-    'options': ['Traffic on your right', 'All traffic already in the roundabout', 'All traffic on your left'], 'correctAnswerIndex': 1,
-    'explanation': 'You must always give way (yield) to any vehicles already circulating within the roundabout before entering.',
+    'id': 'RS041',
+    'category': 'Road Signs',
+    'question': 'What does this sign warn you about?',
+    'imagePaths': ['assets/images/Falling_rocks.png'],
+    'options': ['Construction work', 'Possibility of rocks falling onto the road', 'Rock climbing area', 'Road covered in gravel'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'A sign depicting rocks falling from a cliff warns that on that stretch, rocks might fall onto the road (common in hilly or mountainous terrain).'
   },
   {
-    'id': 'rule_002', 'category': 'Road Rules',
-    'question': 'What is a safe following distance under normal conditions?', 'imagePaths': [],
-    'options': ['One car length', 'The 3-second rule', 'As close as possible'], 'correctAnswerIndex': 1,
-    'explanation': 'The 3-second rule helps you maintain a safe distance. Watch the vehicle ahead pass a fixed point and count three seconds; if you pass the point before then, you are too close.',
+    'id': 'RS042',
+    'category': 'Road Signs',
+    'question': 'What does a warning sign with a bridge icon mean?',
+    'imagePaths': ['assets/images/Bridge_ahead.png'],
+    'options': ['A river crossing where you can stop', 'A bridge is ahead, which may be narrow or movable', 'No bridges allowed', 'Road ends at a bridge'],
+    'correctAnswerIndex': 1, // Cycle: 2 (adjusted from 1 to 2 to balance the cycle)
+    'explanation': 'A triangle with an icon of a bridge or an open drawbridge may indicate a bridge ahead, possibly a movable bridge that could be open (for boat traffic) - in which case you must stop if it\'s open.'
   },
   {
-    'id': 'rule_003', 'category': 'Road Rules',
-    'question': 'At an intersection with a flashing yellow traffic light, you should:', 'imagePaths': [],
-    'options': ['Stop completely before proceeding', 'Proceed with caution', 'Speed up to clear the intersection'], 'correctAnswerIndex': 1,
-    'explanation': 'A flashing yellow light acts as a warning sign. You do not need to stop, but you must slow down and proceed through the intersection with caution.',
+    'id': 'RS043',
+    'category': 'Road Signs',
+    'question': 'What does this warning sign indicate?',
+    'imagePaths': ['assets/images/Traffic_signals_ahead.png'],
+    'options': ['Traffic lights are broken', 'Emergency vehicles only', 'Road construction ahead', 'An intersection with traffic lights is ahead'],
+    'correctAnswerIndex': 3, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'A triangle with the image of traffic lights warns that you are approaching an intersection controlled by traffic signals (lights) which might not be immediately visible.'
   },
   {
-    'id': 'rule_004', 'category': 'Road Rules',
-    'question': 'Before changing lanes, what is the correct sequence of actions?', 'imagePaths': [],
-    'options': ['Signal, check mirrors, check blind spot', 'Check blind spot, signal, check mirrors', 'Check mirrors, check blind spot, signal'], 'correctAnswerIndex': 0,
-    'explanation': 'The correct and safest sequence is to first indicate your intention (signal), then check your mirrors, and finally check your blind spot for any unseen vehicles before making the move.',
-  },
-  {
-    'id': 'rule_005', 'category': 'Road Rules',
-    'question': 'At a four-way stop, who has the right-of-way?', 'imagePaths': [],
-    'options': ['The largest vehicle', 'The vehicle that arrives first', 'The vehicle to the right'], 'correctAnswerIndex': 1,
-    'explanation': 'At a four-way stop, the first vehicle to arrive and stop has the right-of-way. If two vehicles arrive at the same time, the vehicle on the right goes first.',
-  },
-  {
-    'id': 'rule_006', 'category': 'Road Rules',
-    'question': 'A solid white line on the road means:', 'imagePaths': [],
-    'options': ['You may change lanes with caution', 'You should not change lanes', 'The road is ending'], 'correctAnswerIndex': 1,
-    'explanation': 'A solid white line indicates that lane changes are discouraged or prohibited. You should stay in your lane.',
-  },
-  {
-    'id': 'rule_007', 'category': 'Road Rules',
-    'question': 'What should you do when a traffic light turns from green to yellow?', 'imagePaths': [],
-    'options': ['Speed up to make it through', 'Prepare to stop as the light is about to turn red', 'Stop immediately, even in the intersection'], 'correctAnswerIndex': 1,
-    'explanation': 'A steady yellow light is a warning that the light is about to change to red. You should slow down and prepare to stop safely before the intersection.',
-  },
-  {
-    'id': 'rule_008', 'category': 'Road Rules',
-    'question': 'Is it permissible to use a hand-held mobile phone while driving?', 'imagePaths': [],
-    'options': ['Yes, if the conversation is short', 'Only when stopped at a red light', 'No, it is illegal and unsafe'], 'correctAnswerIndex': 2,
-    'explanation': 'Using a hand-held mobile phone while driving is illegal in most places due to the significant distraction it causes.',
-  },
-  {
-    'id': 'rule_009', 'category': 'Road Rules',
-    'question': 'When are you required to use your headlights?', 'imagePaths': [],
-    'options': ['Only after midnight', 'From 30 minutes after sunset to 30 minutes before sunrise', 'Only when it is raining'], 'correctAnswerIndex': 1,
-    'explanation': 'Headlights are required during hours of darkness and any other time visibility is poor, typically defined as from sunset to sunrise.',
-  },
-   {
-    'id': 'rule_010', 'category': 'Road Rules',
-    'question': 'What does a broken yellow line down the center of the road indicate?', 'imagePaths': [],
-    'options': ['Passing is not allowed', 'Passing is allowed for your side if the way is clear', 'It marks the right edge of the pavement'], 'correctAnswerIndex': 1,
-    'explanation': 'A broken yellow line separates lanes of traffic moving in opposite directions. You may pass a vehicle in front of you if the way is clear.',
-  },
-  {
-    'id': 'rule_011', 'category': 'Road Rules',
-    'question': 'Who has the right-of-way at an uncontrolled intersection?', 'imagePaths': [],
-    'options': ['The vehicle on the left', 'The faster vehicle', 'The vehicle on the right'], 'correctAnswerIndex': 2,
-    'explanation': 'At an intersection with no signs or signals, you must yield to vehicles on your right.',
-  },
-  {
-    'id': 'rule_012', 'category': 'Road Rules',
-    'question': 'When a school bus is stopped with its red lights flashing, you must:', 'imagePaths': [],
-    'options': ['Slow down and pass carefully', 'Stop, regardless of your direction of travel', 'Honk to let them know you are passing'], 'correctAnswerIndex': 1,
-    'explanation': 'You must stop for a stopped school bus with flashing red lights, unless you are on the opposite side of a divided highway.',
-  },
-  {
-    'id': 'rule_013', 'category': 'Road Rules',
-    'question': 'What is the "blind spot" for a driver?', 'imagePaths': [],
-    'options': ['The area directly in front of the car', 'The area behind the car visible in the rearview mirror', 'The area around the car not visible in the mirrors'], 'correctAnswerIndex': 2,
-    'explanation': 'The blind spot is the area to the sides of your vehicle that cannot be seen in your side or rearview mirrors. You must physically turn your head to check it.',
-  },
-  {
-    'id': 'rule_014', 'category': 'Road Rules',
-    'question': 'It is illegal to make a U-turn...', 'imagePaths': [],
-    'options': ['...on a highway or near the crest of a hill.', '...in a residential area.', '...at any intersection.'], 'correctAnswerIndex': 0,
-    'explanation': 'U-turns are dangerous and often illegal where visibility is limited, such as on highways, in tunnels, or near the top of a hill.',
-  },
-  {
-    'id': 'rule_015', 'category': 'Road Rules',
-    'question': 'What is the first thing to be affected by alcohol consumption?', 'imagePaths': [],
-    'options': ['Vision', 'Judgment', 'Motor skills'], 'correctAnswerIndex': 1,
-    'explanation': 'Alcohol is a depressant that affects your brain first. One of the first functions to be impaired is judgment and decision-making.',
-  },
-  
-  // Category: Parking (10 Questions)
-  {
-    'id': 'park_001', 'category': 'Parking',
-    'question': 'A sign with a green circle generally means:', 'imagePaths': [],
-    'options': ['Parking is prohibited', 'Action is permitted', 'Yield to traffic'], 'correctAnswerIndex': 1,
-    'explanation': 'Green signs or circles typically indicate that a movement is permitted, or give directional guidance.',
-  },
-  {
-    'id': 'park_002', 'category': 'Parking',
-    'question': 'When parking uphill on a street with a curb, which way should you turn your front wheels?', 'imagePaths': [],
-    'options': ['Towards the curb', 'Straight ahead', 'Away from the curb'], 'correctAnswerIndex': 2,
-    'explanation': 'Turn your wheels away from the curb. If your car rolls backwards, the front tire will hit the curb and stop the car.',
-  },
-  {
-    'id': 'park_003', 'category': 'Parking',
-    'question': 'When parking downhill on a street with a curb, which way should you turn your front wheels?', 'imagePaths': [],
-    'options': ['Away from the curb', 'Towards the curb', 'Straight ahead'], 'correctAnswerIndex': 1,
-    'explanation': 'Turn your wheels towards the curb. If your car rolls forwards, the front tire will hit the curb and stop the car.',
-  },
-  {
-    'id': 'park_004', 'category': 'Parking',
-    'question': 'What does a painted yellow curb mean?', 'imagePaths': [],
-    'options': ['Loading zone for commercial vehicles', 'Free public parking', 'Passenger pickup/dropoff only'], 'correctAnswerIndex': 0,
-    'explanation': 'A yellow curb often indicates a commercial loading zone or a specific time-limited stopping area. Check nearby signs for specific rules.',
-  },
-  {
-    'id': 'park_005', 'category': 'Parking',
-    'question': 'How close can you legally park to a fire hydrant?', 'imagePaths': [],
-    'options': ['As close as you want', 'Depends on the country, but never right next to it', 'At least 10 meters away'], 'correctAnswerIndex': 1,
-    'explanation': 'The distance varies by location (e.g., 3 meters in some places, 15 feet in others), but it is always illegal to park too close to a fire hydrant and obstruct access.',
-  },
-  {
-    'id': 'park_006', 'category': 'Parking',
-    'question': 'What is "double parking"?', 'imagePaths': [],
-    'options': ['Parking in a two-car garage', 'Parking for two hours', 'Parking alongside a car that is already parked at the curb'], 'correctAnswerIndex': 2,
-    'explanation': 'Double parking is illegal and dangerous as it obstructs a lane of traffic.',
-  },
-   {
-    'id': 'park_007', 'category': 'Parking',
-    'question': 'Is it legal to park in front of a private driveway?', 'imagePaths': [],
-    'options': ['Yes, if you are just waiting', 'Only for a few minutes', 'No, you cannot block access'], 'correctAnswerIndex': 2,
-    'explanation': 'Blocking a private or public driveway is illegal as it prevents vehicles from entering or exiting.',
-  },
-  {
-    'id': 'park_008', 'category': 'Parking',
-    'question': 'What does a painted red curb signify?', 'imagePaths': [],
-    'options': ['Short-term parking', 'Fire lane - no stopping or parking', 'Passenger loading zone'], 'correctAnswerIndex': 1,
-    'explanation': 'A red curb indicates that stopping, standing, or parking is prohibited, often because it is a designated fire lane.',
-  },
-  {
-    'id': 'park_009', 'category': 'Parking',
-    'question': 'When parallel parking, how far can your wheels be from the curb?', 'imagePaths': [],
-    'options': ['As far as needed', 'A maximum of one meter', 'Generally no more than 30cm (12 inches)'], 'correctAnswerIndex': 2,
-    'explanation': 'To be legally parked, your vehicle must be close to the curb, typically within 30cm or 12 inches, to avoid obstructing traffic.',
-  },
-  {
-    'id': 'park_010', 'category': 'Parking',
-    'question': 'You are looking for a parking spot. What should you be mindful of?', 'imagePaths': [],
-    'options': ['Only the empty spots', 'The traffic behind you', 'The color of the other cars'], 'correctAnswerIndex': 1,
-    'explanation': 'When searching for parking, it is crucial to remain aware of the traffic around you, especially vehicles behind you that may not expect you to slow down or stop suddenly.',
+    'id': 'RS044',
+    'category': 'Road Signs',
+    'question': 'What does a warning sign with a steam train symbol indicate?',
+    'imagePaths': ['assets/images/Railway_ahead.png'],
+    'options': ['An unguarded railway level crossing ahead', 'A train station nearby', 'Trains run slowly here', 'No trains allowed'],
+    'correctAnswerIndex': 0, // Cycle: 0 (adjusted from 1 to 0 to balance the cycle)
+    'explanation': 'There are two main warning signs: one for an unguarded level crossing (usually depicted by a steam train symbol or crossbucks) meaning a railway crossing without barriers - slow down, look for trains.'
   },
 
-  // Category: Night Driving (5 questions)
+  // Lesson 6: Traffic Signs - Informative Signs and Markings
   {
-    'id': 'night_001', 'category': 'Night Driving',
-    'question': 'When should you dip your high beams for an oncoming vehicle?', 'imagePaths': [],
-    'options': ['50 meters away', '150 meters away', 'As soon as you see them'], 'correctAnswerIndex': 1,
-    'explanation': 'To avoid dazzling other drivers, you must dip your high beams at least 150 meters before meeting another vehicle.',
-  },
-  {
-    'id': 'night_002', 'category': 'Night Driving',
-    'question': 'What does "overdriving your headlights" mean?', 'imagePaths': [],
-    'options': ['Driving so fast you cannot stop within the distance your lights illuminate', 'Using high beams in a well-lit urban area', 'Forgetting to turn your headlights on'], 'correctAnswerIndex': 0,
-    'explanation': 'Overdriving your headlights means your stopping distance is longer than the area illuminated by your lights, which is very dangerous.',
+    'id': 'RS045',
+    'category': 'Road Signs',
+    'question': 'What is the purpose of this sign if it shows "Lagos - 100 km"?',
+    'imagePaths': ['assets/images/Direction_and_distance.png'],
+    'options': ['Speed limit 100 km/h', 'Lagos is 100 kilometers away in the indicated direction', 'Road closed for 100 km', 'You must turn back from Lagos'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'These are often green or blue rectangular signs with white lettering. They show directions to towns, cities, villages, or landmarks, sometimes with an arrow. For example, a sign might say “Abuja – 250 km” with an arrow pointing straight, meaning Abuja is straight ahead in 250 kilometers.'
   },
   {
-    'id': 'night_003', 'category': 'Night Driving',
-    'question': 'If an oncoming vehicle has its high beams on, you should:', 'imagePaths': [],
-    'options': ['Turn your own high beams on', 'Look directly at their lights to show them', 'Look to the right edge of your lane or the painted line'], 'correctAnswerIndex': 2,
-    'explanation': 'Never stare into oncoming high beams. Avert your gaze to the right edge of the road to guide your car and avoid being blinded.',
+    'id': 'RS046',
+    'category': 'Road Signs',
+    'question': 'What does a sign that says "Welcome to Kaduna" inform you of?',
+    'imagePaths': ['assets/images/Welcome_to_traffic_sign.png'],
+    'options': ['A special traffic rule applies', 'The road ahead is under construction', 'A new speed limit is about to begin', 'Your current geographical location'],
+    'correctAnswerIndex': 3, // Cycle: 2 (adjusted from 1 to 2 to balance the cycle)
+    'explanation': 'When entering a town or state, you often see a sign with the name of the place (e.g., “Welcome to Kaduna”). These signs inform you of your location.'
   },
   {
-    'id': 'night_004', 'category': 'Night Driving',
-    'question': 'Why is it more dangerous to drive at night?', 'imagePaths': [],
-    'options': ['There are more cars on the road', 'Your visibility is significantly reduced', 'The road is more slippery'], 'correctAnswerIndex': 1,
-    'explanation': 'Reduced visibility is the single biggest danger of night driving. You see less of the road ahead and have less time to react to hazards.',
-  },
-   {
-    'id': 'night_005', 'category': 'Night Driving',
-    'question': 'When should you use your fog lights?', 'imagePaths': [],
-    'options': ['Whenever it is dark', 'Only in heavy fog or poor visibility, and turn them off when visibility improves', 'During any amount of rain'], 'correctAnswerIndex': 1,
-    'explanation': 'Fog lights are powerful and can dazzle other drivers. They should only be used in conditions of severely reduced visibility like fog or heavy snow, and turned off when conditions clear.',
-  },
-  
-  // Category: Vehicle Safety (5 questions)
-  {
-    'id': 'safe_001', 'category': 'Vehicle Safety',
-    'question': 'What is the primary purpose of head restraints in a car?', 'imagePaths': [],
-    'options': ['To provide comfort for the neck', 'To prevent whiplash in a rear-end collision', 'To improve the car\'s aerodynamics'], 'correctAnswerIndex': 1,
-    'explanation': 'Head restraints are a critical safety feature designed to limit the backward movement of the head during a rear-end crash, thereby preventing or reducing the severity of whiplash.',
+    'id': 'RS047',
+    'category': 'Road Signs',
+    'question': 'What does this sign indicate?',
+    'imagePaths': ['assets/images/Hospital_ahead.png'],
+    'options': ['A hospital or first aid station is ahead', 'A hotel is nearby', 'A rest area is ahead', 'No horn allowed in this area'],
+    'correctAnswerIndex': 0, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'A white or blue sign with a red cross or the letter “H” indicates a hospital or first aid station.'
   },
   {
-    'id': 'safe_002', 'category': 'Vehicle Safety',
-    'question': 'What does ABS stand for in a vehicle?', 'imagePaths': [],
-    'options': ['Automatic Braking System', 'Anti-lock Braking System', 'Advanced Balancing System'], 'correctAnswerIndex': 1,
-    'explanation': 'ABS prevents the wheels from locking up during hard braking, allowing the driver to maintain steering control.',
+    'id': 'RS048',
+    'category': 'Road Signs',
+    'question': 'What does this sign with an airplane symbol indicate?',
+    'imagePaths': ['assets/images/Airport_ahead.png'],
+    'options': ['A restricted airspace zone', 'Direction to an airport or airport ahead', 'No flying allowed', 'A place to park aircraft'],
+    'correctAnswerIndex': 1, // Cycle: 0 (adjusted from 1 to 0 to balance the cycle)
+    'explanation': 'A symbol of an airplane on a sign informs of an airport ahead or direction to an airport.'
   },
   {
-    'id': 'safe_003', 'category': 'Vehicle Safety',
-    'question': 'Hydroplaning is most likely to occur when?', 'imagePaths': [],
-    'options': ['Driving on a dry, sunny day', 'Driving through deep water at high speed', 'Driving on a gravel road'], 'correctAnswerIndex': 1,
-    'explanation': 'Hydroplaning happens when a layer of water builds between the tires and the road surface, leading to a loss of traction. It is most common when driving too fast for wet conditions.',
+    'id': 'RS049',
+    'category': 'Road Signs',
+    'question': 'What service is indicated by this sign?',
+    'imagePaths': ['assets/images/Telephone_ahead.png'],
+    'options': ['A mobile phone signal booster', 'No phone use while driving', 'Emergency call box', 'A public telephone service ahead'],
+    'correctAnswerIndex': 3, // Cycle: 1 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'A sign with a telephone handset might indicate public telephone service (less common now with mobile phones).'
   },
   {
-    'id': 'safe_004', 'category': 'Vehicle Safety',
-    'question': 'How often should you check your tire pressure?', 'imagePaths': [],
-    'options': ['Once a year', 'Only when they look flat', 'At least once a month and before long trips'], 'correctAnswerIndex': 2,
-    'explanation': 'Proper tire pressure is crucial for safety, fuel efficiency, and tire longevity. Checking it monthly is a recommended practice.',
+    'id': 'RS050',
+    'category': 'Road Signs',
+    'question': 'What does a sign indicating "Police checkpoint 300m" alert you to?',
+    'imagePaths': ['assets/images/Police_controll_ahead.png'],
+    'options': ['A speed trap is ahead', 'A police station is nearby', 'A police checkpoint is ahead; prepare to slow down or stop', 'It is a police-only lane'],
+    'correctAnswerIndex': 2, // Cycle: 2
+    'explanation': 'Signs may indicate a police station or checkpoint ahead. For example, “Police checkpoint 300m” might be seen on highways, alerting you to slow down and be prepared to stop if flagged.'
   },
   {
-    'id': 'safe_005', 'category': 'Vehicle Safety',
-    'question': 'When adjusting your mirrors, you should set them to see:', 'imagePaths': [],
-    'options': ['A large portion of the side of your car', 'The road directly behind you', 'A small sliver of the side of your car, and mostly the lane next to you'], 'correctAnswerIndex': 2,
-    'explanation': 'This setting minimizes your blind spot. You should see just a tiny edge of your own car to orient yourself, with the rest of the mirror covering the adjacent lane.',
-  },
-  
-  // Category: Emergencies (5 questions)
-  {
-    'id': 'emer_001', 'category': 'Emergencies',
-    'question': 'If your car\'s brakes fail completely, what is one of the first things you should do?', 'imagePaths': [],
-    'options': ['Turn off the engine immediately', 'Pump the brake pedal quickly and firmly', 'Open the car door to use your foot'], 'correctAnswerIndex': 1,
-    'explanation': 'Pumping the brake pedal can build up enough pressure in the brake lines to stop the car. If that fails, you should use the emergency brake and downshift.',
+    'id': 'RS051',
+    'category': 'Road Signs',
+    'question': 'If a sign above your lane shows an arrow pointing straight ahead, what must you do?',
+    'imagePaths': ['assets/images/Lane_use_signs.png'],
+    'options': ['You can turn left or right', 'The lane is closed ahead', 'You can change lanes freely', 'You must continue straight in this lane'],
+    'correctAnswerIndex': 3, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'Arrows painted or on signs indicating “↑ (straight)” guide you on which lane to use if you intend to go straight.'
   },
   {
-    'id': 'emer_002', 'category': 'Emergencies',
-    'question': 'You see an emergency vehicle with flashing lights and a siren approaching from behind. What should you do?', 'imagePaths': [],
-    'options': ['Speed up to get out of its way', 'Stop immediately in your current lane', 'Pull over to the right side of the road and stop'], 'correctAnswerIndex': 2,
-    'explanation': 'The law requires you to yield the right-of-way to emergency vehicles by pulling over to the right as safely and quickly as possible and stopping until it has passed.',
+    'id': 'RS052',
+    'category': 'Road Signs',
+    'question': 'What is the general purpose of orange or yellow background signs in work zones?',
+    'imagePaths': ['assets/images/Construction_signs.png'],
+    'options': ['To indicate a permanent road change', 'To warn of permanent hazards', 'To provide temporary information and guidance related to roadworks', 'To indicate a new speed limit has been established'],
+    'correctAnswerIndex': 2, // Cycle: 0 (adjusted from 2 to 0 to balance the cycle)
+    'explanation': 'Sometimes orange or yellow background signs are used in construction zones or for temporary diversions. They might give directions like “Detour” or “Men at work” or “Diversion ahead”.'
   },
   {
-    'id': 'emer_003', 'category': 'Emergencies',
-    'question': 'If you have a tire blowout while driving, you should:', 'imagePaths': [],
-    'options': ['Brake hard immediately', 'Grip the steering wheel firmly and steer straight', 'Quickly swerve to the shoulder'], 'correctAnswerIndex': 1,
-    'explanation': 'Do not slam on the brakes. Hold the steering wheel tightly to maintain control, release the accelerator, and gently guide your car to the side of the road once it has slowed down.',
+    'id': 'RS053',
+    'category': 'Road Signs',
+    'question': 'What does a solid white center line on your side of the road mean?',
+    'imagePaths': ['assets/images/Center_lines.png'],
+    'options': ['You may overtake if safe', 'No crossing or overtaking allowed from your side', 'You are on a one-way street', 'The lane is reserved for emergencies'],
+    'correctAnswerIndex': 1, // Cycle: 1
+    'explanation': 'If the center line is a continuous solid line, it means no crossing – you must stay on your side of the road.'
   },
   {
-    'id': 'emer_004', 'category': 'Emergencies',
-    'question': 'If your car starts to skid, you should:', 'imagePaths': [],
-    'options': ['Steer in the opposite direction of the skid', 'Brake as hard as possible', 'Steer in the direction you want the car to go'], 'correctAnswerIndex': 2,
-    'explanation': 'Look and steer in the direction you want to go. Do not brake hard or oversteer, as this can make the skid worse.',
+    'id': 'RS054',
+    'category': 'Road Signs',
+    'question': 'What do the broad white stripes of a zebra crossing indicate?',
+    'imagePaths': ['assets/images/Zebra_crossing.png'],
+    'options': ['A parking area', 'A pedestrian crossing where drivers must yield', 'A speed bump', 'A bicycle lane'],
+    'correctAnswerIndex': 1, // Cycle: 2 (adjusted from 1 to 2 to balance the cycle)
+    'explanation': 'Crosswalks (Pedestrian crossings) are marked by broad white stripes on the road (zebra crossing), usually accompanied by warning signs and sometimes flashing yellow beacons.'
   },
   {
-    'id': 'emer_005', 'category': 'Emergencies',
-    'question': 'You are the first to arrive at a crash scene. After ensuring your own safety, what is the first thing you should do?', 'imagePaths': [],
-    'options': ['Start directing traffic', 'Call emergency services (e.g., 112)', 'Take photos for insurance'], 'correctAnswerIndex': 1,
-    'explanation': 'The first and most critical action is to call for professional help. Provide the location and details of the crash to the emergency dispatcher.',
+    'id': 'RS055',
+    'category': 'Road Signs',
+    'question': 'Where must you stop your vehicle when you see a thick white line on the road at an intersection with a STOP sign?',
+    'imagePaths': ['assets/images/Stop_lines_at_intersections.png'],
+    'options': ['Anywhere before the intersection', 'After entering the intersection', 'Only if there is cross-traffic', 'With your front tires before the stop line'],
+    'correctAnswerIndex': 3, // Cycle: 3 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'At intersections with STOP signs, you will see a thick stop line painted on the road, often accompanied by the word “STOP”. You must stop with your front tires before this line.'
   },
+  {
+    'id': 'RS056',
+    'category': 'Road Signs',
+    'question': 'What is the main rule for entering a yellow box junction?',
+    'imagePaths': ['assets/images/Yellow_box_junctions.png'],
+    'options': ['Enter freely and wait inside', 'Stop before the box even if exit is clear', 'Use it for parking briefly', 'Only enter if your exit is clear'],
+    'correctAnswerIndex': 3, // Cycle: 0 (adjusted from 1 to 3 to balance the cycle)
+    'explanation': 'The rule for a box junction is that you must not enter the box unless your exit is clear.'
+  },
+  {
+    'id': 'RS057',
+    'category': 'Road Signs',
+    'question': 'What do chevron or striped markings on a speed hump indicate?',
+    'imagePaths': ['assets/images/Speed_bump_markings.png'],
+    'options': ['A sharp turn', 'A pedestrian crossing', 'A visible speed bump or hump', 'An area for accelerating'],
+    'correctAnswerIndex': 2, // Cycle: 1 (adjusted from 2 to 1 to balance the cycle)
+    'explanation': 'Speed bumps or humps may be painted with chevrons or stripes to make them visible.'
+  },
+  {
+    'id': 'RS058',
+    'category': 'Road Signs',
+    'question': 'If you see a lane marked with a bicycle symbol or specific coloring, what does it mean?',
+    'imagePaths': ['assets/images/Cycle_and_bus_lanes.png'],
+    'options': ['It is an optional lane for all vehicles', 'It is a dedicated lane for bicycles, and motor vehicles are generally prohibited', 'It is a lane for buses only during rush hour', 'You can park there briefly'],
+    'correctAnswerIndex': 1, // Cycle: 2 (adjusted from 1 to 2 to balance the cycle)
+    'explanation': 'Sometimes, you may encounter painted cycle lanes (often green) or bus lanes (marked by words or colored pavement). Respect these – do not drive or park in a marked bicycle lane.'
+  },
+{
+  'id': 'RWJQ1', 'category': 'Right of Way & Junctions',
+  'question': 'At a T-junction, who has the right of way?',
+  'imagePaths': [],
+  'options': ['The vehicle turning left', 'The vehicle turning right', 'The vehicle on the through road', 'The vehicle that arrived first'],
+  'correctAnswerIndex': 2,
+  'explanation': 'At T-junctions, vehicles on the through road have the right of way. Vehicles turning into the road must yield.'
+},
+{
+  'id': 'RWJQ2', 'category': 'Right of Way & Junctions',
+  'question': 'When approaching a roundabout, who should you give way to?',
+  'imagePaths': [],
+  'options': ['Vehicles coming from your right', 'Vehicles already in the roundabout', 'Pedestrians', 'No one – you have right of way'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Traffic already in the roundabout has priority. You must yield to vehicles coming from your right before entering.'
+},
+{
+  'id': 'RWJQ3', 'category': 'Right of Way & Junctions',
+  'question': 'When two vehicles arrive at an intersection with no signs, who should go first?',
+  'imagePaths': [],
+  'options': ['The faster vehicle', 'The vehicle on the left', 'The larger vehicle', 'The vehicle on the right'],
+  'correctAnswerIndex': 3,
+  'explanation': 'When two vehicles arrive at the same time at an uncontrolled intersection, the vehicle on the right has the right of way.'
+},
+{
+  'id': 'RWJQ4', 'category': 'Right of Way & Junctions',
+  'question': 'If you are turning left at an uncontrolled junction, what should you do?',
+  'imagePaths': [],
+  'options': ['Yield to oncoming traffic', 'Speed up and turn quickly', 'Wave other cars to stop', 'Always go first'],
+  'correctAnswerIndex': 0,
+  'explanation': 'Turning left across traffic means you must yield to oncoming vehicles and ensure the road is clear before turning.'
+},
+{
+  'id': 'RWJQ5', 'category': 'Right of Way & Junctions',
+  'question': 'If a pedestrian is crossing at an intersection and the light turns green for you, what should you do?',
+  'imagePaths': [],
+  'options': ['Proceed since it’s green', 'Sound your horn', 'Wait until the pedestrian finishes crossing', 'Drive around the pedestrian'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Even if the light turns green, you must allow pedestrians who have already started crossing to finish safely.'
+},
+{
+  'id': 'RWJQ6', 'category': 'Right of Way & Junctions',
+  'question': 'Who has the right of way when entering a main road from a minor road?',
+  'imagePaths': [],
+  'options': ['The vehicle on the minor road', 'Whichever vehicle is faster', 'The vehicle on the main road', 'Both must stop'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Vehicles on the main road always have priority. Vehicles entering from minor roads must yield.'
+},
+{
+  'id': 'RWJQ7', 'category': 'Right of Way & Junctions',
+  'question': 'You are at a 4-way stop. All vehicles arrive at the same time. Who goes first?',
+  'imagePaths': [],
+  'options': ['The vehicle turning left', 'The vehicle on the right', 'The vehicle going straight', 'The vehicle on the left'],
+  'correctAnswerIndex': 1,
+  'explanation': 'When multiple vehicles arrive simultaneously, the vehicle on the right goes first.'
+},
+{
+  'id': 'RWJQ8', 'category': 'Right of Way & Junctions',
+  'question': 'If your view is blocked at a junction, what should you do?',
+  'imagePaths': [],
+  'options': ['Proceed slowly', 'Stop completely and creep forward until you can see', 'Honk and drive through', 'Flash your lights and continue'],
+  'correctAnswerIndex': 1,
+  'explanation': 'If visibility is poor, stop and move slowly until you can see clearly before proceeding.'
+},
+{
+  'id': 'RWJQ9', 'category': 'Right of Way & Junctions',
+  'question': 'What is the safest action when approaching a junction with a malfunctioning traffic light?',
+  'imagePaths': [],
+  'options': ['Ignore it and proceed', 'Stop and treat it like an all-way stop', 'Wait until it works again', 'Follow the vehicle ahead blindly'],
+  'correctAnswerIndex': 1,
+  'explanation': 'At malfunctioning signals, all drivers must stop and proceed only when safe – treating it like an all-way stop.'
+},
+{
+  'id': 'RWJQ10', 'category': 'Right of Way & Junctions',
+  'question': 'At a junction, how should you act if unsure about the other driver’s intentions?',
+  'imagePaths': [],
+  'options': ['Assume they’ll stop', 'Speed up to beat them', 'Yield to avoid conflict', 'Keep moving at normal speed'],
+  'correctAnswerIndex': 2,
+  'explanation': 'When in doubt, it’s safer to yield. Defensive driving means avoiding risk, even if you technically have right of way.'
+},
+{
+  'id': 'SLOQ1', 'category': 'Speed Limits & Overtaking',
+  'question': 'What should you always consider before overtaking another vehicle?',
+  'imagePaths': [],
+  'options': ['If you’re in a hurry', 'Whether there’s a pedestrian nearby', 'If you can see clearly ahead and it’s legal and safe', 'If the road is narrow'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Before overtaking, ensure it’s legal, safe, and you have a clear view of the road ahead.'
+},
+{
+  'id': 'SLOQ2', 'category': 'Speed Limits & Overtaking',
+  'question': 'When is overtaking on the right side allowed?',
+  'imagePaths': [],
+  'options': ['Never', 'When the vehicle ahead is turning left', 'When you’re in a hurry', 'On any narrow road'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Overtaking is typically done on the left, but is allowed on the right if the vehicle ahead is turning left and it’s safe.'
+},
+{
+  'id': 'SLOQ3', 'category': 'Speed Limits & Overtaking',
+  'question': 'What is the general speed limit for cars in urban areas in Nigeria unless otherwise posted?',
+  'imagePaths': [],
+  'options': ['30 km/h', '50 km/h', '80 km/h', '100 km/h'],
+  'correctAnswerIndex': 1,
+  'explanation': 'The typical urban speed limit is 50 km/h, unless signs indicate otherwise.'
+},
+{
+  'id': 'SLOQ4', 'category': 'Speed Limits & Overtaking',
+  'question': 'On a wet or slippery road, you should:',
+  'imagePaths': [],
+  'options': ['Drive at the posted limit', 'Drive faster to avoid skidding', 'Reduce speed below the posted limit', 'Use cruise control'],
+  'correctAnswerIndex': 2,
+  'explanation': 'You must reduce your speed when road conditions are poor to avoid losing control.'
+},
+{
+  'id': 'SLOQ5', 'category': 'Speed Limits & Overtaking',
+  'question': 'You are being overtaken by another vehicle. What should you do?',
+  'imagePaths': [],
+  'options': ['Speed up to prevent them from passing', 'Move to the right edge of your lane and maintain speed', 'Flash your lights at them', 'Slow down suddenly'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Allow the other driver to pass by keeping to your lane and maintaining a steady speed.'
+},
+{
+  'id': 'SLOQ6', 'category': 'Speed Limits & Overtaking',
+  'question': 'Why is overtaking near a bend or hill dangerous?',
+  'imagePaths': [],
+  'options': ['The road may be slippery', 'There may be livestock', 'Visibility is limited', 'Vehicles slow down'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Overtaking where you cannot see far ahead (like hills or bends) is dangerous because of limited visibility.'
+},
+{
+  'id': 'SLOQ7', 'category': 'Speed Limits & Overtaking',
+  'question': 'When approaching a pedestrian crossing at speed, you should:',
+  'imagePaths': [],
+  'options': ['Continue at the same speed', 'Flash your headlights', 'Slow down and be ready to stop', 'Speed up to clear the crossing faster'],
+  'correctAnswerIndex': 2,
+  'explanation': 'You must slow down and be prepared to stop at pedestrian crossings.'
+},
+{
+  'id': 'SLOQ8', 'category': 'Speed Limits & Overtaking',
+  'question': 'You may NOT overtake when:',
+  'imagePaths': [],
+  'options': ['The road ahead is straight', 'You are on a one-way road', 'You are at a pedestrian crossing', 'The vehicle ahead is slow'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Overtaking at pedestrian crossings is illegal and extremely unsafe.'
+},
+{
+  'id': 'SLOQ9', 'category': 'Speed Limits & Overtaking',
+  'question': 'If there are double solid lines in the middle of the road:',
+  'imagePaths': [],
+  'options': ['You may cross them to overtake', 'Only trucks can cross them', 'You may not cross them', 'You may cross at high speed'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Double solid lines indicate that overtaking is prohibited from either direction.'
+},
+{
+  'id': 'SLOQ10', 'category': 'Speed Limits & Overtaking',
+  'question': 'Why should you avoid sudden acceleration or braking when overtaking?',
+  'imagePaths': [],
+  'options': ['It wastes fuel', 'It may confuse other drivers and cause a loss of control', 'It makes noise', 'It’s not stylish'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Smooth, planned maneuvers help you stay in control and avoid startling other road users.'
+},
+{
+  'id': 'PRQ1', 'category': 'Parking Rules',
+  'question': 'Where is parking strictly prohibited?',
+  'imagePaths': [],
+  'options': ['On your own driveway', 'Next to a fire hydrant', 'At a shopping center', 'At night on your street'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Parking next to a fire hydrant is dangerous and can block emergency access.'
+},
+{
+  'id': 'PRQ2', 'category': 'Parking Rules',
+  'question': 'When parking on a hill, you should:',
+  'imagePaths': [],
+  'options': ['Leave the car in neutral', 'Turn the wheels towards the curb and apply the handbrake', 'Point the wheels straight', 'Only use the footbrake'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Turning the wheels and applying the handbrake reduces the risk of the vehicle rolling.'
+},
+{
+  'id': 'PRQ3', 'category': 'Parking Rules',
+  'question': 'What is the minimum distance you must keep when parking from a junction?',
+  'imagePaths': [],
+  'options': ['2 meters', '5 meters', '10 meters', '15 meters'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Parking too close to a junction can obstruct visibility and increase accident risk.'
+},
+{
+  'id': 'PRQ4', 'category': 'Parking Rules',
+  'question': 'When is it acceptable to double park (park beside another parked car)?',
+  'imagePaths': [],
+  'options': ['If the street is not busy', 'Only at night', 'Never', 'If it’s for less than 1 minute'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Double parking obstructs traffic flow and is considered illegal.'
+},
+{
+  'id': 'PRQ5', 'category': 'Parking Rules',
+  'question': 'What should you do if your parked car is blocking a driveway?',
+  'imagePaths': [],
+  'options': ['Leave your phone number on the windshield', 'Wait in the car', 'Move the vehicle immediately', 'Turn on hazard lights'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Blocking access is prohibited; the vehicle should be moved without delay.'
+},
+{
+  'id': 'PRQ6', 'category': 'Parking Rules',
+  'question': 'Parking on a pedestrian crossing is:',
+  'imagePaths': [],
+  'options': ['Allowed during rush hour', 'Allowed for motorcycles only', 'Prohibited at all times', 'Allowed if no pedestrian is present'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Pedestrian crossings must always be kept clear for safety reasons.'
+},
+{
+  'id': 'PRQ7', 'category': 'Parking Rules',
+  'question': 'What is the correct procedure when leaving your car parked on a public road?',
+  'imagePaths': [],
+  'options': ['Leave the engine running', 'Apply the handbrake and switch off the engine', 'Leave windows open', 'Keep headlights on'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Always secure the vehicle by applying the handbrake and switching off the engine.'
+},
+{
+  'id': 'PRQ8', 'category': 'Parking Rules',
+  'question': 'Is it legal to park in front of a public entrance or exit?',
+  'imagePaths': [],
+  'options': ['Yes, if you stay in the car', 'Yes, during non-business hours', 'No, it blocks access and may be illegal', 'Yes, if you use hazard lights'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Parking in front of access points is considered obstruction and may lead to penalties.'
+},
+{
+  'id': 'PRQ9', 'category': 'Parking Rules',
+  'question': 'In areas where parking is permitted, you should park:',
+  'imagePaths': [],
+  'options': ['Facing oncoming traffic', 'In the opposite direction of the lane', 'In the direction of traffic flow', 'Across two lanes'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Parking in the direction of traffic flow ensures predictability and safety.'
+},
+{
+  'id': 'PRQ10', 'category': 'Parking Rules',
+  'question': 'Parking in front of a traffic sign is:',
+  'imagePaths': [],
+  'options': ['Acceptable', 'Illegal if it obstructs the sign', 'Required during emergencies', 'Only allowed with a permit'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Obstructing visibility of road signs is prohibited as it endangers all road users.'
+},
+{
+  'id': 'TLSQ1', 'category': 'Traffic Lights & Signals',
+  'question': 'What does a red traffic light mean?',
+  'imagePaths': [],
+  'options': ['Proceed with caution', 'Speed up', 'Stop and wait behind the line', 'Only stop if cars are coming'],
+  'correctAnswerIndex': 2,
+  'explanation': 'A red light means you must come to a full stop behind the stop line or at the intersection.'
+},
+{
+  'id': 'TLSQ2', 'category': 'Traffic Lights & Signals',
+  'question': 'What does a flashing amber light at an intersection mean?',
+  'imagePaths': [],
+  'options': ['You must stop completely', 'Traffic lights are not working – proceed with caution', 'It means go faster', 'Only motorcycles may proceed'],
+  'correctAnswerIndex': 1,
+  'explanation': 'A flashing amber light usually indicates caution – proceed only when the way is clear.'
+},
+{
+  'id': 'TLSQ3', 'category': 'Traffic Lights & Signals',
+  'question': 'If the traffic lights are off or malfunctioning, you should:',
+  'imagePaths': [],
+  'options': ['Drive through without stopping', 'Treat the junction like a stop sign', 'Ignore it and continue', 'Wait for a traffic officer'],
+  'correctAnswerIndex': 1,
+  'explanation': 'When lights are not working, the intersection becomes an uncontrolled junction and drivers must yield as appropriate.'
+},
+{
+  'id': 'TLSQ4', 'category': 'Traffic Lights & Signals',
+  'question': 'A green traffic light means:',
+  'imagePaths': [],
+  'options': ['You can proceed, but only if the way is clear', 'You must wait 10 seconds', 'You should slow down', 'It’s safe to overtake'],
+  'correctAnswerIndex': 0,
+  'explanation': 'A green light gives permission to go, but only when the intersection is clear.'
+},
+{
+  'id': 'TLSQ5', 'category': 'Traffic Lights & Signals',
+  'question': 'When turning left at a green light without an arrow, you should:',
+  'imagePaths': [],
+  'options': ['Turn without looking', 'Assume other cars will stop', 'Yield to oncoming traffic', 'Speed through the turn'],
+  'correctAnswerIndex': 2,
+  'explanation': 'You must always yield to oncoming traffic before turning left at a green light.'
+},
+{
+  'id': 'TLSQ6', 'category': 'Traffic Lights & Signals',
+  'question': 'What should you do at a green arrow pointing left?',
+  'imagePaths': [],
+  'options': ['Turn left without stopping if it’s safe', 'Stop and check for police', 'Wait for green light', 'Sound your horn'],
+  'correctAnswerIndex': 0,
+  'explanation': 'A green arrow indicates protected turn – you may proceed if it is safe.'
+},
+{
+  'id': 'TLSQ7', 'category': 'Traffic Lights & Signals',
+  'question': 'If you enter an intersection when the light is green and it turns red while you’re crossing, you should:',
+  'imagePaths': [],
+  'options': ['Reverse quickly', 'Stop in the middle', 'Continue through and clear the intersection', 'Sound your horn'],
+  'correctAnswerIndex': 2,
+  'explanation': 'You must always clear the intersection once entered, even if the light turns red.'
+},
+{
+  'id': 'TLSQ8', 'category': 'Traffic Lights & Signals',
+  'question': 'What is the correct action at a steady amber (yellow) traffic light?',
+  'imagePaths': [],
+  'options': ['Accelerate to beat the red', 'Stop if it is safe to do so', 'Ignore it', 'Turn off your headlights'],
+  'correctAnswerIndex': 1,
+  'explanation': 'A yellow light warns that the light is about to turn red – stop unless it is unsafe to do so.'
+},
+{
+  'id': 'TLSQ9', 'category': 'Traffic Lights & Signals',
+  'question': 'Can you turn right at a red traffic light in Nigeria?',
+  'imagePaths': [],
+  'options': ['Yes, always', 'Only if you stop and no traffic is coming', 'No, it is illegal unless a sign permits it', 'Only on Sundays'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Turning on red is not generally allowed in Nigeria unless specifically permitted by a sign.'
+},
+{
+  'id': 'TLSQ10', 'category': 'Traffic Lights & Signals',
+  'question': 'Traffic signals must be obeyed:',
+  'imagePaths': [],
+  'options': ['Only when police are not present', 'Only at night', 'At all times unless overridden by an officer', 'When traffic is heavy'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Traffic lights must be followed unless a traffic officer is present and giving direct instructions.'
+},
+{
+  'id': 'VEQ1', 'category': 'Vehicle Equipment & Use',
+  'question': 'Which of the following is a required item that must be carried in a vehicle in Nigeria?',
+  'imagePaths': [],
+  'options': ['GPS device', 'Fire extinguisher', 'Spare fuel container', 'Toolbox'],
+  'correctAnswerIndex': 1,
+  'explanation': 'By law, Nigerian drivers are required to carry a functional fire extinguisher in their vehicle.'
+},
+{
+  'id': 'VEQ2', 'category': 'Vehicle Equipment & Use',
+  'question': 'What is the purpose of a reflective warning triangle?',
+  'imagePaths': [],
+  'options': ['Decoration', 'Navigation aid', 'To warn other drivers of a breakdown or accident ahead', 'To increase speed'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Warning triangles are used to alert approaching traffic about a hazard ahead, especially during breakdowns.'
+},
+{
+  'id': 'VEQ3', 'category': 'Vehicle Equipment & Use',
+  'question': 'Where should you place a warning triangle after a breakdown on a road?',
+  'imagePaths': [],
+  'options': ['Directly in front of the car', 'On top of the vehicle', '30-50 meters behind the vehicle on the same side', 'Beside the nearest traffic light'],
+  'correctAnswerIndex': 2,
+  'explanation': 'You should place the warning triangle about 30-50 meters behind your car to warn other drivers in time.'
+},
+{
+  'id': 'VEQ4', 'category': 'Vehicle Equipment & Use',
+  'question': 'When should you use your vehicle\'s hazard lights?',
+  'imagePaths': [],
+  'options': ['Only when reversing', 'During a breakdown or emergency to alert others', 'When overtaking', 'When driving at night'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Hazard lights signal that your vehicle is in trouble or a temporary hazard to others.'
+},
+{
+  'id': 'VEQ5', 'category': 'Vehicle Equipment & Use',
+  'question': 'If your brake lights are not working, what risk does this create?',
+  'imagePaths': [],
+  'options': ['Lower fuel efficiency', 'Reduced visibility in fog', 'Other drivers may not know when you are slowing down', 'Higher engine temperature'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Brake lights let drivers behind you know that you are slowing or stopping.'
+},
+{
+  'id': 'VEQ6', 'category': 'Vehicle Equipment & Use',
+  'question': 'When driving at night, your headlights should be used to:',
+  'imagePaths': [],
+  'options': ['See road signs more clearly', 'Make your car look stylish', 'Improve fuel economy', 'Help you see and be seen by others'],
+  'correctAnswerIndex': 3,
+  'explanation': 'Headlights improve both visibility and your ability to be seen by other road users.'
+},
+{
+  'id': 'VEQ7', 'category': 'Vehicle Equipment & Use',
+  'question': 'What should you check before starting a long journey?',
+  'imagePaths': [],
+  'options': ['Radio station presets', 'Tyre pressure, fluid levels, and brakes', 'The car’s color', 'Window tint percentage'],
+  'correctAnswerIndex': 1,
+  'explanation': 'It is essential to check your tyres, brakes, oil, coolant, and other critical systems before a trip.'
+},
+{
+  'id': 'VEQ8', 'category': 'Vehicle Equipment & Use',
+  'question': 'Why should you avoid overloading your vehicle?',
+  'imagePaths': [],
+  'options': ['It makes your car look messy', 'It can damage suspension and brakes and reduce control', 'It reduces air conditioning efficiency', 'It attracts police attention'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Overloading affects your vehicle’s performance and increases the risk of accidents.'
+},
+{
+  'id': 'VEQ9', 'category': 'Vehicle Equipment & Use',
+  'question': 'What is the function of your rearview and side mirrors?',
+  'imagePaths': [],
+  'options': ['To check your hairstyle', 'To admire your car’s shape', 'To monitor traffic behind and beside you', 'To avoid using your indicators'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Mirrors help maintain awareness of surrounding traffic, critical for safe driving.'
+},
+{
+  'id': 'VEQ10', 'category': 'Vehicle Equipment & Use',
+  'question': 'When should you replace your tyres?',
+  'imagePaths': [],
+  'options': ['When they are dirty', 'If the tread depth is below safe levels or tyres are damaged', 'After six months regardless of condition', 'When you buy a new car stereo'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Worn or damaged tyres compromise grip and braking – they should be replaced immediately when unsafe.'
+},
+{
+  'id': 'EMQ1', 'category': 'Emergency Situations',
+  'question': 'What should you do first if your vehicle starts overheating?',
+  'imagePaths': [],
+  'options': ['Speed up to cool the engine', 'Turn on the air conditioning', 'Turn off the AC and pull over safely', 'Open the radiator cap immediately'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Turning off the AC and pulling over safely allows the engine to cool down without further strain.'
+},
+{
+  'id': 'EMQ2', 'category': 'Emergency Situations',
+  'question': 'If your brakes fail while driving, what is your first action?',
+  'imagePaths': [],
+  'options': ['Jump out of the car', 'Pump the brake pedal rapidly', 'Turn off the ignition immediately', 'Sound the horn continuously'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Pumping the brake can help build pressure to stop the car. If that fails, you can use engine braking and the handbrake.'
+},
+{
+  'id': 'EMQ3', 'category': 'Emergency Situations',
+  'question': 'After an accident, when should you move the vehicles off the road?',
+  'imagePaths': [],
+  'options': ['Always leave them where they stopped', 'Only when the police arrive', 'If there are no injuries and the vehicles are driveable', 'Immediately, regardless of damage'],
+  'correctAnswerIndex': 2,
+  'explanation': 'If the crash is minor and there are no injuries, you should clear the road to avoid causing further danger.'
+},
+{
+  'id': 'EMQ4', 'category': 'Emergency Situations',
+  'question': 'What number can you dial in Nigeria to reach the FRSC in an emergency?',
+  'imagePaths': [],
+  'options': ['999', '911', '122', '444'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Dial 122 to reach the Federal Road Safety Corps (FRSC) emergency services in Nigeria.'
+},
+{
+  'id': 'EMQ5', 'category': 'Emergency Situations',
+  'question': 'If someone is unconscious but breathing and you must leave to get help, what should you do?',
+  'imagePaths': [],
+  'options': ['Leave them as they are', 'Put them in the recovery position', 'Give them water', 'Shake them until they wake up'],
+  'correctAnswerIndex': 1,
+  'explanation': 'The recovery position keeps the airway open and reduces the risk of choking while you seek help.'
+},
+{
+  'id': 'EMQ6', 'category': 'Emergency Situations',
+  'question': 'If your car enters water, what is the best way to escape?',
+  'imagePaths': [],
+  'options': ['Wait for rescue', 'Break a window or open one quickly before pressure builds', 'Call your insurance first', 'Try to open the door immediately'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Windows may work briefly after submersion. Escape through a window quickly before pressure equalizes.'
+},
+{
+  'id': 'EMQ7', 'category': 'Emergency Situations',
+  'question': 'What is the biggest danger of opening the hood fully during an engine fire?',
+  'imagePaths': [],
+  'options': ['You might break the hood latch', 'You might damage the paint', 'It feeds the fire with oxygen', 'The engine will cool too quickly'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Opening the hood fully can provide oxygen and intensify the fire. Instead, spray through a small gap if it’s safe.'
+},
+{
+  'id': 'EMQ8', 'category': 'Emergency Situations',
+  'question': 'If a person is bleeding heavily, what should you do?',
+  'imagePaths': [],
+  'options': ['Wash the wound with water', 'Apply direct pressure with a clean cloth', 'Give them sugar water', 'Ignore the bleeding and treat for shock'],
+  'correctAnswerIndex': 1,
+  'explanation': 'Apply direct pressure to slow or stop the bleeding. Use a clean cloth or bandage if available.'
+},
+{
+  'id': 'EMQ9', 'category': 'Emergency Situations',
+  'question': 'What should you NEVER do if someone may have a spinal injury?',
+  'imagePaths': [],
+  'options': ['Cover them with a blanket', 'Talk to them calmly', 'Move them unless absolutely necessary', 'Check for breathing'],
+  'correctAnswerIndex': 2,
+  'explanation': 'Moving a person with spinal injuries can cause permanent damage. Only move them if their life is in immediate danger.'
+},
+{
+  'id': 'EMQ10', 'category': 'Emergency Situations',
+  'question': 'Which of the following can help reduce the chances of having an emergency on the road?',
+  'imagePaths': [],
+  'options': ['Regular vehicle maintenance', 'Driving as fast as possible', 'Avoiding the use of mirrors', 'Ignoring dashboard warning lights'],
+  'correctAnswerIndex': 0,
+  'explanation': 'Proper maintenance can prevent breakdowns, brake failure, and overheating, reducing risk on the road.'
+},
 ];
 
 
 
+
+
 final Map<String, Map<String, dynamic>> quizData = {
-  'Q1': {'title': 'Quiz: Lesson 1', 'questionIds': ['L1Q1', 'L1Q2', 'L1Q3', 'L1Q4', 'L1Q5']},
-  'Q2': {'title': 'Quiz: Lesson 2', 'questionIds': ['L2Q1', 'L2Q2', 'L2Q3', 'L2Q4', 'L2Q5']},
-  'Q3': {'title': 'Quiz: Lesson 3', 'questionIds': ['L3Q1', 'L3Q2', 'L3Q3', 'L3Q4']},
-  'Q4': {'title': 'Quiz: Lesson 4', 'questionIds': ['L4Q1', 'L4Q2', 'L4Q3', 'L4Q4']},
-  'Q5': {'title': 'Quiz: Lesson 5', 'questionIds': ['L5Q1', 'L5Q2', 'L5Q3', 'L5Q4', 'L5Q5', 'L5Q6', 'L5Q7']},
-  'Q6': {'title': 'Quiz: Lesson 6', 'questionIds': ['L6Q1', 'L6Q2', 'L6Q3', 'L6Q4', 'L6Q5', 'L6Q6']},
-  'Q7': {'title': 'Quiz: Lesson 7', 'questionIds': ['L7Q1', 'L7Q2', 'L7Q3']},
-  'Q8': {'title': 'Quiz: Lesson 8', 'questionIds': ['L8Q1', 'L8Q2', 'L8Q3']},
-  'Q9': {'title': 'Quiz: Lesson 9', 'questionIds': ['L9Q1', 'L9Q2', 'L9Q3']},
-  'Q10':{'title': 'Quiz: Lesson 10', 'questionIds': ['L10Q1', 'L10Q2', 'L10Q3']},
+  'Q1': {'title': 'Quiz: Lesson 1', 'questionIds': ['L1Q1', 'L1Q2', 'L1Q3', 'L1Q4', 'L1Q5', 'L1Q6', 'L1Q7', 'L1Q8', 'L1Q9', 'L1Q10']},
+  'Q2': {'title': 'Quiz: Lesson 2', 'questionIds': ['L2Q1', 'L2Q2', 'L2Q3', 'L2Q4', 'L2Q5', 'L2Q6', 'L2Q7', 'L2Q8', 'L2Q9', 'L2Q10']},
+  'Q3': {'title': 'Quiz: Lesson 3', 'questionIds': ['L3Q1', 'L3Q2', 'L3Q3', 'L3Q4', 'L3Q5', 'L3Q6', 'L3Q7', 'L3Q8', 'L3Q9', 'L3Q10']},
+  'Q4': {'title': 'Quiz: Lesson 4', 'questionIds': ['L4Q1', 'L4Q2', 'L4Q3', 'L4Q4', 'L4Q5', 'L4Q6', 'L4Q7', 'L4Q8', 'L4Q9', 'L4Q10']},
+  'Q5': {'title': 'Quiz: Lesson 5', 'questionIds': ['L5Q1', 'L5Q2', 'L5Q3', 'L5Q4', 'L5Q5', 'L5Q6', 'L5Q7', 'L5Q8', 'L5Q9', 'L5Q10']},
+  'Q6': {'title': 'Quiz: Lesson 6', 'questionIds': ['L6Q1', 'L6Q2', 'L6Q3', 'L6Q4', 'L6Q5', 'L6Q6', 'L6Q7', 'L6Q8', 'L6Q9', 'L6Q10']},
+  'Q7': {'title': 'Quiz: Lesson 7', 'questionIds': ['L7Q1', 'L7Q2', 'L7Q3', 'L7Q4', 'L7Q5', 'L7Q6', 'L7Q7', 'L7Q8', 'L7Q9', 'L7Q10']},
+  'Q8': {'title': 'Quiz: Lesson 8', 'questionIds': ['L8Q1', 'L8Q2', 'L8Q3', 'L8Q4', 'L8Q5', 'L8Q6', 'L8Q7', 'L8Q8', 'L8Q9', 'L8Q10']},
+  'Q9': {'title': 'Quiz: Lesson 9', 'questionIds': ['L9Q1', 'L9Q2', 'L9Q3', 'L9Q4', 'L9Q5', 'L9Q6', 'L9Q7', 'L9Q8', 'L9Q9', 'L9Q10']},
+  'Q10':{'title': 'Quiz: Lesson 10', 'questionIds': ['L10Q1', 'L10Q2', 'L10Q3', 'L10Q4', 'L10Q5', 'L10Q6', 'L10Q7', 'L10Q8', 'L10Q9', 'L10Q10']},
 };

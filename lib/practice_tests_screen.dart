@@ -6,20 +6,18 @@ import 'package:fl_chart/fl_chart.dart';
 import 'progress_provider.dart';
 import 'content_data.dart';
 import 'mock_test_screen.dart';
+import 'streak_test_screen.dart'; 
 
 class PracticeTestsScreen extends StatelessWidget {
   const PracticeTestsScreen({super.key});
 
-  // --- THIS FUNCTION IS NOW CORRECTED ---
-  // It now correctly uses the central questionBank instead of the old quizData structure.
   List<Map<String, dynamic>> _getAllQuestions() {
-    // Create a new list from the question bank so we can shuffle it without affecting the original.
     final allQuestions = List<Map<String, dynamic>>.from(questionBank);
     allQuestions.shuffle();
     return allQuestions;
   }
   
-  void _startTest(BuildContext context, int questionCount) {
+  void _startStandardTest(BuildContext context, int questionCount) {
     final allQuestions = _getAllQuestions();
     if (allQuestions.length < questionCount) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -39,6 +37,36 @@ class PracticeTestsScreen extends StatelessWidget {
     );
   }
 
+  void _startRoadSignsTest(BuildContext context) {
+    final roadSignQuestions = questionBank.where((q) => q['category'] == 'Road Signs').toList();
+    roadSignQuestions.shuffle();
+    
+    if (roadSignQuestions.length < 20) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Not enough road sign questions available to start a 20-question test.')),
+      );
+      return;
+    }
+
+    final testQuestions = roadSignQuestions.take(20).toList();
+    const duration = Duration(minutes: 20);
+
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => MockTestScreen(questions: testQuestions, duration: duration),
+      ),
+    );
+  }
+
+  void _startStreakTest(BuildContext context) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const StreakTestScreen()),
+    );
+  }
+
+
   @override
   Widget build(BuildContext context) {
     final List<int> testOptions = [10, 20, 30, 40, 50];
@@ -47,7 +75,7 @@ class PracticeTestsScreen extends StatelessWidget {
       builder: (context, progressProvider, child) {
         return Scaffold(
           appBar: AppBar(
-            title: const Text('Practice Tests'),
+            title: const Text('Practice Tests & Modes'),
           ),
           body: ListView(
             padding: const EdgeInsets.all(16.0),
@@ -65,17 +93,43 @@ class PracticeTestsScreen extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               
-              _buildStatsGrid(progressProvider),
+              _buildStatsGrid(progressProvider), 
               const SizedBox(height: 24),
               const Divider(thickness: 1),
               const SizedBox(height: 16),
-              const Text('Start a New Test', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              
+              const Text('Start a CBT Test', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
               const SizedBox(height: 16),
-
               Column(
                 children: testOptions.map((count) {
-                  return _buildTestOptionButton(context, count);
+                  return _buildStandardTestButton(
+                    context: context, 
+                    text: '$count Questions', 
+                    onPressed: () => _startStandardTest(context, count)
+                  );
                 }).toList(),
+              ),
+              const SizedBox(height: 24),
+              const Divider(thickness: 1),
+              const SizedBox(height: 16),
+              
+              const Text('Game Modes', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+              const SizedBox(height: 16),
+
+              _buildGameModeButton(
+                context: context,
+                title: 'Road Signs',
+                subtitle: '20 questions, road signs only',
+                icon: Icons.signpost,
+                onTap: () => _startRoadSignsTest(context),
+              ),
+              const SizedBox(height: 8),
+              _buildGameModeButton(
+                context: context,
+                title: 'Streak',
+                subtitle: 'Answer until you get one wrong!',
+                icon: Icons.whatshot,
+                onTap: () => _startStreakTest(context),
               ),
             ],
           ),
@@ -84,7 +138,11 @@ class PracticeTestsScreen extends StatelessWidget {
     );
   }
   
-  Widget _buildTestOptionButton(BuildContext context, int questionCount) {
+  Widget _buildStandardTestButton({
+    required BuildContext context, 
+    required String text, 
+    required VoidCallback onPressed
+  }) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
       child: ElevatedButton(
@@ -93,11 +151,44 @@ class PracticeTestsScreen extends StatelessWidget {
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           minimumSize: const Size(double.infinity, 36), 
         ),
-        onPressed: () => _startTest(context, questionCount),
-        child: Text('$questionCount Questions', style: const TextStyle(fontSize: 16)),
+        onPressed: onPressed,
+        child: Text(text, style: const TextStyle(fontSize: 16)),
       ),
     );
   }
+
+  // --- UPDATED: This button now has the correct colors ---
+  Widget _buildGameModeButton({
+    required BuildContext context,
+    required String title,
+    required String subtitle,
+    required IconData icon,
+    required VoidCallback onTap,
+  }) {
+    return Card(
+      elevation: 2,
+      // FIX: Set the card's background color to the app's primary color
+      color: Theme.of(context).primaryColor,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: ListTile(
+        // FIX: Set icon and text colors to white for readability
+        leading: Icon(icon, size: 40, color: Colors.white),
+        title: Text(
+          title, 
+          style: const TextStyle(
+            fontWeight: FontWeight.bold, 
+            fontSize: 16, 
+            color: Colors.white
+          )
+        ),
+        subtitle: Text(subtitle, style: TextStyle(color: Colors.white.withOpacity(0.8))),
+        trailing: const Icon(Icons.play_arrow, color: Colors.white),
+        onTap: onTap,
+        contentPadding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+      ),
+    );
+  }
+
 
   Widget _buildStatsGrid(ProgressProvider provider) {
     return IntrinsicHeight(
@@ -105,23 +196,25 @@ class PracticeTestsScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           _buildStatItem('Tests Taken', provider.testsTaken.toString()),
-          const VerticalDivider(thickness: 1),
-          _buildStatItem('Tests Passed', provider.testsPassed.toString()),
-          const VerticalDivider(thickness: 1),
+          const VerticalDivider(thickness: 1, width: 1),
           _buildStatItem('Pass Rate', '${(provider.passageRate * 100).toStringAsFixed(0)}%'),
+          const VerticalDivider(thickness: 1, width: 1),
+          _buildStatItem('Streak 🔥', provider.streakHighScore.toString()),
         ],
       ),
     );
   }
 
   Widget _buildStatItem(String title, String value) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
-        const SizedBox(height: 4),
-        Text(title, style: const TextStyle(color: Colors.grey)),
-      ],
+    return Expanded(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(value, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+          const SizedBox(height: 4),
+          Text(title, style: const TextStyle(color: Colors.grey), textAlign: TextAlign.center),
+        ],
+      ),
     );
   }
 

@@ -4,7 +4,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'progress_provider.dart';
-import 'mock_test_results_screen.dart'; // <-- Import the new results screen
+import 'mock_test_results_screen.dart'; 
 
 class MockTestScreen extends StatefulWidget {
   final List<Map<String, dynamic>> questions;
@@ -74,7 +74,6 @@ class _MockTestScreenState extends State<MockTestScreen> {
       totalQuestions: widget.questions.length,
     );
 
-    // --- UPDATED: Navigate to the new results screen instead of showing a dialog ---
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
@@ -163,22 +162,31 @@ class _MockTestScreenState extends State<MockTestScreen> {
                         style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(height: 20),
+                      
+                      // --- UPDATED: Reduced top spacing ---
+                      const SizedBox(height: 16),
+                      
                       if (imagePaths.isNotEmpty)
-                        SizedBox(
-                          height: 120,
-                          child: ListView.builder(
-                            scrollDirection: Axis.horizontal,
-                            itemCount: imagePaths.length,
-                            itemBuilder: (context, index) {
-                              return Padding(
-                                padding: const EdgeInsets.only(right: 16.0),
-                                child: Image.asset(imagePaths[index], height: 120),
-                              );
-                            },
+                        Center(
+                          child: SizedBox(
+                            // --- UPDATED: Image height increased to 240 ---
+                            height: 240,
+                            child: ListView.builder(
+                              scrollDirection: Axis.horizontal,
+                              shrinkWrap: true,
+                              itemCount: imagePaths.length,
+                              itemBuilder: (context, index) {
+                                return Padding(
+                                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                  child: Image.asset(imagePaths[index], height: 240),
+                                );
+                              },
+                            ),
                           ),
                         ),
-                      const SizedBox(height: 40),
+
+                      // --- UPDATED: Reduced bottom spacing ---
+                      const SizedBox(height: 24),
                       ...List.generate(options.length, (index) {
                         return RadioListTile<int>(
                           title: Text(options[index]),

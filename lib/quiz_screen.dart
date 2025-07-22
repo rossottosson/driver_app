@@ -102,7 +102,6 @@ class _QuizScreenState extends State<QuizScreen> {
     }
     
     final question = _questionsForThisQuiz[_currentQuestionIndex];
-    // --- THIS LINE IS NOW CORRECTED ---
     final options = List<String>.from(question['options'] as List);
     final imagePaths = List<String>.from(question['imagePaths'] as List);
 
@@ -126,24 +125,30 @@ class _QuizScreenState extends State<QuizScreen> {
               style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
-            const SizedBox(height: 20),
+            // --- UPDATED: Reduced top spacing ---
+            const SizedBox(height: 16),
 
             if (imagePaths.isNotEmpty)
-              SizedBox(
-                height: 120,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: imagePaths.length,
-                  itemBuilder: (context, index) {
-                    return Padding(
-                      padding: const EdgeInsets.only(right: 16.0),
-                      child: Image.asset(imagePaths[index], height: 120),
-                    );
-                  },
+              Center(
+                child: SizedBox(
+                  // --- UPDATED: Image height increased to 240 ---
+                  height: 240,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    shrinkWrap: true,
+                    itemCount: imagePaths.length,
+                    itemBuilder: (context, index) {
+                      return Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                        child: Image.asset(imagePaths[index], height: 240),
+                      );
+                    },
+                  ),
                 ),
               ),
 
-            const SizedBox(height: 40),
+            // --- UPDATED: Reduced bottom spacing ---
+            const SizedBox(height: 24),
 
             ...List.generate(options.length, (index) {
               Color? tileColor;

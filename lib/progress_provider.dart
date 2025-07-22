@@ -17,6 +17,10 @@ class ProgressProvider with ChangeNotifier {
   
   bool _isSoundOn = true;
   bool get isSoundOn => _isSoundOn;
+
+  // --- NEW: Added state for Streak High Score ---
+  int _streakHighScore = 0;
+  int get streakHighScore => _streakHighScore;
   
   int get testsTaken => _testHistory.length;
   int get testsPassed => _testHistory.where((result) => result['score'] >= 0.8).length;
@@ -40,6 +44,9 @@ class ProgressProvider with ChangeNotifier {
     
     _isSoundOn = prefs.getBool('isSoundOn') ?? true;
 
+    // --- NEW: Load streak high score ---
+    _streakHighScore = prefs.getInt('streakHighScore') ?? 0;
+
     _isLoading = false;
     notifyListeners();
   }
@@ -49,6 +56,8 @@ class ProgressProvider with ChangeNotifier {
     await prefs.setStringList('unlockedStops', _unlockedStops.toList());
     final historyAsJson = _testHistory.map((result) => jsonEncode(result)).toList();
     await prefs.setStringList('testHistory', historyAsJson);
+    // --- NEW: Save streak high score ---
+    await prefs.setInt('streakHighScore', _streakHighScore);
   }
   
   void initializeRoadMap(List<String> roadMap) {
@@ -56,7 +65,6 @@ class ProgressProvider with ChangeNotifier {
     if (_unlockedStops.isEmpty && _roadMap.isNotEmpty) {
       _unlockedStops.add(_roadMap.first);
     }
-    // NOTIFY LISTENERS IS REMOVED FROM HERE
   }
 
   bool isUnlocked(String stopLabel) {
@@ -78,6 +86,15 @@ class ProgressProvider with ChangeNotifier {
     });
     _saveProgress();
     notifyListeners();
+  }
+
+  // --- NEW: Method to update the streak high score ---
+  void updateStreakHighScore(int newScore) {
+    if (newScore > _streakHighScore) {
+      _streakHighScore = newScore;
+      _saveProgress();
+      notifyListeners();
+    }
   }
 
   void unlockNextStop(String currentStopLabel) {
@@ -103,6 +120,8 @@ class ProgressProvider with ChangeNotifier {
 
   Future<void> resetTestHistory() async {
     _testHistory.clear();
+    // --- NEW: Reset streak high score as well ---
+    _streakHighScore = 0;
     await _saveProgress();
     notifyListeners();
   }
