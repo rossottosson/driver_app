@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'content_data.dart';
 import 'progress_provider.dart';
 import 'sound_manager.dart';
+import 'dart:math'; // NYTT: Importerad för att kunna blanda
 
 class QuizScreen extends StatefulWidget {
   final String quizId;
@@ -17,17 +18,24 @@ class QuizScreen extends StatefulWidget {
 class _QuizScreenState extends State<QuizScreen> {
   int _currentQuestionIndex = 0;
   int _correctAnswerCount = 0;
-  int? _selectedOptionIndex;
+  int? _selectedDisplayIndex; // ÄNDRAD: Bytt namn för tydlighet
   bool _answerChecked = false;
 
   late final List<Map<String, dynamic>> _questionsForThisQuiz;
+
+  // NYTT: State för att hantera blandade svar
+  late List<String> _shuffledOptions;
+  late List<int> _originalIndices;
 
   @override
   void initState() {
     super.initState();
     _loadQuestions();
+    if (_questionsForThisQuiz.isNotEmpty) {
+      _loadAndShuffleQuestion();
+    }
   }
-  
+
   void _loadQuestions() {
     final quizContent = quizData[widget.quizId];
     if (quizContent == null) {
@@ -42,6 +50,30 @@ class _QuizScreenState extends State<QuizScreen> {
         .toList();
   }
 
+  // NYTT: Funktion för att ladda och blanda en fråga
+  void _loadAndShuffleQuestion() {
+    final question = _questionsForThisQuiz[_currentQuestionIndex];
+    final originalOptions = List<String>.from(question['options'] as List);
+
+    // Skapa en lista med objekt som innehåller text och originalindex
+    final indexedOptions = originalOptions
+        .asMap()
+        .entries
+        .map((entry) => {'text': entry.value, 'originalIndex': entry.key})
+        .toList();
+    
+    // Blanda listan
+    indexedOptions.shuffle(Random());
+
+    // Uppdatera state med den blandade datan
+    setState(() {
+      _shuffledOptions = indexedOptions.map((e) => e['text'] as String).toList();
+      _originalIndices = indexedOptions.map((e) => e['originalIndex'] as int).toList();
+      _selectedDisplayIndex = null;
+      _answerChecked = false;
+    });
+  }
+
   bool get _isLastQuestion => _currentQuestionIndex == _questionsForThisQuiz.length - 1;
 
   void _checkAnswer() {
@@ -49,7 +81,10 @@ class _QuizScreenState extends State<QuizScreen> {
     final question = _questionsForThisQuiz[_currentQuestionIndex];
     final correctAnswerIndex = question['correctAnswerIndex'] as int;
 
-    if (_selectedOptionIndex == correctAnswerIndex) {
+    // ÄNDRAD: Jämför det ursprungliga indexet, inte displayindexet
+    final selectedOriginalIndex = _originalIndices[_selectedDisplayIndex!];
+
+    if (selectedOriginalIndex == correctAnswerIndex) {
       _correctAnswerCount++;
       SoundManager.playCorrectSound(progressProvider.isSoundOn);
     } else {
@@ -66,9 +101,8 @@ class _QuizScreenState extends State<QuizScreen> {
     } else {
       setState(() {
         _currentQuestionIndex++;
-        _selectedOptionIndex = null;
-        _answerChecked = false;
       });
+      _loadAndShuffleQuestion(); // Ladda och blanda nästa fråga
     }
   }
 
@@ -102,117 +136,121 @@ class _QuizScreenState extends State<QuizScreen> {
     }
     
     final question = _questionsForThisQuiz[_currentQuestionIndex];
-    final options = List<String>.from(question['options'] as List);
+    // ÄNDRAD: Använder inte längre options direkt från frågan här
     final imagePaths = List<String>.from(question['imagePaths'] as List);
 
     return Scaffold(
       appBar: AppBar(
         title: Text(quizInfo['title'] as String),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text(
-              'Question ${_currentQuestionIndex + 1}/${_questionsForThisQuiz.length}',
-              textAlign: TextAlign.center,
-              style: TextStyle(color: Colors.grey[600], fontSize: 16),
-            ),
-            const SizedBox(height: 12),
-            Text(
-              question['question'] as String,
-              style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-            // --- UPDATED: Reduced top spacing ---
-            const SizedBox(height: 16),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Text(
+                'Question ${_currentQuestionIndex + 1}/${_questionsForThisQuiz.length}',
+                textAlign: TextAlign.center,
+                style: TextStyle(color: Colors.grey[600], fontSize: 16),
+              ),
+              const SizedBox(height: 12),
+              Text(
+                question['question'] as String,
+                style: const TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 16),
 
-            if (imagePaths.isNotEmpty)
-              Center(
-                child: SizedBox(
-                  // --- UPDATED: Image height increased to 240 ---
-                  height: 240,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    shrinkWrap: true,
-                    itemCount: imagePaths.length,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                        child: Image.asset(imagePaths[index], height: 240),
-                      );
-                    },
+              if (imagePaths.isNotEmpty)
+                Center(
+                  child: SizedBox(
+                    height: 240,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: imagePaths.length,
+                      itemBuilder: (context, index) {
+                        return Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          child: Image.asset(imagePaths[index], height: 240),
+                        );
+                      },
+                    ),
                   ),
                 ),
-              ),
 
-            // --- UPDATED: Reduced bottom spacing ---
-            const SizedBox(height: 24),
+              const SizedBox(height: 24),
 
-            ...List.generate(options.length, (index) {
-              Color? tileColor;
-              if (_answerChecked) {
-                final correctAnswerIndex = question['correctAnswerIndex'] as int;
-                if (index == correctAnswerIndex) {
-                  tileColor = Colors.green.withOpacity(0.3);
-                } else if (index == _selectedOptionIndex) {
-                  tileColor = Colors.red.withOpacity(0.3);
-                }
-              }
-
-              return Container(
-                margin: const EdgeInsets.symmetric(vertical: 4.0),
-                decoration: BoxDecoration(
-                  color: tileColor,
-                  borderRadius: BorderRadius.circular(8),
-                  border: Border.all(
-                    color: tileColor != null ? Colors.transparent : Colors.grey.withOpacity(0.3)
-                  )
-                ),
-                child: RadioListTile<int>(
-                  title: Text(options[index]),
-                  value: index,
-                  groupValue: _selectedOptionIndex,
-                  onChanged: _answerChecked ? null : (value) {
-                    setState(() {
-                      _selectedOptionIndex = value!;
-                    });
-                  },
-                ),
-              );
-            }),
-            
-            if (_answerChecked)
-              _buildExplanationCard(question),
-
-            const Spacer(),
-            
-            ElevatedButton(
-              style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 16)),
-              onPressed: _selectedOptionIndex == null ? null : () {
+              // ÄNDRAD: Bygger listan från de blandade alternativen
+              ...List.generate(_shuffledOptions.length, (index) {
+                Color? tileColor;
                 if (_answerChecked) {
-                  _nextQuestion();
-                } else {
-                  _checkAnswer();
+                  final correctAnswerIndex = question['correctAnswerIndex'] as int;
+                  final originalIndexOfThisOption = _originalIndices[index];
+
+                  if (originalIndexOfThisOption == correctAnswerIndex) {
+                    tileColor = Colors.green.withOpacity(0.3);
+                  } else if (index == _selectedDisplayIndex) {
+                    tileColor = Colors.red.withOpacity(0.3);
+                  }
                 }
-              },
-              child: Text(
-                _answerChecked
-                    ? (_isLastQuestion ? 'Finish Quiz' : 'Next Question')
-                    : 'Check Answer',
-                style: const TextStyle(fontSize: 18),
+
+                return Container(
+                  margin: const EdgeInsets.symmetric(vertical: 4.0),
+                  decoration: BoxDecoration(
+                    color: tileColor,
+                    borderRadius: BorderRadius.circular(8),
+                    border: Border.all(
+                      color: tileColor != null ? Colors.transparent : Colors.grey.withOpacity(0.3)
+                    )
+                  ),
+                  child: RadioListTile<int>(
+                    title: Text(_shuffledOptions[index]), // Visar blandat alternativ
+                    value: index, // Värdet är displayindex
+                    groupValue: _selectedDisplayIndex,
+                    onChanged: _answerChecked ? null : (value) {
+                      setState(() {
+                        _selectedDisplayIndex = value!;
+                      });
+                    },
+                  ),
+                );
+              }),
+              
+              if (_answerChecked)
+                _buildExplanationCard(question),
+
+              const SizedBox(height: 40),
+              
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 16)),
+                onPressed: _selectedDisplayIndex == null ? null : () {
+                  if (_answerChecked) {
+                    _nextQuestion();
+                  } else {
+                    _checkAnswer();
+                  }
+                },
+                child: Text(
+                  _answerChecked
+                      ? (_isLastQuestion ? 'Finish Quiz' : 'Next Question')
+                      : 'Check Answer',
+                  style: const TextStyle(fontSize: 18),
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
   }
   
   Widget _buildExplanationCard(Map<String, dynamic> question) {
+    // ÄNDRAD: Logik för att avgöra om svaret var rätt
     final correctAnswerIndex = question['correctAnswerIndex'] as int;
-    final bool isCorrect = _selectedOptionIndex == correctAnswerIndex;
+    final selectedOriginalIndex = _originalIndices[_selectedDisplayIndex!];
+    final bool isCorrect = selectedOriginalIndex == correctAnswerIndex;
 
     return Container(
       margin: const EdgeInsets.only(top: 20),
@@ -244,6 +282,7 @@ class _QuizScreenState extends State<QuizScreen> {
   }
 }
 
+// Ingen ändring i QuizResultsScreen, så den är exkluderad för korthetens skull
 class QuizResultsScreen extends StatelessWidget {
   final double score;
   final String quizId;

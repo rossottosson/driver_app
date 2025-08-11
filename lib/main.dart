@@ -8,8 +8,30 @@ import 'content_data.dart';
 import 'practice_tests_screen.dart';
 import 'settings_screen.dart';
 import 'sound_manager.dart';
+import 'package:audioplayers/audioplayers.dart'; 
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); 
+
+  // Korrigerad global ljudkonfiguration
+  await AudioPlayer.global.setAudioContext(AudioContext(
+    // iOS-specifik konfiguration
+    iOS: AudioContextIOS(
+      category: AVAudioSessionCategory.ambient,
+      // FIX: 'options' är borttagen. 'ambient'-kategorin
+      // hanterar automatiskt mixning med andra ljud, så detta alternativ behövs inte
+      // och orsakade kraschen enligt felmeddelandet.
+    ),
+    // Android-specifik konfiguration
+    android: AudioContextAndroid(
+      isSpeakerphoneOn: true,
+      stayAwake: false,
+      contentType: AndroidContentType.sonification,
+      usageType: AndroidUsageType.assistanceSonification,
+      audioFocus: AndroidAudioFocus.gainTransient, 
+    ),
+  ));
+
   runApp(
     ChangeNotifierProvider(
       create: (context) => ProgressProvider(),
@@ -118,7 +140,6 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
   final List<Map<String, dynamic>> roadStops = [];
   bool _isInitialized = false;
 
-  // --- FIXED: Moved baseScreenWidth to the class level ---
   static const double baseScreenWidth = 412.0;
 
   @override
@@ -126,7 +147,6 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
     super.initState();
     _scrollController = ScrollController();
 
-    // Ensures that the context is available for MediaQuery.
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (!_isInitialized && mounted) {
         _initializeStops();
@@ -146,39 +166,39 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
       { 'label': '1.2',  'isQuiz': false, 'imageAsset': 'assets/images/Waving_from_car.png',  'imageSize': 270.0, 'offsetX': 10.0, 'offsetY': -5.0  },
       { 'label': 'Q1',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0,},
       { 'label': '2.1',  'isQuiz': false, 'imageAsset': 'assets/images/L2_Sign.png',  'imageSize': 280.0,  'offsetX': -20.0, 'offsetY': 0.0  },
-      { 'label': '2.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_bench.png',     'imageSize': 280.0,},
+      { 'label': '2.2',  'isQuiz': false, 'imageAsset': 'assets/images/Tree.1.png',     'imageSize': 350.0,},
       { 'label': 'Q2',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',  'imageSize': 350.0 },
       { 'label': '3.1',  'isQuiz': false, 'imageAsset': 'assets/images/L3_Sign.png',  'imageSize': 280.0 },
       { 'label': '3.2',  'isQuiz': false, 'imageAsset': 'assets/images/Car_with_learners_permit.png',     'imageSize': 350.0, },
       { 'label': 'Q3',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',    'imageSize': 350.0 },
       { 'label': '4.1',  'isQuiz': false, 'imageAsset': 'assets/images/L4_Sign.png',  'imageSize': 280.0 },
-      { 'label': '4.2',  'isQuiz': false, 'imageAsset': 'assets/images/Fire_truck_decoration.png',     'imageSize': 280.0, },
-      { 'label': '4.3',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 300.0, },
+      { 'label': '4.2',  'isQuiz': false, 'imageAsset': 'assets/images/Fire_truck_decoration.png',     'imageSize': 240.0, 'offsetX': -20.0, 'offsetY': 0.0},
+      { 'label': '4.3',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 270.0, },
       { 'label': 'Q4',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',   'imageSize': 350.0 },
       { 'label': '5.1',  'isQuiz': false, 'imageAsset': 'assets/images/L5_Sign.png',  'imageSize': 280.0 },
       { 'label': '5.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_lake.png',     'imageSize': 280.0, },
-      { 'label': '5.3',  'isQuiz': false, 'imageAsset': 'assets/images/Gas_pump_decoration.png',     'imageSize': 280.0,},
+      { 'label': '5.3',  'isQuiz': false, 'imageAsset': 'assets/images/Gas_pump_decoration.png',     'imageSize': 280.0, 'offsetX': -10.0, 'offsetY': -20.0},
       { 'label': '5.4',  'isQuiz': false, 'imageAsset': 'assets/images/Traffic_cone_decoration.png',     'imageSize': 350.0, },
       { 'label': '5.5',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_lake.png',     'imageSize': 350.0, },
       { 'label': 'Q5',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0 },
       { 'label': '6.1',  'isQuiz': false, 'imageAsset': 'assets/images/L6_Sign.png',  'imageSize': 280.0 },
-      { 'label': '6.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_market.png',     'imageSize': 350.0, },
-      { 'label': '6.3',  'isQuiz': false, 'imageAsset': 'assets/images/Heap_of_old_tires.png',     'imageSize': 350.0, },
+      { 'label': '6.2',  'isQuiz': false, 'imageAsset': 'assets/images/Road_side_market.png',     'imageSize': 300.0, },
+      { 'label': '6.3',  'isQuiz': false, 'imageAsset': 'assets/images/Heap_of_old_tires.png',     'imageSize': 300.0,  },
       { 'label': 'Q6',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png','imageSize': 350.0 },
       { 'label': '7.1',  'isQuiz': false, 'imageAsset': 'assets/images/L7_Sign.png',  'imageSize': 280.0 },
       { 'label': '7.2',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 300.0, },
       { 'label': 'Q7',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',  'imageSize': 350.0 },
       { 'label': '8.1',  'isQuiz': false, 'imageAsset': 'assets/images/L8_Sign.png',  'imageSize': 280.0 },
-      { 'label': '8.2',  'isQuiz': false },
-      { 'label': '8.3',  'isQuiz': false },
-      { 'label': '8.4',  'isQuiz': false },
+      { 'label': '8.2',  'isQuiz': false , 'imageAsset': 'assets/images/Road_side_bench.png',     'imageSize': 250.0,},
+      { 'label': '8.3',  'isQuiz': false, 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 280.0, },
+      { 'label': '8.4',  'isQuiz': false, 'imageAsset': 'assets/images/Tree.1.png',     'imageSize': 350.0, },
       { 'label': 'Q8',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',     'imageSize': 350.0 },
       { 'label': '9.1',  'isQuiz': false, 'imageAsset': 'assets/images/L9_Sign.png',  'imageSize': 280.0 },
-      { 'label': '9.2',  'isQuiz': false },
+      { 'label': '9.2',  'isQuiz': false, 'imageAsset': 'assets/images/Gas_pump_decoration.png',     'imageSize': 280.0, },
       { 'label': 'Q9',   'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz_mirrored.png',     'imageSize': 350.0 },
       { 'label': '10.1', 'isQuiz': false, 'imageAsset': 'assets/images/L10_Sign.png', 'imageSize': 280.0 },
-      { 'label': '10.2', 'isQuiz': false },
-      { 'label': '10.3', 'isQuiz': false },
+      { 'label': '10.2', 'isQuiz': false, 'imageAsset': 'assets/images/Heap_of_old_tires.png',     'imageSize': 300.0, },
+      { 'label': '10.3', 'isQuiz': false , 'imageAsset': 'assets/images/Flower_patch.png',     'imageSize': 270.0, },
       { 'label': 'Q10',  'isQuiz': true,  'imageAsset': 'assets/images/Police_quiz.png',      'imageSize': 280.0,  'offsetX': 20.0, 'offsetY': 20.0},
     ];
 
@@ -229,7 +249,6 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
       final stopData = bubbleData[i];
       final newStopData = Map<String, dynamic>.from(stopData);
 
-      // --- Calculate responsive sizes and offsets ---
       if (newStopData.containsKey('imageSize')) {
         final originalSize = newStopData['imageSize'] as double;
         newStopData['imageSize'] = (originalSize / baseScreenWidth) * screenWidth;
@@ -259,7 +278,6 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
       roadStops.addAll(stops);
     });
 
-    // Scroll to the bottom after initialization
     Future.delayed(const Duration(milliseconds: 100), () {
       if (_scrollController.hasClients) {
         _scrollController.jumpTo(
@@ -346,7 +364,7 @@ class _RoadMapScreenState extends State<RoadMapScreen> {
 
                 if (stop.containsKey('imageAsset')) {
                   final imageAsset = stop['imageAsset'] as String;
-                  // --- UPDATED: Default size is now responsive ---
+                  
                   final double imageSize =
                       (stop['imageSize'] as double?) ?? (280.0 / baseScreenWidth) * screenWidth;
                   final double dxOffset =

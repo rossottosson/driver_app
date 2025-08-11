@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'progress_provider.dart';
 import 'mock_test_results_screen.dart'; 
+import 'dart:math'; // NYTT: Importerad för att kunna blanda
 
 class MockTestScreen extends StatefulWidget {
   final List<Map<String, dynamic>> questions;
@@ -22,16 +23,42 @@ class MockTestScreen extends StatefulWidget {
 
 class _MockTestScreenState extends State<MockTestScreen> {
   int _currentQuestionIndex = 0;
-  final Map<int, int> _selectedAnswers = {};
+  // ÄNDRAD: Selected answers sparar nu det ursprungliga, korrekta indexet
+  final Map<int, int> _selectedAnswers = {}; 
   
   Timer? _timer;
   late int _remainingSeconds;
+
+  // NYTT: State för att hantera blandade svar för den aktuella frågan
+  late List<String> _shuffledOptions;
+  late List<int> _originalIndices;
 
   @override
   void initState() {
     super.initState();
     _remainingSeconds = widget.duration.inSeconds;
+    _loadAndShuffleQuestion(0); // Ladda och blanda första frågan
     _startTimer();
+  }
+
+  // NYTT: Funktion för att ladda och blanda en specifik fråga
+  void _loadAndShuffleQuestion(int index) {
+    final question = widget.questions[index];
+    final originalOptions = List<String>.from(question['options'] as List);
+
+    final indexedOptions = originalOptions
+        .asMap()
+        .entries
+        .map((entry) => {'text': entry.value, 'originalIndex': entry.key})
+        .toList();
+    
+    indexedOptions.shuffle(Random());
+
+    setState(() {
+      _currentQuestionIndex = index;
+      _shuffledOptions = indexedOptions.map((e) => e['text'] as String).toList();
+      _originalIndices = indexedOptions.map((e) => e['originalIndex'] as int).toList();
+    });
   }
 
   void _startTimer() {
@@ -62,8 +89,8 @@ class _MockTestScreenState extends State<MockTestScreen> {
   void _submitQuiz() {
     _timer?.cancel();
     int correctAnswers = 0;
-    _selectedAnswers.forEach((questionIndex, selectedAnswerIndex) {
-      if (widget.questions[questionIndex]['correctAnswerIndex'] == selectedAnswerIndex) {
+    _selectedAnswers.forEach((questionIndex, selectedAnswerOriginalIndex) {
+      if (widget.questions[questionIndex]['correctAnswerIndex'] == selectedAnswerOriginalIndex) {
         correctAnswers++;
       }
     });
@@ -112,9 +139,14 @@ class _MockTestScreenState extends State<MockTestScreen> {
   @override
   Widget build(BuildContext context) {
     final question = widget.questions[_currentQuestionIndex];
-    final options = List<String>.from(question['options'] as List);
     final isLastQuestion = _currentQuestionIndex == widget.questions.length - 1;
     final imagePaths = List<String>.from(question['imagePaths'] as List);
+
+    // NYTT: Hitta vilket display-index det valda svaret har
+    final selectedOriginalIndex = _selectedAnswers[_currentQuestionIndex];
+    final displayGroupValue = selectedOriginalIndex == null
+        ? null
+        : _originalIndices.indexOf(selectedOriginalIndex);
 
     return PopScope(
       canPop: false,
@@ -163,13 +195,11 @@ class _MockTestScreenState extends State<MockTestScreen> {
                         textAlign: TextAlign.center,
                       ),
                       
-                      // --- UPDATED: Reduced top spacing ---
                       const SizedBox(height: 16),
                       
                       if (imagePaths.isNotEmpty)
                         Center(
                           child: SizedBox(
-                            // --- UPDATED: Image height increased to 240 ---
                             height: 240,
                             child: ListView.builder(
                               scrollDirection: Axis.horizontal,
@@ -185,16 +215,18 @@ class _MockTestScreenState extends State<MockTestScreen> {
                           ),
                         ),
 
-                      // --- UPDATED: Reduced bottom spacing ---
                       const SizedBox(height: 24),
-                      ...List.generate(options.length, (index) {
+                      // ÄNDRAD: Bygger från blandade alternativ
+                      ...List.generate(_shuffledOptions.length, (index) {
                         return RadioListTile<int>(
-                          title: Text(options[index]),
+                          title: Text(_shuffledOptions[index]),
                           value: index,
-                          groupValue: _selectedAnswers[_currentQuestionIndex],
+                          groupValue: displayGroupValue,
                           onChanged: (value) {
                             setState(() {
-                              _selectedAnswers[_currentQuestionIndex] = value!;
+                              // Spara det ursprungliga indexet i _selectedAnswers
+                              final originalIndex = _originalIndices[value!];
+                              _selectedAnswers[_currentQuestionIndex] = originalIndex;
                             });
                           },
                         );
@@ -211,9 +243,8 @@ class _MockTestScreenState extends State<MockTestScreen> {
                     if (isLastQuestion) {
                       _submitQuiz();
                     } else {
-                      setState(() {
-                        _currentQuestionIndex++;
-                      });
+                      // Ladda och blanda nästa fråga
+                      _loadAndShuffleQuestion(_currentQuestionIndex + 1);
                     }
                   },
                   child: Text(isLastQuestion ? 'Submit Test' : 'Next Question', style: const TextStyle(fontSize: 18)),

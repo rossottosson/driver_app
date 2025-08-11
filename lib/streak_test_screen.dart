@@ -19,9 +19,13 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
   late Map<String, dynamic> _currentQuestion;
   final List<String> _usedQuestionIds = [];
   int _currentStreak = 0;
-  int? _selectedOptionIndex;
+  int? _selectedDisplayIndex; // ÄNDRAD: Bytt namn för tydlighet
   bool _answerChecked = false;
   bool _isCorrect = false;
+
+  // NYTT: State för att hantera blandade svar
+  late List<String> _shuffledOptions;
+  late List<int> _originalIndices;
 
   @override
   void initState() {
@@ -41,10 +45,21 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
 
     final question = availableQuestions[Random().nextInt(availableQuestions.length)];
     
+    // Samma blandningslogik som i QuizScreen
+    final originalOptions = List<String>.from(question['options'] as List);
+    final indexedOptions = originalOptions
+        .asMap()
+        .entries
+        .map((entry) => {'text': entry.value, 'originalIndex': entry.key})
+        .toList();
+    indexedOptions.shuffle(Random());
+    
     setState(() {
       _currentQuestion = question;
       _usedQuestionIds.add(question['id'] as String);
-      _selectedOptionIndex = null;
+      _shuffledOptions = indexedOptions.map((e) => e['text'] as String).toList();
+      _originalIndices = indexedOptions.map((e) => e['originalIndex'] as int).toList();
+      _selectedDisplayIndex = null;
       _answerChecked = false;
       _isCorrect = false;
     });
@@ -53,17 +68,17 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
   void _checkAnswer() {
     final progressProvider = Provider.of<ProgressProvider>(context, listen: false);
     final correctAnswerIndex = _currentQuestion['correctAnswerIndex'] as int;
+    final selectedOriginalIndex = _originalIndices[_selectedDisplayIndex!];
 
     setState(() {
       _answerChecked = true;
-      if (_selectedOptionIndex == correctAnswerIndex) {
+      if (selectedOriginalIndex == correctAnswerIndex) {
         _isCorrect = true;
         _currentStreak++;
         SoundManager.playCorrectSound(progressProvider.isSoundOn);
       } else {
         _isCorrect = false;
         SoundManager.playIncorrectSound(progressProvider.isSoundOn);
-        _endGame();
       }
     });
   }
@@ -89,7 +104,6 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
       );
     }
     
-    final options = List<String>.from(_currentQuestion['options'] as List);
     final imagePaths = List<String>.from(_currentQuestion['imagePaths'] as List);
 
     return Scaffold(
@@ -128,13 +142,11 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
                       textAlign: TextAlign.center,
                     ),
                     
-                    // --- UPDATED: Reduced top spacing ---
                     const SizedBox(height: 16),
 
                     if (imagePaths.isNotEmpty)
                       Center(
                         child: SizedBox(
-                          // --- UPDATED: Image height increased to 240 ---
                           height: 240,
                           child: ListView.builder(
                             scrollDirection: Axis.horizontal,
@@ -150,16 +162,18 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
                         ),
                       ),
                     
-                    // --- UPDATED: Reduced bottom spacing ---
                     const SizedBox(height: 24),
 
-                    ...List.generate(options.length, (index) {
+                    // ÄNDRAD: Bygger från blandade alternativ
+                    ...List.generate(_shuffledOptions.length, (index) {
                       Color? tileColor;
                       if (_answerChecked) {
                         final correctAnswerIndex = _currentQuestion['correctAnswerIndex'] as int;
-                        if (index == correctAnswerIndex) {
+                        final originalIndexOfThisOption = _originalIndices[index];
+
+                        if (originalIndexOfThisOption == correctAnswerIndex) {
                           tileColor = Colors.green.withOpacity(0.3);
-                        } else if (index == _selectedOptionIndex) {
+                        } else if (index == _selectedDisplayIndex) {
                           tileColor = Colors.red.withOpacity(0.3);
                         }
                       }
@@ -174,12 +188,12 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
                           )
                         ),
                         child: RadioListTile<int>(
-                          title: Text(options[index]),
+                          title: Text(_shuffledOptions[index]),
                           value: index,
-                          groupValue: _selectedOptionIndex,
+                          groupValue: _selectedDisplayIndex,
                           onChanged: _answerChecked ? null : (value) {
                             setState(() {
-                              _selectedOptionIndex = value!;
+                              _selectedDisplayIndex = value!;
                             });
                           },
                         ),
@@ -196,15 +210,21 @@ class _StreakTestScreenState extends State<StreakTestScreen> {
             const SizedBox(height: 16),
             ElevatedButton(
               style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(vertical: 16)),
-              onPressed: _selectedOptionIndex == null ? null : () {
+              onPressed: _selectedDisplayIndex == null ? null : () {
                 if (_answerChecked) {
-                  _loadNextQuestion();
+                  if (_isCorrect) {
+                    _loadNextQuestion();
+                  } else {
+                    _endGame();
+                  }
                 } else {
                   _checkAnswer();
                 }
               },
               child: Text(
-                _answerChecked && _isCorrect ? 'Next Question' : 'Check Answer',
+                !_answerChecked
+                  ? 'Check Answer'
+                  : (_isCorrect ? 'Next Question' : 'Finish'),
                 style: const TextStyle(fontSize: 18),
               ),
             ),
